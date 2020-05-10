@@ -1,0 +1,352 @@
+
+body{
+	background-color: #e2e2e230;
+}
+
+h1,h2{
+	font-weight: 600;
+	font-family: 'berlin sans fb demi';
+	color: #004e92;
+}
+
+h3,h4,h5,h6{
+	font-family: 'berlin sans fb demi';
+}
+p{
+	color: #5f6368;
+	line-height: 1.5;
+	font-family: lucida sans;
+	font-size: 1.1em;
+}
+
+.drk::before{
+	content:"";
+	display:block;
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.45);
+
+}
+
+
+.carousel-item img{
+	border: none !important;
+	outline: none;
+
+}
+
+.carousel-item{
+	text-align: center;
+	height: 100vh;
+	min-height: 300px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-color: teal;
+}
+
+.carousel-caption{
+	bottom: 220px;
+}
+
+.carousel-caption h5{
+	font-size: 40px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
+	font-family: broadway;
+}
+
+.carousel-caption p{
+	width: 60%;
+	margin: auto;
+	font-size: 20px;
+	font-weight: 300;
+	color: #eee;
+	line-height: 1.9;
+	font-family: Consolas;
+}
+
+.carousel-caption a{
+	text-transform: uppercase;
+	background: #146579;
+	color: #FE4A49;
+	padding: 10px 30px;
+	display: inline-block;
+}
+
+
+/* food details css*/
+
+#list_container img{
+	width: 100%;
+	height: 200px;
+	padding: 0;
+}
+
+
+
+.container .row .col-sm-3 .col-sm-12{
+	padding: 0 !important;
+}
+
+#list_container{
+	margin: 3.5em auto;
+	padding-right: 10px;
+}
+
+#list_container h5, h6{
+	padding-left: 10px;
+	font-size: 1.1em;
+}
+
+
+
+
+.test{
+	transition: all 0.7s ease-in-out;
+	border: thin solid transparent;
+	padding: 2px;
+	box-shadow: 0 5px 7px -5px #05ABE7;
+	margin-top: 1.235em;
+	background-color: #FFFFFF;
+}
+
+.test:hover{
+	border-color: grey;
+	text-decoration: underline;
+
+}
+
+
+/*css for the welcome section */
+#welcome{
+	/*background-image:linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
+background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+	background-image: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+	*/
+	background: linear-gradient(15deg, rgba(19,84,122,0.7), rgba(128,208,199,0.5));
+	padding: 2em 0;
+	margin-bottom: 1.2em;
+}
+#welcome_section{
+	text-align: center;
+	margin: 2.5em auto;
+
+}
+#welcome_section #welcome-dish{
+	background-color: #25809b;
+}
+#welcome_section #welcome-community{
+	background-color: #146579;
+}
+#welcome_section #welcome-learning{
+	background-color: #31b5dd;
+}
+
+#welcome_section .welcome-class{
+	padding: 2.3em;
+	height: auto;
+	margin: 1em auto;
+}
+
+
+#welcome_section  h1{
+	color: #004e92;
+	text-transform: uppercase;
+	font-weight: 700;
+
+}
+#welcome_section  h2{
+	font-family: 'RopaSans-Regular';
+}
+
+#welcome_section  p{
+	color:#eee;
+	font-weight: 500;
+	line-height: 1.5em;
+}
+
+
+/* css for category section */
+#categories .icofont{
+	color: #004e92;
+	width: auto;
+}
+
+.cate-text{
+	margin: 5em auto;
+}
+.cate-icon{
+	margin: 6em auto;
+	text-align: center;
+}
+div.oval-shadow {
+	height: 16px;
+	background-color: #dfdfdf;
+	border-radius: 100%;
+	margin-top: 3em;
+}
+
+
+/* css for features section */
+#features{
+	background-image: linear-gradient(to left, rgba(20,101,121,0.4), rgba(20,101,121,0.4)),url("/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.57fc970d1c4b.jpg");
+	background-size: cover;
+	margin:-1em 0 1.5em auto;
+	padding: 3.0em 0;
+
+}
+
+#ft-txt{
+	text-align: center;
+}
+
+#ft-txt h1{
+	text-transform: uppercase;
+}
+#ft-txt p{
+	color: whitesmoke;
+}
+
+#features .ft-features > p{
+	color: #05131c;
+	font-family: poppins;
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+#features h2, h3, span{
+	display: inline-block;
+}
+
+#features .icofont{
+	color:#004e92;
+	padding-right: 20px;
+	font-size: 26px;
+	text-shadow: 2px 0 2px #fff;
+}
+
+
+#features .ft-features{
+	border-radius: 20px;
+	border: 1px solid white;
+	padding: 30px;
+	margin: 1em auto;
+	background-color: rgba(200,200,200,0.5) !important;
+	transition: All 2000s ease-in !important;
+}
+
+/* Shutter In Horizontal */
+.hvr-shutter-in-horizontal {
+  background: rgba(255, 255, 255, 0.102) !important;
+
+}
+.hvr-shutter-in-horizontal:before {
+  background: rgba(255, 255, 255, 0.102) !important;
+	border-radius: 20px;
+}
+
+
+
+/* footer css*/
+
+#footer-id{
+	background-color:#292929; /*#484848;*/
+	margin-top: -1.2em;
+	margin-bottom: -5.5em;
+	padding: 2em;
+	text-align: center;
+	color: whitesmoke;
+	font-weight: 700;
+}
+
+
+#footer-id .icofont{
+	color: #000;
+	text-shadow: 2px 0 3px #fff;
+	font-size: 2.5em;
+	display: inline-block;
+}
+
+#footer-id a{
+	color: #d1d1d1;
+}
+
+#footer-id a:hover{
+	color:seagreen;
+}
+
+
+#about-page{
+	background-color: #fff;
+	padding:20px;
+	margin: 4.5em auto;
+	text-align: left;
+
+}
+#about-page > ul{
+	list-style: none;
+}
+
+#about-page > ul > li > h4{
+	text-transform: capitalize;
+}
+#about-page h1{
+	color:#05ABE7;
+}
+#about-page p:first-letter{
+	font-size: 1.3em;
+}
+
+#about-page img{
+	height: 380px;
+	width: 100%;
+	margin: 3.5em auto;
+	box-shadow: 10px 10px 7px -5px grey;
+	display: inline-block !important;
+	opacity: 0.9;
+}
+
+
+
+/* form */
+.form-override {
+    background-color: #fff;
+    margin: 4.7em auto;
+    padding: 20px;
+}
+
+.message-override{
+	    margin: 4.5em auto -5em auto;
+		text-align: center;
+}
+
+#food_recipe{
+	background-color: #fff;
+	padding:20px;
+	margin: 4.5em auto;
+}
+
+
+
+@media(max-width: 48em){
+	#welcome_section .welcome-class{
+		padding:0.6em;
+	}
+
+	#food_recipe {
+		padding:0px;
+		margin: 4.5em auto;
+	}
+}
+
+
+
+
+
+
+
+
+

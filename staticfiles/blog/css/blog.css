@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#blog-container{
+	color:white;
+	padding: 50px;
+	margin: 5em auto;
+}
+.general-style{
+	padding: 30px;
+	background-color: #fff;
+	color: black;
+	box-shadow: 0 5px 10px -5px #05ABE7;
+	margin-bottom: 2em;
+}
+
+#asideside{
+	height:200px;
+	background-color: green;
+
+}
+
+.general-style img{
+	height:100px;
+	max-width:100px !important;
+	background-color: #145679;
+	border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

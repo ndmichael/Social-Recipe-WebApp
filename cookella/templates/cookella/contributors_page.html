@@ -1,0 +1,26 @@
+{% extends "cookella/base.html" %}
+{%  load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container" >
+        <div class="row form-override">
+            <form method="POST" enctype="multipart/form-data" class="offset-sm-2 col-sm-7">
+                {% csrf_token %}
+                <fieldset>
+                    <h1 class="form-group text-center mt-4">Add Your Recipes</h1>
+                    <p class="text-muted text-center border-bottom">
+                        <small>
+                            End each recipe step with a full stop .
+                        </small>
+                    </p>
+                    {{ f_form|crispy }}
+                    {{ r_form|crispy }}
+                </fieldset>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock content %}

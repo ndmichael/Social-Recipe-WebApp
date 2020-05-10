@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap');
+
+.navbar-light{
+	display: inline-block;
+	height: auto;
+	transition:0.7s ease;
+	border-bottom: 3px solid #ff0;
+	margin-bottom: 2em;
+	background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.navbar-light.scrolled{
+	display: inline-block;
+	height: auto;
+	background-color: #485550;
+	border-bottom: 3px solid #ffd100;
+
+}
+
+
+
+.navbar-brand{
+	font-size: 2.25rem;
+	font-weight: bold;
+	margin-top: -0.5em;
+
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(232, 85, 78,1.0);
+}
+
+.navbar-light .navbar-nav .nav-item > .nav-link {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bolder;
+	font-size: 0.9em;
+	font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: white;
+	padding: 20px 7px;
+	margin: -20px auto;
+}
+
+.navbar-light .navbar-nav .active > .nav-link{
+	color: #e8554e;
+	font-size: 1.2em;
+	padding: 17px 7px;
+}
+
+.navbar-light .navbar-nav .nav-item > .community{
+	color:yellow;
+	background-color:#080808;
+}
+
+.navbar-light .navbar-nav .nav-item > .community:hover{
+	color:#ffc107;
+	background-color: #e8554e;
+}
+
+/* i just want the nav auth to have different color */
+.navbar-light .navbar-nav .nav-item >  .nav-auth{
+	color: #ff0;
+}
+
+
+.w-100{
+	height: 100vh;
+}
+
+.navbar-light .navbar-nav > .nav-item > a:active,
+.navbar-light .navbar-nav > .nav-item > a:hover{
+	color:#fff;
+	background-color: #e8554e;
+	transition: background-color 0.5s ease-in;
+}
+
+
+.navbar-nav{
+	text-align: center;
+}
+
+.nav-link{
+	padding: .2rem 1rem;
+}
+
+.navbar-toggler{
+	background-color: #ff0;
+}
+
+
+@media(max-width: 48em){
+	.navbar-light .navbar-nav > .nav-item > a:hover{
+		background-color: transparent!important;
+		color: #e8554e;
+	}
+
+	.navbar-light .navbar-nav .nav-item > .nav-link{
+		padding: 30px 0;
+	}
+
+	.navbar-light .navbar-nav .nav-item > .community{
+		background-color: rgba(47,107,151,0.4);
+	}
+
+
+}
+

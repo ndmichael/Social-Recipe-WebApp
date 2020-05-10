@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Fondamento|Metal+Mania|Ubuntu+Condensed&display=swap');
+body{
+	background-color: #e2e2e230;
+}
+
+h1,h2{
+	font-weight: 600;
+	font-family:  'Berkshire Swash', cursive;
+	color: #e8554e;
+}
+
+h3,h4,h5,h6{
+	font-family: 'Fondamento', cursive;
+}
+p{
+	color: #5f6368;
+	line-height: 1.7;
+	letter-spacing: 0.2px;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 1.1em;
+}
+
+.drk::before{
+	content:"";
+	display:block;
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.45);
+
+}
+
+
+.carousel-item img{
+	border: none !important;
+	outline: none;
+
+}
+
+.carousel-item{
+	text-align: center;
+	height: 100vh;
+	min-height: 300px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-color: teal;
+}
+
+.carousel-caption{
+	bottom: 220px;
+}
+
+.carousel-caption h5{
+	font-size: 40px;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 25px;
+	font-family: 'Metal Mania', cursive;
+
+}
+
+.carousel-caption p{
+	width: 60%;
+	margin: auto;
+	font-size: 20px;
+	font-weight: 300;
+	color: #eee;
+	line-height: 1.9;
+	font-family: Consolas;
+}
+
+.carousel-caption a{
+	text-transform: uppercase;
+	background: transparent;
+	margin-top: 20px;
+	color: #ff0;
+	padding: 10px 30px;
+	display: inline-block;
+	border: 2px solid #ff0;
+}
+
+
+/* food details css*/
+
+#list_container img{
+	width: 100%;
+	height: 200px;
+	padding: 0;
+}
+
+
+
+.container .row .col-sm-3 .col-sm-12{
+	padding: 0 !important;
+}
+
+#list_container{
+	margin: 3.5em auto;
+	padding-right: 10px;
+}
+
+#list_container h5, h6{
+	padding-left: 10px;
+	font-size: 1.1em;
+}
+#list_container p{
+	padding-left: 10px;
+	font-size: 0.9em;
+}
+
+
+
+
+.test{
+	transition: all 0.7s ease-in-out;
+	border: thin solid transparent;
+	padding: 2px;
+	box-shadow: 0 5px 7px -5px #05ABE7;
+	margin-top: 1.235em;
+	background-color: #FFFFFF;
+}
+
+.test:hover{
+	border-color: grey;
+	text-decoration: underline;
+
+}
+
+
+/*css for the welcome section */
+#welcome{
+	 background: linear-gradient(to right top, rgba(232, 85, 78,0.7), rgba(255, 255, 0,0.7));
+	/*background-image: linear-gradient(to right top, #e8554e, #ff7a3d, #ffa423, #ffd100, #ffff00); */
+	padding: 4em 0;
+	margin-bottom: 0;
+}
+#welcome_section{
+	text-align: center;
+	margin: 2.5em auto;
+
+}
+#welcome_section #welcome-dish{
+	background-color:rgba(106, 52, 52, 0.4);
+}
+#welcome_section #welcome-community{
+	background-color:rgba(106, 52, 52, 0.4);
+}
+#welcome_section #welcome-learning{
+	background-color:rgba(106, 52, 52, 0.4);
+}
+
+#welcome_section .welcome-class{
+	padding: 2.3em;
+	height: auto;
+	margin: 1em auto;
+}
+
+
+#welcome_section  h1{
+	color: #e8554e;
+	text-transform: uppercase;
+	font-weight: 700;
+
+}
+#welcome_section  h2{
+	font-family: 'RopaSans-Regular';
+}
+
+#welcome_section  p{
+	color:#eee;
+	font-weight: 500;
+	line-height: 1.5em;
+}
+
+
+/* css for category section */
+#mission{
+	margin:0 auto 0 auto;
+}
+
+#mission .mission-class{
+	padding: 5em 2em 3em 0.5em;
+}
+
+#mission .goal-mission{
+	text-align: left;
+	display: block;
+	width: auto;
+}
+
+#mission .join-mission{
+	background-image: linear-gradient(to left, rgba(0, 0, 0,0.8), rgba(0, 0, 0,0.8)), url("/static/cookella/images/slidefood_img4.jpg");
+	background-size: cover;
+	padding: 8em 5em;
+	text-align: center;
+	width: auto;
+}
+#mission .join-mission h2{
+	color: #FFFFFF;
+	font-weight: 900;
+	font-font: broadway, 'berlin sans fb';
+	font-size: xx-large;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+#mission .join-mission p{
+	color: #FFFFFF;
+}
+
+
+/*  css for details section */
+#details{
+	padding: 10em 10px;
+	text-align: center;
+	background-color: #FFFFFF;
+}
+
+#details .icofont-blogger{
+	color: goldenrod;
+}
+#details .icofont-users-social{
+	color: green;
+}
+
+#details .icofont-addons{
+	color: #e8554e;
+}
+
+#details p .icofont{
+	border-radius: 50%;
+	padding: 10px;
+	background-color: #080808;
+}
+#details p{
+	padding: 10px;
+}
+
+
+
+/* css for features section */
+#features{
+	background-image: linear-gradient(to left, rgba(0.8, 0.8, 0.8, 0.6), rgba(0.8, 0.8, 0.8, 0.6)), url("/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg");
+	background-size: cover;
+	margin:0 0 1.5em auto;
+	padding: 3.0em 0;
+
+}
+
+#ft-txt{
+	text-align: center;
+}
+
+#ft-txt h1{
+	text-transform: uppercase;
+}
+#ft-txt p{
+	color: whitesmoke;
+}
+
+#features .ft-features > p{
+	color: #05131c;
+	font-family: poppins;
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+#features h2, h3, span{
+	display: inline-block;
+}
+
+#features .icofont{
+	color:#ffc107;
+	padding-right: 20px;
+	font-size: 26px;
+	text-shadow: 2px 0 4px #e8554e;
+}
+
+
+#features .ft-features{
+	border-radius: 20px;
+	border: 1px solid white;
+	padding: 30px;
+	margin: 1em auto;
+	background-color: rgba(200,200,200,0.5) !important;
+	transition: All 2000s ease-in !important;
+}
+
+/* Shutter In Horizontal */
+.hvr-shutter-in-horizontal {
+  background: rgba(255, 255, 255, 0.102) !important;
+
+}
+.hvr-shutter-in-horizontal:before {
+  background: rgba(255, 255, 255, 0.102) !important;
+	border-radius: 20px;
+}
+
+
+
+/* footer css*/
+
+#footer-id{
+	background-color:#292929; /*#484848;*/
+	margin-top: -1.2em;
+	margin-bottom: -5.5em;
+	padding: 2em;
+	text-align: center;
+	color: whitesmoke;
+	font-weight: 700;
+}
+
+
+#footer-id .icofont{
+	color: #000;
+	text-shadow: 2px 0 3px #fff;
+	font-size: 2.5em;
+	display: inline-block;
+}
+
+#footer-id a{
+	color: #d1d1d1;
+}
+
+#footer-id a:hover{
+	color:#ff0;
+}
+
+
+/* The about page css section */
+#about-page{
+	background-color: #fff;
+	padding:20px;
+	margin: 4.5em auto;
+	text-align: left;
+
+}
+#about-page > ul{
+	list-style: none;
+}
+
+#about-page > ul > li > h4{
+	text-transform: capitalize;
+}
+#about-page p:first-letter{
+	font-size: 1.3em;
+}
+
+#about-page img{
+	height: 380px;
+	width: 100%;
+	margin: 3.5em auto;
+	box-shadow: 10px 10px 7px -5px grey;
+	display: inline-block !important;
+	opacity: 0.9;
+}
+
+
+
+/* form */
+.form-override {
+    background-color: #fff;
+    margin: 4.7em auto;
+    padding: 20px;
+	font-weight: 700;
+	color: #1c87a2;
+}
+
+.message-override{
+	    margin: 4.5em auto -5em auto;
+		text-align: center;
+}
+
+#food_recipe{
+	background-color: #fff;
+	padding:20px;
+	margin: 4.5em auto;
+}
+
+
+
+@media(max-width: 48em){
+	#welcome_section .welcome-class{
+		padding:0.6em;
+	}
+
+	#food_recipe {
+		padding:0px;
+		margin: 4.5em auto;
+	}
+}
+
+
+
+
+
+
+
+
+

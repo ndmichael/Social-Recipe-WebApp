@@ -1,0 +1,50 @@
+{% extends "cookella/base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <section class="container" id="list_container">
+        <div class="row mb-4">
+        {% for dish in object_list %}
+            <div class="col-12 col-sm-3">
+                <div class="col-sm-12  test">
+                    {% if dish.food_image %}
+                        <p><img src="{{ dish.food_image.url }}"/></p>
+                    {% endif %}
+                    <figcaption>
+                        <h5 class="text-muted">Region: {{ dish.country.name }} <i class="{{ dish.country.flag_css }}"></i> </h5>
+                        <h6>{{ dish.food_name }}</h6>
+                        <p><strong>By:</strong> {{ dish.contributor }}</p>
+                    </figcaption>
+                    </figure>
+                    <a href="{%  url 'recipes' dish.pk dish.slug %}" ><button type="button" class="btn btn-outline-info btn-lg mb-2 ml-2">Cook Now</button></a>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+        <div class="mt-5 text-center border-top">
+            {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                    <a class="btn btn-outline-primary" href="?page=1">First</a>
+                    <a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a class="btn btn-outline-primary"
+                       href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                {% endif %}
+            {% endif %}
+
+        </div>
+
+    </section>
+{% endblock %}
+
