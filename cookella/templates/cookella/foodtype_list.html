@@ -1,4 +1,4 @@
-{% extends "cookella/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 
@@ -7,15 +7,17 @@
         <div class="row mb-4">
         {% for dish in object_list %}
             <div class="col-12 col-sm-3">
-                <div class="col-sm-12  test">
-                    {% if dish.food_image %}
-                        <p><img src="{{ dish.food_image.url }}"/></p>
-                    {% endif %}
-                    <figcaption>
-                        <h5 class="text-muted">Region: {{ dish.country.name }} <i class="{{ dish.country.flag_css }}"></i> </h5>
-                        <h6>{{ dish.food_name }}</h6>
-                        <p><strong>By:</strong> {{ dish.contributor }}</p>
-                    </figcaption>
+                <div class="col-sm-12 test">
+                    <figure>
+                        {% if dish.food_image %}
+                            <img src="{{ dish.food_image.url }}"/>
+                        {% endif %}
+                        <figcaption>
+                            <h5 class="text-muted">Region: {{ dish.country.name }} <i
+                                    class="{{ dish.country.flag_css }}"></i></h5>
+                            <h6>{{ dish.food_name }}</h6>
+                            <p><strong>By:</strong> {{ dish.contributor }}</p>
+                        </figcaption>
                     </figure>
                     <a href="{%  url 'recipes' dish.pk dish.slug %}" ><button type="button" class="btn btn-outline-info btn-lg mb-2 ml-2">Cook Now</button></a>
                 </div>

@@ -1,7 +1,6 @@
-{% extends "cookella/base.html" %}
-{% load cookella_tags  %}
+{% extends "base.html" %}
 {% load static %}
-
+{% load cookella_tags %}
 
 {% block content %}
     <section class="container">
@@ -30,7 +29,7 @@
                     <p><strong>Contributed by: </strong>{{ object.contributor }}</p>
                     <!-- only display the update button if requesting person is the contributor -->
                     {% if request.user.username == object.contributor  %}
-                        <a href="{% url "contributors-update" object.pk object.slug %}" class="btn btn-info btn-lg">Update Recipe</a>
+                        <a href="{% url "recipe-update" object.pk object.slug %}" class="btn btn-info">Update Recipe</a>
                     {% endif %}
                 </div>
             </div>

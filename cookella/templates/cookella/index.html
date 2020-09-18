@@ -1,8 +1,8 @@
-{% extends 'cookella/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -25,7 +25,7 @@
     </div>
     <div class="carousel-item drk">
 
-        <img src="{% static "cookella/images/slidefood_img5.jpg" %}" class="d-block mx-auto d-block w-100" alt="...">
+        <img src="{% static "cookella/images/slidefood_img5.jpg" %}" class="d-block mx-auto d-block w-100" alt="..." />
 		<div class="carousel-caption d-none d-md-block">
           <h5 class="animated fadeInDown" style=" animation-delay: 2s;">Be a Contributor</h5>
 			<p class="animated fadeInUp" style=" animation-delay: 2s;">
@@ -33,7 +33,7 @@
                 if Yes then be a contributor by registering today.
             </p>
             <p class="animated zoomIn" style=" animation-delay: 1s;">
-                <a href="{% url 'cookella-contributors' %}">Learn MORE</a>
+                <a href="{% url 'cookella-add-recipe' %}">Learn MORE</a>
             </p>
         </div>
     </div>
@@ -68,35 +68,45 @@
 				<div class="col-sm-12">
 					<h1>Welcome</h1>
 				</div>
-				<div class="col-sm-4 col-12 hvr-float-shadow">
-					<div class="col-sm-12 welcome-class hvr-curl-top-right " id="welcome-learning">
-						<p><span class="icofont icofont-book icofont-5x"></span></p>
-						<h3>Learning</h3>
-						<p>Here is the best place for you to learn a new dish
-							We have free Recipes(images and procedures), on various meals.
-						</p>
-					</div>
-				</div> <!-- end of col -->
-				<div class="col-sm-4 col-12 hvr-float-shadow">
-					<div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-dish">
-						<p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
-						<h3>Dish & Recipe</h3>
-						<p>
-                            Recipes are contributed by cooking enthusiast and experts alike.
-                            Share your Recipes and learn new Recipes.
-						</p>
-					</div>
-				</div> <!-- end of col -->
-				<div class="col-sm-4 col-12 hvr-float-shadow">
-					<div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-community">
-						<p><span class="icofont icofont-5x icofont-rss-feed" aria-hidden="true"></span></p>
-						<h3>Community</h3>
-						<p>Get in touch with other cooking enthusiast,food lovers and experts.
-						You can showcase your cooking skills.
-						</p>
-					</div>
-				</div> <!-- end of col -->
-			</div>
+
+                <div class="col-sm-4 col-12 hvr-float-shadow">
+                    <a href="{% url 'cookella-add-recipe' %}">
+                        <div class="col-sm-12 welcome-class hvr-curl-top-right " id="welcome-learning">
+                            <p><span class="icofont icofont-page icofont-5x"></span></p>
+                            <h3>Add Recipe</h3>
+                            <p>
+                                Add Recipes today and watch them grow in popularity, and Appreciated.
+                                Enjoy what you do, do what you enjoy.
+                            </p>
+                        </div>
+                    </a>
+                </div> <!-- end of col -->
+
+                <div class="col-sm-4 col-12 hvr-float-shadow">
+                    <a href="{% url 'dish_list' %}">
+                        <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-dish">
+                            <p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
+                            <h3>Dish & Recipe</h3>
+                            <p>
+                                Recipes are contributed by cooking enthusiast and experts alike.
+                                Share your Recipes and learn new Recipes.
+                            </p>
+
+                        </div>
+                    </a>
+                </div> <!-- end of col -->
+                <div class="col-sm-4 col-12 hvr-float-shadow">
+                    <a href="{% url 'blog-home' %}">
+                        <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-community">
+                            <p><span class="icofont icofont-5x icofont-rss-feed" aria-hidden="true"></span></p>
+                            <h3>Community</h3>
+                            <p>Get in touch with other cooking enthusiast,food lovers and experts.
+                                You can showcase your cooking skills.
+                            </p>
+                        </div>
+                    </a>
+                </div> <!-- end of col -->
+            </div>
 		</section>
 	</section>
 
@@ -163,7 +173,7 @@
                         You can also update your recipes at any time.
 
                     <p>
-                        <a href="{% url 'cookella-contributors' %}" class="btn btn-outline-danger btn-lg">Be A Contributor</a>
+                        <a href="{% url 'cookella-add-recipe' %}" class="btn btn-outline-danger btn-lg">Be A Contributor</a>
                     </p>
                     </p>
                 </div>

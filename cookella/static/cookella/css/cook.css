@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Fondamento|Metal+Mania|Ubuntu+Condensed&display=swap');
 body{
-	background-color: #e2e2e230;
+	background-color: #bfbfbf30;
 }
 
 h1,h2{
@@ -97,7 +97,7 @@ p{
 }
 
 #list_container{
-	margin: 3.5em auto;
+	margin: 4em auto;
 	padding-right: 10px;
 }
 
@@ -110,13 +110,9 @@ p{
 	font-size: 0.9em;
 }
 
-
-
-
 .test{
 	transition: all 0.7s ease-in-out;
 	border: thin solid transparent;
-	padding: 2px;
 	box-shadow: 0 5px 7px -5px #05ABE7;
 	margin-top: 1.235em;
 	background-color: #FFFFFF;
@@ -174,6 +170,10 @@ p{
 	line-height: 1.5em;
 }
 
+#welcome_section  a{
+	color: inherit;
+	text-decoration: underline;
+}
 
 /* css for category section */
 #mission{
@@ -330,27 +330,27 @@ p{
 
 /* The about page css section */
 #about-page{
-	background-color: #fff;
+	background-color: transparent;
 	padding:20px;
 	margin: 4.5em auto;
 	text-align: left;
 
 }
-#about-page > ul{
-	list-style: none;
-}
+/*#about-page > ul{*/
+/*	list-style: none;*/
+/*}*/
 
-#about-page > ul > li > h4{
-	text-transform: capitalize;
-}
-#about-page p:first-letter{
-	font-size: 1.3em;
-}
+/*#about-page > ul > li > h4{*/
+/*	text-transform: capitalize;*/
+/*}*/
+/*#about-page p:first-letter{*/
+/*	font-size: 1.3em;*/
+/*}*/
 
 #about-page img{
-	height: 380px;
+	height: 300px;
 	width: 100%;
-	margin: 3.5em auto;
+	margin: 1em auto;
 	box-shadow: 10px 10px 7px -5px grey;
 	display: inline-block !important;
 	opacity: 0.9;
@@ -378,6 +378,26 @@ p{
 	margin: 4.5em auto;
 }
 
+/*For the like and unlike button in django css */
+.liked_btn{
+	background-color: transparent !important;
+	color: #05ABE7;
+	border-color: transparent !important;
+	-webkit-text-stroke: 1px rgba(255,255,255,0.8);
+}
+
+.unliked_btn{
+	background-color: transparent !important;
+	-webkit-text-stroke: 1px rgb(0,0,0);
+	color: #FFFFFF;
+	border-color: transparent !important;
+}
+
+.msg-btn{
+	-webkit-text-stroke: 1px rgba(255,255,255,0.8);
+	color: #007bff;
+}
+
 
 
 @media(max-width: 48em){
@@ -389,9 +409,15 @@ p{
 		padding:0px;
 		margin: 4.5em auto;
 	}
+
+	#about-page {
+		background-color: transparent;
+		padding: 0px;
+		margin: 4em auto;
+		text-align: left;
+
+	}
 }
-
-
 
 
 

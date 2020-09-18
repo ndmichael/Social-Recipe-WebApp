@@ -1,68 +1,71 @@
 @charset "utf-8";
 /* CSS Document */
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?&family=Orbitron&display=swap');
 
 .navbar-light{
 	display: inline-block;
 	height: auto;
 	transition:0.7s ease;
-	border-bottom: 3px solid #ff0;
 	margin-bottom: 2em;
-	background-color: rgba(0, 0, 0, 0.5);
+	font-family: 'Orbitron', sans-serif;
+	background-color: rgba(08,08,08, 0.5);
+	padding: 0;
 
 }
 
 .navbar-light.scrolled{
 	display: inline-block;
 	height: auto;
-	background-color: #485550;
-	border-bottom: 3px solid #ffd100;
+	/* background-color: rgba(178, 34, 34, 1); */
+	background: maroon;
 
 }
 
-
-
 .navbar-brand{
-	font-size: 2.25rem;
+	font-size: 2rem;
 	font-weight: bold;
-	margin-top: -0.5em;
 
 }
 
 .navbar-light .navbar-brand {
-    color: rgba(232, 85, 78,1.0);
+    color: rgba(255, 255, 255, 1.0);
 }
 
 .navbar-light .navbar-nav .nav-item > .nav-link {
-	text-transform: uppercase;
+	text-transform: capitalize;
 	text-decoration: none;
-	font-weight: bolder;
+	font-weight: 300;
 	font-size: 0.9em;
-	font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: white;
+	color: #ffffff;
 	padding: 20px 7px;
 	margin: -20px auto;
 }
 
 .navbar-light .navbar-nav .active > .nav-link{
-	color: #e8554e;
-	font-size: 1.2em;
-	padding: 17px 7px;
+	color: #ffffff;
+	font-weight: 600;
+	text-transform: uppercase;
 }
 
 .navbar-light .navbar-nav .nav-item > .community{
-	color:yellow;
-	background-color:#080808;
+	color:#080808;
+	background-color: #ffc800;
 }
 
 .navbar-light .navbar-nav .nav-item > .community:hover{
-	color:#ffc107;
-	background-color: #e8554e;
+	transition: opacity 0.2s ease-in-out;
+	color:#080808;
+	opacity: 0.7;
 }
 
 /* i just want the nav auth to have different color */
 .navbar-light .navbar-nav .nav-item >  .nav-auth{
-	color: #ff0;
+	color: #ffc800;
+	font-size: 15px;
+	font-weight: 700;
+	margin-left: 10px;
+	text-transform: uppercase;
 }
 
 
@@ -72,9 +75,8 @@
 
 .navbar-light .navbar-nav > .nav-item > a:active,
 .navbar-light .navbar-nav > .nav-item > a:hover{
-	color:#fff;
-	background-color: #e8554e;
-	transition: background-color 0.5s ease-in;
+	color:#ffc800;
+	transition: background-color 0.2s ease-in;
 }
 
 
@@ -98,7 +100,9 @@
 	}
 
 	.navbar-light .navbar-nav .nav-item > .nav-link{
-		padding: 30px 0;
+		padding: 35px 0;
+		font-weight: 900;
+		font-size: 16px;
 	}
 
 	.navbar-light .navbar-nav .nav-item > .community{

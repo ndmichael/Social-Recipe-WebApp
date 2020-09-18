@@ -9,6 +9,7 @@ from django_countries.fields import CountryField
 # Create your models here.
 
 
+# Created Category which i think i might use for the future
 class FoodType(models.Model):
     Categories = (
         ('Bakery', 'Bakery'),
@@ -25,14 +26,17 @@ class FoodType(models.Model):
     date_added = models.DateTimeField(default=timezone.now)
     contributor = models.CharField(max_length=150, default='admin')
 
-    def save(self, *args, **kwargs): #i override the save to prepopulate slugs, another way is using signals
+    def save(self, *args, **kwargs):  # i override the save to pre-populate slugs, another way is using signals
         self.slug = slugify(self.food_name)
         super(FoodType, self).save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.food_name}"
 
-    # resizes images to 400,400
+    def get_absolute_url(self):
+       return reverse('recipes', kwargs={'pk': self.pk, 'slug': self.slug})
+
+    # resizes images to 400,400, commented out due to error on s3
     """def save(self):
         super().save()
         img = Image.open(self.food_image.path)
@@ -46,7 +50,7 @@ class FoodType(models.Model):
 class FoodRecipe(models.Model):
     recipe = models.TextField()
     food_type = models.OneToOneField(FoodType, on_delete=models.CASCADE, related_name='food_type', primary_key=True, unique=True)
-    ingredient = models.TextField(max_length=600)
+    ingredient = models.TextField(max_length=1000)
     upvote = models.IntegerField(default=0)
     note = models.CharField(max_length=300, blank=True)
 
@@ -54,19 +58,4 @@ class FoodRecipe(models.Model):
         return f"{self.recipe}"
 
 
-    
-'''
-class FoodComments(models.Model):
-    username = models.CharField(max_length=150, blank=False)
-    email = models.EmailField(blank=False)
-    post = models.ForeignKey(FoodRecipe, on_delete= models.CASCADE, related_name='food_comments')
-    comment_created = models.DateTimeField(auto_now_add=True)
-    comment_published = models.DateTimeField(auto_now=True)
-    active = models.BooleanField(default=True)
 
-    class Meta:
-        ordering = ('comment_created', )
-
-    def __str__(self):
-        return f"post by {self.username} on {self.comment_created}"
-'''

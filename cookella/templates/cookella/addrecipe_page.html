@@ -7,7 +7,7 @@
             <form method="POST" enctype="multipart/form-data" class="offset-sm-2 col-sm-7">
                 {% csrf_token %}
                 <fieldset>
-                    <h1 class="form-group text-center mt-4">Update Your Recipes</h1>
+                    <h1 class="form-group text-center mt-4">Add Your Recipes</h1>
                     <p class="text-muted text-center border-bottom">
                         <small>
                             End each recipe step with a full stop .
@@ -17,7 +17,7 @@
                     {{ r_form|crispy }}
                 </fieldset>
                 <div>
-                    <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                 </div>
 
             </form>
