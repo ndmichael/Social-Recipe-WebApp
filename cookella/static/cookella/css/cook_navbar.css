@@ -33,24 +33,28 @@
 }
 
 .navbar-light .navbar-nav .nav-item > .nav-link {
-	text-transform: capitalize;
+	text-transform: uppercase;
 	text-decoration: none;
-	font-weight: 300;
+	font-weight: 500;
 	font-size: 0.9em;
 	color: #ffffff;
 	padding: 20px 7px;
 	margin: -20px auto;
+	font-family: 'Roboto', sans-serif;
 }
 
 .navbar-light .navbar-nav .active > .nav-link{
 	color: #ffffff;
 	font-weight: 600;
 	text-transform: uppercase;
+	
 }
 
 .navbar-light .navbar-nav .nav-item > .community{
-	color:#080808;
+	color:#000000;
+	font-weight: 900;
 	background-color: #ffc800;
+	opacity: 1;
 }
 
 .navbar-light .navbar-nav .nav-item > .community:hover{

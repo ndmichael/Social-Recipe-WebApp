@@ -1,85 +1,79 @@
-@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Fondamento|Metal+Mania|Ubuntu+Condensed&display=swap');
-body{
-	background-color: #bfbfbf30;
+body {
+	background-color: #FFFFFF;
 }
 
-h1,h2{
-	font-weight: 600;
-	font-family:  'Berkshire Swash', cursive;
-	color: #e8554e;
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Orbitron', sans-serif;
+
 }
 
-h3,h4,h5,h6{
-	font-family: 'Fondamento', cursive;
-}
-p{
+p {
 	color: #5f6368;
 	line-height: 1.7;
-	letter-spacing: 0.2px;
-	font-family: 'Ubuntu Condensed', sans-serif;
-	font-size: 1.1em;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
 }
 
-.drk::before{
+a{
+	text-decoration: none;
+}
+
+
+/* Carousel CSS  */
+.drk::before {
 	content:"";
 	display:block;
 	position:absolute;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.45);
+	background: rgba(0, 0, 0, 0.5);
 
 }
 
 
-.carousel-item img{
+.carousel-item img {
 	border: none !important;
-	outline: none;
+	outline: none; 
+	object-fit: cover;
+	object-position: center;
 
 }
 
-.carousel-item{
+.carousel-item {
 	text-align: center;
 	height: 100vh;
 	min-height: 300px;
 	background: no-repeat center center scroll;
 	-webkit-background-size: cover;
 	background-size: cover;
-	background-color: teal;
+	background-attachment: fixed;
+	background-color: maroon;
 }
 
-.carousel-caption{
-	bottom: 220px;
+.carousel-caption {
+	display: block;
+	margin-bottom: 25vh;
 }
 
-.carousel-caption h5{
+.carousel-caption h5 {
 	font-size: 40px;
 	font-weight: 900;
 	text-transform: uppercase;
-	letter-spacing: 2px;
 	margin-top: 25px;
 	font-family: 'Metal Mania', cursive;
+	padding-bottom: 15px;
 
 }
 
-.carousel-caption p{
+.carousel-caption p {
 	width: 60%;
 	margin: auto;
 	font-size: 20px;
 	font-weight: 300;
 	color: #eee;
-	line-height: 1.9;
-	font-family: Consolas;
+	padding-bottom: 15px;
 }
 
-.carousel-caption a{
-	text-transform: uppercase;
-	background: transparent;
-	margin-top: 20px;
-	color: #ff0;
-	padding: 10px 30px;
-	display: inline-block;
-	border: 2px solid #ff0;
-}
 
 
 /* food details css*/
@@ -238,9 +232,8 @@ p{
 }
 
 
-
 /* css for features section */
-#features{
+#features {
 	background-image: linear-gradient(to left, rgba(0.8, 0.8, 0.8, 0.6), rgba(0.8, 0.8, 0.8, 0.6)), url("/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg");
 	background-size: cover;
 	margin:0 0 1.5em auto;
@@ -248,18 +241,18 @@ p{
 
 }
 
-#ft-txt{
+#ft-txt {
 	text-align: center;
 }
 
-#ft-txt h1{
+#ft-txt h1 {
 	text-transform: uppercase;
 }
-#ft-txt p{
+#ft-txt p {
 	color: whitesmoke;
 }
 
-#features .ft-features > p{
+#features .ft-features > p {
 	color: #05131c;
 	font-family: poppins;
 	font-size: 1.1em;
@@ -401,6 +394,23 @@ p{
 
 
 @media(max-width: 48em){
+	.carousel-caption {
+		text-align: center;
+		margin-bottom: 15vh;
+
+	}	
+	.carousel-caption p {
+		min-width: 100% !important;
+		font-size: 18px;
+	}	
+
+	.carousel-caption h5 {
+		font-size: 30px;
+		width: 100%;
+	
+	}
+	
+
 	#welcome_section .welcome-class{
 		padding:0.6em;
 	}
