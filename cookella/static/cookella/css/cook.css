@@ -120,25 +120,27 @@ a{
 
 
 /*css for the welcome section */
-#welcome{
-	 background: linear-gradient(to right top, rgba(232, 85, 78,0.7), rgba(255, 255, 0,0.7));
-	/*background-image: linear-gradient(to right top, #e8554e, #ff7a3d, #ffa423, #ffd100, #ffff00); */
+#welcome {
 	padding: 4em 0;
 	margin-bottom: 0;
 }
-#welcome_section{
+#welcome_section {
 	text-align: center;
 	margin: 2.5em auto;
 
 }
-#welcome_section #welcome-dish{
-	background-color:rgba(106, 52, 52, 0.4);
+#welcome_section #welcome-dish {
+	/* background-image: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
+	background: linear-gradient(to right top, #e1e1e1, #f8f9fa);
 }
-#welcome_section #welcome-community{
-	background-color:rgba(106, 52, 52, 0.4);
+#welcome_section #welcome-community {
+	/* background-image: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
+	background: linear-gradient(to right top, #f8f9fa, #f8f9fa);
+	
 }
-#welcome_section #welcome-learning{
-	background-color:rgba(106, 52, 52, 0.4);
+#welcome_section #welcome-learning {
+	/* background: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
+	background:linear-gradient(to right top, #f8f9fa, #f8f9fa );
 }
 
 #welcome_section .welcome-class{
@@ -158,10 +160,14 @@ a{
 	font-family: 'RopaSans-Regular';
 }
 
-#welcome_section  p{
-	color:#eee;
-	font-weight: 500;
-	line-height: 1.5em;
+#welcome_section  p .icofont{
+	background: -moz-linear-gradient(maroon , #dc3545);
+	background: -webkit-linear-gradient(maroon , #dc3545);
+	background: linear-gradient(#dc3545, maroon);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	display: inline-block;
 }
 
 #welcome_section  a{
@@ -213,7 +219,7 @@ a{
 }
 
 #details p .icofont{
-	border-radius: 50%;
+	border-radius: 30%;
 	padding: 10px;
 	/* background-color: #080808; */
 	color: #343a40;
@@ -256,10 +262,18 @@ a{
 }
 
 #features .icofont{
-	color:#ffc107;
+	/* color:#ffc107;
 	padding-right: 20px;
 	font-size: 26px;
-	text-shadow: 2px 0 4px #e8554e;
+	text-shadow: 2px 0 4px #e8554e; */
+	font-size: 26px;
+	background: -moz-linear-gradient(maroon , #dc3545);
+	background: -webkit-linear-gradient(maroon , #dc3545);
+	background: linear-gradient(maroon , #dc3545);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	display: inline-block;
 }
 
 
