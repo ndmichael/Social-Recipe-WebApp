@@ -139,12 +139,12 @@ b, strong{
 }
 #welcome_section #welcome-community {
 	/* background-image: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
-	background: linear-gradient(to right top, #f8f9fa, #f8f9fa);
+	background: linear-gradient(to right top, #dbdcdc, #DEE6E3 );
 	
 }
 #welcome_section #welcome-learning {
 	/* background: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
-	background:linear-gradient(to right top, #f8f9fa, #f8f9fa );
+	background:linear-gradient(to right top, #dbdcdc, #DEE6E3 );
 }
 
 #welcome_section .welcome-class{
@@ -182,7 +182,7 @@ b, strong{
 /* css for category section */
 #mission{
 	margin:0 auto 0 auto;
-	background: #f8f9fa;
+	background: #e9ecef;
 }
 
 #mission .mission-class{
@@ -274,7 +274,7 @@ b, strong{
 	font-size: 26px;
 	background: -moz-linear-gradient(maroon , #dc3545);
 	background: -webkit-linear-gradient(maroon , #dc3545);
-	background: linear-gradient(maroon , #dc3545);
+	background: linear-gradient(#dc3545, maroon);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
