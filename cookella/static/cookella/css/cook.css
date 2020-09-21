@@ -121,7 +121,7 @@ a{
 
 /*css for the welcome section */
 #welcome {
-	padding: 4em 0;
+	padding: 3em 0;
 	margin-bottom: 0;
 }
 #welcome_section {
@@ -178,6 +178,7 @@ a{
 /* css for category section */
 #mission{
 	margin:0 auto 0 auto;
+	background: #f8f9fa;
 }
 
 #mission .mission-class{
@@ -191,7 +192,7 @@ a{
 }
 
 #mission .join-mission{
-	background-image: linear-gradient(to left, rgba(0, 0, 0,0.8), rgba(0, 0, 0,0.8)), url("/static/cookella/images/slidefood_img4.jpg");
+	background-image: linear-gradient(to left, rgba(0, 0, 0,0.75), rgba(0, 0, 0,0.75)), url("/static/cookella/images/slidefood_img4.jpg");
 	background-size: cover;
 	padding: 8em 5em;
 	text-align: center;
