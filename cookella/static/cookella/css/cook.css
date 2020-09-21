@@ -18,6 +18,10 @@ a{
 	text-decoration: none;
 }
 
+b, strong{
+	color: #dc3545;
+}
+
 
 /* Carousel CSS  */
 .drk::before {
