@@ -7,9 +7,13 @@ h1,h2,h3,h4,h5,h6 {
 
 }
 
+h1{
+	font-weight: 600;
+}
+
 p {
 	color: #5f6368;
-	line-height: 1.7;
+	line-height: 1.6;
 	font-family: 'Roboto', sans-serif;
 	font-size: 1em;
 }
@@ -155,11 +159,9 @@ b, strong{
 
 
 #welcome_section  h1{
-	color: #e8554e;
 	text-transform: uppercase;
-	font-weight: 700;
-
 }
+
 #welcome_section  h2{
 	font-family: 'RopaSans-Regular';
 }
