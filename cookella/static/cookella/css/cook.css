@@ -225,7 +225,7 @@ h6 {
 /*  css for details section */
 
 #details {
-    padding: 10em 10px;
+    padding: 20vh 10px;
     text-align: center;
     background-color: #FFFFFF;
     min-height: 100vh;
@@ -268,7 +268,6 @@ h6 {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    margin: 0 0 1.5em auto;
     padding: 3.0em 0;
 }
 
@@ -355,7 +354,7 @@ span {
 }
 
 #footer-id a:hover {
-    color: #ff0;
+    color: #ffc800;
 }
 
 
@@ -368,32 +367,6 @@ span {
     text-align: left;
 }
 
-
-/*#about-page > ul{*/
-
-
-/*	list-style: none;*/
-
-
-/*}*/
-
-
-/*#about-page > ul > li > h4{*/
-
-
-/*	text-transform: capitalize;*/
-
-
-/*}*/
-
-
-/*#about-page p:first-letter{*/
-
-
-/*	font-size: 1.3em;*/
-
-
-/*}*/
 
 #about-page img {
     height: 300px;
@@ -473,5 +446,9 @@ span {
         padding: 0px;
         margin: 4em auto;
         text-align: left;
+    }
+
+    #details {
+        padding: 5vh 10px;
     }
 }
