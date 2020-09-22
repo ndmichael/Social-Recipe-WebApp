@@ -3,27 +3,35 @@
 
 
 {% block content %}
-    <section class="container" id="list_container">
+    <section class="container" id="recipe-section">
         <div class="row mb-4">
             <div class="col-12 col-md-9">
-           
                 <div class="row">
                     {% for dish in object_list %}
-                    <div class="col-12 col-md-4">
-                        <div class="test">
-                            <figure>
+                    <div class="col-12 col-md-4  mb-4">
+                        <div class="recipe-wrapper h-100">
                                 {% if dish.food_image %}
-                                    <img src="{{ dish.food_image.url }}"/>
+                                    <div class="img-box">
+                                        <img src="{{ dish.food_image.url }}" class="w-100 img-fluid"/>
+                                    </div>
+                                    
                                 {% endif %}
-                                <figcaption>
+                                <div class="recipe-detail">
                                     <h5 class="text-muted">Region: {{ dish.country.name }} <i
                                         class="{{ dish.country.flag_css }}"></i>
                                     </h5>
-                                    <h6>{{ dish.food_name }}</h6>
+                                    <h6>
+                                        {{ dish.food_name }}
+                                    </h6>
                                     <p><strong>By:</strong> {{ dish.contributor }}</p>
-                                </figcaption>
-                            </figure>
-                            <a href="{%  url 'recipes' dish.pk dish.slug %}" ><button type="button" class="btn btn-outline-info btn-lg mb-2 ml-2">Cook Now</button></a>
+                                    <a href="{%  url 'recipes' dish.pk dish.slug %}" >
+                                        <button type="button" class="btn btn-danger btn-block">
+                                            Cook Now
+                                        </button>
+                                    </a>
+
+                                </div>
+                                    
                         </div>
                     </div>
                     {% endfor %}
