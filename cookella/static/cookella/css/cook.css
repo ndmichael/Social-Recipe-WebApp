@@ -343,10 +343,15 @@ span {
 
 .form-override {
     background-color: #fff;
-    margin: 4.7em auto;
+    margin: 5em auto;
     padding: 20px;
-    font-weight: 700;
-    color: #1c87a2;
+    font-weight: 550;
+    box-shadow: 0 5px 10px grey;
+
+}
+
+.form-override h1{
+    color: #dc3545;
 }
 
 .message-override {

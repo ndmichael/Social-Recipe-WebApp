@@ -30,6 +30,8 @@ DEBUG = (os.environ.get('DEBUG_VALUE', False) == 'True')
 
 ALLOWED_HOSTS = ['cookella.herokuapp.com', '127.0.0.1']
 
+SITE_ID = 2
+
 
 # Application definition
 
@@ -46,6 +48,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    'django.contrib.sites',
+
+     # allauth
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
+    # 'allauth.socialaccount.providers.google', 
+    # 'allauth.socialaccount.providers.facebook', 
 ]
 
 MIDDLEWARE = [
@@ -169,3 +179,20 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 django_heroku.settings(locals())
+
+
+
+#django-allauth registraion settings 
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+
+# 1 day 
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
+
+#or any other page 
+ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
+
+
