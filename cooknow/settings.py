@@ -30,8 +30,8 @@ SECRET_KEY = 't567@n+)9x=1x1&1rs5v6j6@y)6nj#onpabm!d^06oyb%vofhr'
 # SECRET_KEY=os.environ.get('SECRET_KEY_COOKELLA') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG_VALUE') == 'True'
-# DEBUG = True
+# DEBUG = os.environ.get('DEBUG_VALUE') == 'True'
+DEBUG = True
 
 ALLOWED_HOSTS = ["cookella.herokuapp.com"]
 
