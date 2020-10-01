@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{%  block content  %}
+    <section class="container" id="blog-container">
+        <article class="row">
+            <div class="col-sm-8 ">
+                <section class="col-sm-12 general-style">
+                    <p class="">
+                        <img src="{{ post.author.profile.image.url }}" class="img-fluid img-thumbnail rounded-circle"
+                             alt="..."/>
+                        <span class="mr-3"><a href="{% url 'profile' post.author.username %}">{{ post.author }} </a></span><small>{{ post.date_created|date:"F d, Y" }}</small>
+                    </p>
+                    {% if object.author == user %}
+                        <div class="border-bottom">
+                            <a href="{% url 'post-update' object.id %}" class="btn btn-info btn-sm mt-1 mb-1">update
+                                post</a>
+                            <a href="{% url 'post-delete' object.id %}" class="btn btn-outline-danger btn-sm mt-1 mb-1">delete
+                                post</a>
+                        </div>
+                    {% endif %}
+                    <h3>{{ post.title }}</h3>
+                    <p>
+                        {{ post.content  }}
+                    </p>
+                    <!-- like and comment section for ajax calls -->
+                    <div id="like-section">
+                        {% include 'blog/like_section.html' %}
+                    </div>
+                </section>
+               <!-- <span class="fb-comments-count" data-href="https://example.com/"></span>awesome comments -->
+             <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="10" data-width=""></div>
+            </div>
+        </article>
+    </section>
+{% endblock content %}

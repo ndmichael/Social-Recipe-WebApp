@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#blog-container{
+	color:white;
+	margin: 4.5em auto;
+}
+.general-style{
+	padding: 30px;
+	background-color: #fff;
+	color: black;
+	box-shadow: 0 5px 10px -5px #05ABE7;
+	margin-bottom: 2em;
+	margin-right: 0;
+	margin-left: 0;
+	width: 100%;
+}
+
+#asideside{
+	height:200px;
+	background-color: green;
+
+}
+
+.general-style img{
+	min-width:70px !important;
+	max-width:70px !important;
+	min-height: 70px;
+	max-height: 70px;
+	background-color: #145679;
+	border-radius: 50%;
+}
+
+
+@media(max-width: 48em){
+	.general-style{
+		padding: 10px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

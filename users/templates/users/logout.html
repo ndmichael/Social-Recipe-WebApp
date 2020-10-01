@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5 ">
+            <div class="offset-sm-3 col-sm-6 form-override">
+                <h2>You have been logout</h2>
+                <div>
+                    <small>
+                        <a href="{% url 'login' %}">Login Again</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

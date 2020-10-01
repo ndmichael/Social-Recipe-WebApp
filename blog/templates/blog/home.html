@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{%  load crispy_forms_tags %}
+
+
+
+{%  block content  %}
+
+<!--{#    <section class="container" id="blog-container">#}-->
+<!--{#        <div class="row" style="color: #0b2e13; width: 100%; height: 100%;">#}-->
+<!--{#            {% for post in posts %}#}-->
+<!--{#                <div class="col-sm-12">#}-->
+<!--{#                hello everyone#}-->
+<!--{#                </div>#}-->
+<!--{#            {% endfor %}#}-->
+<!--{#            <aside style="color: purple; width: 100%; height: 100%;">#}-->
+<!--{#                hey hello#}-->
+<!--{#            </aside>#}-->
+<!--{#        </div>#}-->
+<!--{#    </section>#}-->
+
+
+
+    <section class="container" id="blog-container">
+        <article class="row">
+            <div class="offset-sm-1 col-sm-7">
+                {% for post in posts %}
+                        <div class="col-sm-12  general-style">
+                            <p class="border-bottom">
+                                <img src="{{ post.author.profile.image.url }}"
+                                     class="img-fluid img-thumbnail rounded-circle"
+                                     alt="..."/>
+                                <a href="{% url 'profile' post.author.username %}"><span
+                                        class="mr-4">{{ post.author }} </span></a>
+                                <small>{{ post.date_created|date:"F d, Y" }}</small>
+                            </p>
+                            <h3>
+                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}">{{ post.title }}</a>
+                            </h3>
+                            <p>
+                                {{ post.content|truncatechars:150 }} ...
+                            </p>
+                            <form class="form1" method="post">
+                                {% csrf_token %}
+                                {% if user in post.liked.all %}
+                                    <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}" class="icofont icofont-thumbs-up icofont-3x liked_btn like">
+                                        <small id="" class="text-muted total">{{ post.num_likes }}</small>
+                                    </button>
+                                {% else %}
+                                    <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}" class="icofont icofont-thumbs-up icofont-3x unliked_btn like">
+                                        <small id="" class="text-muted total">{{ post.num_likes }}</small>
+                                    </button>
+                                {% endif %}
+
+                                <i class="icofont icofont-ui-chat icofont-2x msg-btn"></i>
+                            </form>
+
+                        </div>
+
+                {% endfor %}
+            </div>
+            <aside class="col-sm-3" style="height: 100%; background-color: #FFFFDD;">
+                why is nothing showing
+            </aside>
+        </article> <!-- end of outter container row row -->
+
+
+    <div class="offset-sm-2">
+                    {% if is_paginated %}
+                        {% if page_obj.has_previous %}
+                            <a class="btn btn-outline-primary" href="?page=1">First</a>
+                            <a class="btn btn-outline-primary"
+                               href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                        {% endif %}
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        {% if page_obj.has_next %}
+                            <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
+                            <a class="btn btn-outline-primary"
+                               href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+    </section> <!-- end of container wrapper -->
+
+{% endblock content %}
