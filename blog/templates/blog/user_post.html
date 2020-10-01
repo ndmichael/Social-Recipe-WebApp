@@ -1,4 +1,4 @@
-{% extends 'cookella/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 
@@ -19,6 +19,24 @@
                         <p>
                             {{ post.content|truncatechars:150 }}
                         </p>
+                        <form method="POST" action="{% url 'like-post' %}" enctype="multipart/form-data" class="">
+                            {% csrf_token %}
+                            <div>
+                                <input type="hidden" name="post_id" value="{{ post.pk }}" />
+                                <input type="hidden" name="page_num" value="{{ page_obj.number}}" />
+                                 {% if user in post.liked.all %}
+                                    <button type="submit" class="icofont icofont-thumbs-up icofont-2x liked_btn"></button>
+                                {% else %}
+                                    <button type="submit" class="icofont icofont-thumbs-up icofont-2x unliked_btn"></button>
+                                {% endif %}
+                                <strong class="text-muted"> {{ post.liked.all.count }} </strong>
+                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}">
+                                    <i class="icofont icofont-ui-text-chat icofont-1x ml-4 msg-btn"></i>
+                                    <strong class="text-muted">  {{ post.liked.all.count }} Comment </strong>
+                                </a>
+                            </div>
+
+                        </form>
 
                     </section>
                 {% endfor %}

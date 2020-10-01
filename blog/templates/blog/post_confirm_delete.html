@@ -1,4 +1,4 @@
-{% extends "cookella/base.html" %}
+{% extends "base.html" %}
 
 {% block content %}
     <div class="container">
@@ -7,7 +7,7 @@
                 {% csrf_token %}
                 <fieldset class="form-group">
                     <legend class="form-group mb-4 mt-4"><h1>Delete Post</legend>
-                    <h2>Are you sure you want to delete post?</h2>
+                    <h3>Are you sure you want to delete post?</h3>
                 </fieldset>
                 <div>
                     <button type="submit" class="btn btn-outline-danger btn-group-sm">Yes, Delete</button>

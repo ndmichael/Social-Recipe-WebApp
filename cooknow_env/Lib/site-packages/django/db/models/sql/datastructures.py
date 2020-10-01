@@ -2,8 +2,6 @@
 Useful auxiliary data structures for query construction. Not useful outside
 the SQL domain.
 """
-# for backwards-compatibility in Django 1.11
-from django.core.exceptions import EmptyResultSet  # NOQA: F401
 from django.db.models.sql.constants import INNER, LOUTER
 
 
@@ -70,7 +68,7 @@ class Join:
         qn2 = connection.ops.quote_name
 
         # Add a join condition for each pair of joining columns.
-        for index, (lhs_col, rhs_col) in enumerate(self.join_cols):
+        for lhs_col, rhs_col in self.join_cols:
             join_conditions.append('%s.%s = %s.%s' % (
                 qn(self.parent_alias),
                 qn2(lhs_col),

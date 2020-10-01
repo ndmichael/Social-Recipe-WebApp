@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 import django_heroku
 
+print((os.environ.get('DEBUG_VALUE') == 'True'))
+
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,14 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 't567@n+)9x=1x1&1rs5v6j6@y)6nj#onpabm!d^06oyb%vofhr'
+SECRET_KEY = 't567@n+)9x=1x1&1rs5v6j6@y)6nj#onpabm!d^06oyb%vofhr'
 
-SECRET_KEY = os.environ.get('SECRET_KEY_COOKELLA')
+# SECRET_KEY=os.environ.get('SECRET_KEY_COOKELLA') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE', False) == 'True')
+DEBUG = os.environ.get('DEBUG_VALUE') == 'True'
+# DEBUG = True
 
-ALLOWED_HOSTS = ['cookella.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ["cookella.herokuapp.com"]
 
 SITE_ID = 2
 
@@ -47,7 +52,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
     'django.contrib.sites',
 
      # allauth
@@ -56,6 +60,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount', 
     # 'allauth.socialaccount.providers.google', 
     # 'allauth.socialaccount.providers.facebook', 
+
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -142,11 +148,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'cookella/static'),
-    os.path.join(BASE_DIR, 'blog/static'),
+    
 ]
 
 
@@ -164,21 +170,19 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # setting environmental variables for S3
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID_COOKELLA') 
+AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY_COOKELLA') 
+AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME_COOKELLA') 
 
 
-AWS_S3_FILE_OVERWRITE = False
+AWS_S3_FILE_OVERWRITE=False
+AWS_S3_REGION_NAME='us-east-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
-AWS_S3_REGION_NAME = 'us-east-2'
-AWS_DEFAULT_UCL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+AWS_DEFAULT_UCL=None
+DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 
-
-
-django_heroku.settings(locals())
 
 
 
@@ -195,4 +199,21 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
 #or any other page 
 ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 
+django_heroku.settings(locals())
 
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
+        },
+    },
+}

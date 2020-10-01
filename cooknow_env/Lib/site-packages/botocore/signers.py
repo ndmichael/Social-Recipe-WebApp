@@ -145,9 +145,11 @@ class RequestSigner(object):
             }
             if expires_in is not None:
                 kwargs['expires'] = expires_in
-            if not explicit_region_name and request.context.get(
-                    'signing', {}).get('region'):
-                kwargs['region_name'] = request.context['signing']['region']
+            signing_context = request.context.get('signing', {})
+            if not explicit_region_name and signing_context.get('region'):
+                kwargs['region_name'] = signing_context['region']
+            if signing_context.get('signing_name'):
+                kwargs['signing_name'] = signing_context['signing_name']
             try:
                 auth = self.get_auth_instance(**kwargs)
             except UnknownSignatureVersionError as e:
@@ -674,6 +676,8 @@ def generate_presigned_post(self, Bucket, Key, Fields=None, Conditions=None,
 
     if fields is None:
         fields = {}
+    else:
+        fields = fields.copy()
 
     if conditions is None:
         conditions = []

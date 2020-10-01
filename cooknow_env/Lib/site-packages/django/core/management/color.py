@@ -14,8 +14,7 @@ def supports_color():
     Return True if the running system's terminal supports color,
     and False otherwise.
     """
-    plat = sys.platform
-    supported_platform = plat != 'Pocket PC' and (plat != 'win32' or 'ANSICON' in os.environ)
+    supported_platform = sys.platform != 'win32' or 'ANSICON' in os.environ
 
     # isatty is not always implemented, #6223.
     is_a_tty = hasattr(sys.stdout, 'isatty') and sys.stdout.isatty()
@@ -64,10 +63,10 @@ def no_style():
     return make_style('nocolor')
 
 
-def color_style():
+def color_style(force_color=False):
     """
     Return a Style object from the Django color scheme.
     """
-    if not supports_color():
+    if not force_color and not supports_color():
         return no_style()
     return make_style(os.environ.get('DJANGO_COLORS', ''))

@@ -1,4 +1,4 @@
-{% extends 'cookella/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 
@@ -24,9 +24,14 @@
                     <p>
                         {{ post.content  }}
                     </p>
+                    <!-- like and comment section for ajax calls -->
+                    <div id="like-section">
+                        {% include 'blog/like_section.html' %}
+                    </div>
                 </section>
+               <!-- <span class="fb-comments-count" data-href="https://example.com/"></span>awesome comments -->
+             <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="10" data-width=""></div>
             </div>
         </article>
     </section>
-
 {% endblock content %}
