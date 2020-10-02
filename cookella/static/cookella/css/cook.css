@@ -213,7 +213,7 @@ strong {
     0% {
         transform: rotateY(0deg);
     }
-    20% {
+    5% {
         transform: rotateY(-360deg);
     }
     100% {
@@ -294,21 +294,14 @@ span {
 
 #footer-id {
     background-color: #292929;
-    /*#484848;*/
-    margin-top: -1.2em;
-    margin-bottom: -5.5em;
+    bottom:0;
     padding: 2em;
+    width: 100%;
     text-align: center;
     color: whitesmoke;
     font-weight: 700;
 }
 
-#footer-id .icofont {
-    color: #000;
-    text-shadow: 2px 0 3px #fff;
-    font-size: 2.5em;
-    display: inline-block;
-}
 
 #footer-id a {
     color: #d1d1d1;
@@ -438,7 +431,7 @@ span {
 @media(max-width: 48em) {
     .carousel-caption {
         text-align: center;
-        margin-bottom: 15vh;
+        margin-bottom: 25vh;
     }
     .carousel-caption p {
         min-width: 100% !important;
@@ -464,5 +457,9 @@ span {
 
     #details {
         padding: 5vh 10px;
+    }
+
+    #features {
+        background-attachment: scroll;
     }
 }

@@ -10,7 +10,7 @@
     transition: 0.7s ease;
     margin-bottom: 2em;
     font-family: 'Orbitron', sans-serif;
-    background-color: rgba(08, 08, 08, 0.5);
+    background-color: rgba(36, 41, 46, .9);
     padding: 0;
 }
 
@@ -28,6 +28,10 @@
 
 .navbar-light .navbar-brand {
     color: rgba(255, 255, 255, 1.0);
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #ffc800;
 }
 
 .navbar-light .navbar-nav .nav-item>.nav-link {
@@ -65,14 +69,14 @@
 
 .navbar-light .navbar-nav .nav-item>.nav-auth {
     color: #ffc800;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 900;
     margin-left: 10px;
     text-transform: uppercase;
 }
 
 .navbar-light .navbar-nav .nav-item>.nav-auth:hover {
-    color: #080808;
+    color: #ffffff;
 }
 
 .w-100 {
