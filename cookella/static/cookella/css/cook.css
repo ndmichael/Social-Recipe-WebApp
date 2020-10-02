@@ -438,7 +438,7 @@ span {
 @media(max-width: 48em) {
     .carousel-caption {
         text-align: center;
-        margin-bottom: 15vh;
+        margin-bottom: 25vh;
     }
     .carousel-caption p {
         min-width: 100% !important;
