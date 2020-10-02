@@ -213,7 +213,7 @@ strong {
     0% {
         transform: rotateY(0deg);
     }
-    20% {
+    5% {
         transform: rotateY(-360deg);
     }
     100% {
@@ -294,9 +294,8 @@ span {
 
 #footer-id {
     background-color: #292929;
-    /*#484848;*/
-    margin-top: -1.2em;
-    margin-bottom: -5.5em;
+    position:absolute;
+    bottom:0;
     padding: 2em;
     text-align: center;
     color: whitesmoke;
