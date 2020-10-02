@@ -294,20 +294,14 @@ span {
 
 #footer-id {
     background-color: #292929;
-    position:absolute;
     bottom:0;
     padding: 2em;
+    width: 100%;
     text-align: center;
     color: whitesmoke;
     font-weight: 700;
 }
 
-#footer-id .icofont {
-    color: #000;
-    text-shadow: 2px 0 3px #fff;
-    font-size: 2.5em;
-    display: inline-block;
-}
 
 #footer-id a {
     color: #d1d1d1;
@@ -463,5 +457,9 @@ span {
 
     #details {
         padding: 5vh 10px;
+    }
+
+    #features {
+        background-attachment: scroll;
     }
 }
