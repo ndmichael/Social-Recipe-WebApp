@@ -17,7 +17,7 @@
                                     
                                 {% endif %}
                                 <div class="recipe-detail">
-                                    <h5 class="text-muted">Region: {{ dish.country.name }} <i
+                                    <h5 class="text-muted">{{ dish.country.name }} <i
                                         class="{{ dish.country.flag_css }}"></i>
                                     </h5>
                                     <h6>
@@ -25,7 +25,7 @@
                                     </h6>
                                     <p><strong>By:</strong> {{ dish.contributor }}</p>
                                     <a href="{%  url 'recipes' dish.pk dish.slug %}" >
-                                        <button type="button" class="btn btn-danger btn-block">
+                                        <button type="button" class="btn btn-danger btn-block btn-lg">
                                             Cook Now
                                         </button>
                                     </a>

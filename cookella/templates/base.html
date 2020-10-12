@@ -43,7 +43,7 @@
                         <a class="nav-link nav-auth" href="{% url 'profile' request.user.username %}">{{ request.user.username }}, Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-auth" href="{% url 'logout' %}">Logout </a>
+                        <a class="nav-link nav-auth" href="{% url 'account_logout' %}">Logout </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-auth" href="{% url 'create-post' %}">New Post</a>
@@ -53,7 +53,7 @@
                         <a class="nav-link nav-auth" href="{% url 'login' %}">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-auth" href="{% url 'register' %}">Register</a>
+                        <a class="nav-link nav-auth" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -98,7 +98,7 @@
             <div class="col-sm-12">
                 <p>Copyright &#64; 2020 Alright reserved <br />
 
-                    <a href="http://www.codeja-vu.dx.am" , target="_blank">
+                    <a href="https://ndmichael.github.io/ndmichael/" , target="_blank">
                         <small> want to know more about the developer?. visit </small> my portfolio.
                     </a>
                 </p>
