@@ -23,12 +23,12 @@
 
     <section class="container" id="blog-container">
         <article class="row">
-            <div class="col-sm-8">
+            <div class="col-12 offset-md-1 col-md-7">
                 {% for post in posts %}
                     <div class="row general-style mr-md-2 mb-4">
                         <div class="col-sm-8 my-3">
                             <p class="border-bottom">
-                                <img src="{{ post.author.profile.image.url }}"
+                                <img src="{{ post.author.profile.photo_url }}"
                                      class="img-fluid img-thumbnail p-0"
                                      alt="..."/>
                                 <a href="{% url 'profile' post.author.username %}"  class="mr-4">
@@ -42,7 +42,7 @@
                                 <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}">{{ post.title }}</a>
                             </h3>
                             <p>
-                                {{ post.content|truncatechars:150 }} ...
+                                {{ post.content|truncatechars:250 }} ...
                             </p>
                             <form class="form1" method="post">
                                 {% csrf_token %}
@@ -59,7 +59,7 @@
                                 <i class="icofont icofont-ui-chat icofont-2x msg-btn"></i>
                             </form>
                         </div>
-                        <div class="col-12 col-md-4" style="background-color: #ffc800; padding: 0 !important;">
+                        <div class="col-12 col-md-4" style="background-color: #dc3545; padding: 0 !important;">
 
                         </div>
 

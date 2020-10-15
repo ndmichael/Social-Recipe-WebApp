@@ -16,7 +16,7 @@
 }
 
 #blog-container span{
-	color: #dc3545 !important;
+	color: #000000 !important;
 }
 
 #asideside{
@@ -25,12 +25,12 @@
 
 }
 
-a{
-	color: #000000;
+#blog-container a{
+	color: #dc3545;
 }
 
-a:hover{
-	color: #dc3545 !important;
+#blog-container a:hover{
+	color: #000000 !important;
 }
 
 
