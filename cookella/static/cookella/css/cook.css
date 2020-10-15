@@ -84,6 +84,11 @@ strong {
     padding-bottom: 15px;
 }
 
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    width: 70px;
+    height: 70px;
+}
+
 
 
 
