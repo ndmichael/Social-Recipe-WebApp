@@ -15,7 +15,7 @@
 	transition: box-shadow .5s;
 }
 
-#blog-container span{
+#blog-container .general-style span{
 	color: #000000 !important;
 }
 
@@ -25,11 +25,11 @@
 
 }
 
-#blog-container a{
+#blog-container .header_link{
 	color: #dc3545;
 }
 
-#blog-container a:hover{
+#blog-container .general-style .header_link:hover{
 	color: #000000 !important;
 }
 

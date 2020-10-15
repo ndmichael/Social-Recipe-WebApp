@@ -39,7 +39,7 @@
                                 <small>{{ post.date_created|date:"F d, Y" }}</small>
                             </p>
                             <h3>
-                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}">{{ post.title }}</a>
+                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">{{ post.title }}</a>
                             </h3>
                             <p>
                                 {{ post.content|truncatechars:250 }} ...
