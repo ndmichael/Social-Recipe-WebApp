@@ -1,9 +1,8 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
-<div id="carouselExampleIndicators" class="carousel" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel" data-ride="carousel" data-interval="false">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active drk">
@@ -11,47 +10,51 @@
             <div class="carousel-caption">
                 <h5 class="animated fadeInUp" style=" animation-delay: 1s;">Dish Recipe</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    Learn how to prepare different varieties of dishes, Both Africa and Intercontinental Including ingredients and recipes, from expert cooks just for you.
+                    Learn how to prepare different varieties of dishes, Both Africa and Intercontinental Including
+                    ingredients and recipes, from expert cooks just for you.
 
                 </p>
-                <p class="animated zoomIn" style=" animation-delay: 1s;">
+
+                <p class="animated zoomIn pt-4" style=" animation-delay: 1s;">
                     <a href="{% url 'dish_list' %}">
                         <button class="btn btn-warning  btn-lg">
-                            cook now
+                            View Recipe
                         </button>
                     </a>
+
+                    <a href="{% url 'cookella-add-recipe'%}">
+                        <button class="btn btn-light  btn-lg">
+                            Add Recipe
+                        </button>
+                    </a>                 
                 </p>
+
+
+                
+
+
+
             </div>
         </div>
 
         <div class="carousel-item drk">
-            <img src="{% static "cookella/images/slidefood_img5.jpg " %}" class="d-block mx-auto d-block w-100" alt="..." />
-            <div class="carousel-caption">
-                <h5 class="animated fadeInDown" style=" animation-delay: 1s;">Be a Contributor</h5>
-                <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    Do you wish your dish and recipe to be listed on our page? if Yes then be a contributor by registering today.
-                </p>
-                <p class="animated zoomIn" style=" animation-delay: 1s;">
-                    <a href="{% url 'cookella-add-recipe' %}">
-                        <button class="btn btn-warning btn-lg">
-                            Learn More
-                        </button>
-                    </a>
-                </p>
-            </div>
-        </div>
-
-        <div class="carousel-item drk">
-            <img src="{% static "cookella/images/man-1915351_1920.jpg " %}" class="d-block mx-auto d-block w-100" alt="..." />
+            <img src="{% static "cookella/images/man-1915351_1920.jpg " %}" class="d-block mx-auto d-block w-100"
+                alt="..." />
             <div class="carousel-caption">
                 <h5 class="animated  lightSpeedIn" style=" animation-delay: 1s;">Join our Community</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    Why build your own blog when you can be a blogger with us. <br /> Join our community today to blog, interact and learn.
+                    Why build your own blog when you can be a blogger with us. <br /> Join our community today to blog,
+                    interact and learn.
                 </p>
-                <p class="animated zoomIn" style=" animation-delay: 1s;">
+                <p class="animated zoomIn pt-3" style=" animation-delay: 1s;">
                     <a href="{% url 'blog-home' %}">
                         <button class="btn btn-warning btn-lg">
-                            Join Now
+                            Sign Up
+                        </button>
+                    </a>
+                    <a href="{% url 'blog-home' %}">
+                        <button class="btn btn-light btn-lg">
+                            Login
                         </button>
                     </a>
                 </p>
@@ -82,7 +85,8 @@
                         <p><span class="icofont icofont-page icofont-5x"></span></p>
                         <h3>Add Recipe</h3>
                         <p>
-                            Add Recipes today and watch them grow in popularity, and Appreciated. Enjoy what you do, do what you enjoy.
+                            Add Recipes today and watch them grow in popularity, and Appreciated. Enjoy what you do, do
+                            what you enjoy.
                         </p>
                     </div>
                 </a>
@@ -95,7 +99,8 @@
                         <p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
                         <h3>Dish & Recipe</h3>
                         <p>
-                            Recipes are contributed by cooking enthusiast and experts alike. Share your Recipes and learn new Recipes.
+                            Recipes are contributed by cooking enthusiast and experts alike. Share your Recipes and
+                            learn new Recipes.
                         </p>
 
                     </div>
@@ -107,7 +112,8 @@
                     <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-community">
                         <p><span class="icofont icofont-5x icofont-rss-feed" aria-hidden="true"></span></p>
                         <h3>Community</h3>
-                        <p>Get in touch with other cooking enthusiast,food lovers and experts. You can showcase your cooking skills.
+                        <p>Get in touch with other cooking enthusiast,food lovers and experts. You can showcase your
+                            cooking skills.
                         </p>
                     </div>
                 </a>
@@ -124,8 +130,11 @@
             <div class="col-sm-6 goal-mission mission-class">
                 <h1>Who we are and What we do?</h1>
                 <p>
-                    A community where you can post on a variety of topics related to Food, Health, and Recipes. We provide Cooking Enthusiasts, Food Experts, and Users a user profile, Recipes page, and a blogging system, where every registered user is a blogger. We also
-                    have a contribution section where you can upload your recipe to our Recipe page; with a gallery for each recipe. <br />
+                    A community where you can post on a variety of topics related to Food, Health, and Recipes. We
+                    provide Cooking Enthusiasts, Food Experts, and Users a user profile, Recipes page, and a blogging
+                    system, where every registered user is a blogger. We also
+                    have a contribution section where you can upload your recipe to our Recipe page; with a gallery for
+                    each recipe. <br />
                     <strong>Gain the recognition you deserve today!!!</strong> <br />
                     <br />
                     <a href="{% url 'cookella-about' %}">
@@ -160,44 +169,47 @@
                 <p><i class="icofont icofont-5x icofont-blogger"></i></p>
                 <h2>Blogger</h2>
                 <p>
-                    How cool is it, posting and blogging about your passion? We provide a platform that makes you a blogger without the stress of creating a blog.
-                    <p>
-                        <a href="{% url 'blog-home' %}">
-                            <button class="btn btn-danger btn-lg">
+                    How cool is it, posting and blogging about your passion? We provide a platform that makes you a
+                    blogger without the stress of creating a blog.
+                <p>
+                    <a href="{% url 'blog-home' %}">
+                        <button class="btn btn-danger btn-lg">
                             Blog Now
                         </button>
-                        </a>
-                    </p>
+                    </a>
+                </p>
                 </p>
             </div>
             <div class="col-lg-4 col-sm-4 col-12">
                 <p><i class="icofont icofont-5x icofont-users-social"></i></p>
                 <h2>User Profile</h2>
                 <p>
-                    All registered users will have a profile. You can track your activities, Edit your profile and other cool features.
-                    <p>
-                        <a href="{% url 'register' %}">
-                            <button class="btn btn-danger btn-lg">
+                    All registered users will have a profile. You can track your activities, Edit your profile and other
+                    cool features.
+                <p>
+                    <a href="{% url 'register' %}">
+                        <button class="btn btn-danger btn-lg">
                             Register Now
                         </button>
-                        </a>
-                    </p>
+                    </a>
+                </p>
                 </p>
             </div>
             <div class="col-lg-4 col-sm-4 col-12">
                 <p><i class="icofont icofont-5x icofont-addons"></i></p>
                 <h2>Contributors</h2>
                 <p>
-                    You can post your recipes on our page for everyone to see your cooking skills. Users can see your recipe, like, and comment on it. You can update your recipes at any time.
+                    You can post your recipes on our page for everyone to see your cooking skills. Users can see your
+                    recipe, like, and comment on it. You can update your recipes at any time.
 
-                    <p>
-                        <a href="{% url 'cookella-add-recipe' %}">
-                            <button class="btn btn-danger btn-lg">
+                <p>
+                    <a href="{% url 'cookella-add-recipe' %}">
+                        <button class="btn btn-danger btn-lg">
                             Be A Contributor
                         </button>
 
-                        </a>
-                    </p>
+                    </a>
+                </p>
                 </p>
             </div>
         </div>
@@ -210,7 +222,7 @@
         <div class="row">
             <div class="col-sm-12" id="ft-txt">
                 <h1 class="hvr-underline-from-center">Superb Features</h1>
-                <p>What we offer and what you can post about</p> 
+                <p>What we offer and what you can post about</p>
             </div>
             <div class="col-sm-4">
                 <div class="ft-features hvr-shutter-in-horizontal">

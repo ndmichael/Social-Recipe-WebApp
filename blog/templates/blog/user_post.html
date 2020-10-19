@@ -3,70 +3,84 @@
 
 
 {%  block content  %}
-    <section class="container" id="blog-container">
 
-        <article class="row">
-            <div class="col-sm-6">
-                            <h1>{{ view.kwargs.username }} has {{ page_obj.paginator.count }} total post</h1>
-                {% for post in posts %}
-                    <section class="col-sm-12 general-style">
+<section class="container" id="blog-container">
+    <div class="col-12 col-md-12 center">
+        <h3>{{ view.kwargs.username }} has {{ page_obj.paginator.count }} total post</h1>
+    </div>
+    <article class="row">
+        <div class="col-12 col-md-8">
+            {% for post in posts %}
+                <div class="row general-style mr-md-2 mb-4">
+                    <div class="col-sm-8 my-3">
                         <p class="border-bottom">
-                            <img src="{{ post.author.profile.image.url }}" class="img-fluid img-thumbnail rounded-circle"
+                            <img src="{{ post.author.profile.photo_url }}"
+                                 class="img-fluid img-thumbnail p-0"
                                  alt="..."/>
-                           <a href="{% url 'profile' post.author.username %}"><span class="mr-3">{{ post.author }} </span></a> <small>{{ post.date_created|date:"F d, Y" }}</small>
+                            <a href="{% url 'profile' post.author.username %}"  class="mr-4">
+                                <span>
+                                    {{ post.author }} 
+                                </span>
+                            </a>
+                            <small>{{ post.date_created|date:"F d, Y" }}</small>
                         </p>
-                         <h3><a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}">{{ post.title }}</a></h3>
+                        <h3>
+                            <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">{{ post.title }}</a>
+                        </h3>
                         <p>
-                            {{ post.content|truncatechars:150 }}
+                            {{ post.content|truncatechars:100 }} ...
                         </p>
-                        <form method="POST" action="{% url 'like-post' %}" enctype="multipart/form-data" class="">
+                        <form class="form1" method="post">
                             {% csrf_token %}
-                            <div>
-                                <input type="hidden" name="post_id" value="{{ post.pk }}" />
-                                <input type="hidden" name="page_num" value="{{ page_obj.number}}" />
-                                 {% if user in post.liked.all %}
-                                    <button type="submit" class="icofont icofont-thumbs-up icofont-2x liked_btn"></button>
-                                {% else %}
-                                    <button type="submit" class="icofont icofont-thumbs-up icofont-2x unliked_btn"></button>
-                                {% endif %}
-                                <strong class="text-muted"> {{ post.liked.all.count }} </strong>
-                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}">
-                                    <i class="icofont icofont-ui-text-chat icofont-1x ml-4 msg-btn"></i>
-                                    <strong class="text-muted">  {{ post.liked.all.count }} Comment </strong>
-                                </a>
-                            </div>
-
-                        </form>
-
-                    </section>
-                {% endfor %}
-
-                <div>
-                    {% if is_paginated %}
-                        <h1>Yes i am paginated</h1>
-                        {% if page_obj.has_previous %}
-                            <a class="btn btn-outline-primary" href="?page=1">First</a>
-                            <a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                        {% endif %}
-                        {% for num in page_obj.paginator.page_range  %}
-                            {% if page_obj.number == num %}
-                                <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
-                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                                <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
+                            {% if user in post.liked.all %}
+                                <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}" class="icofont icofont-thumbs-up icofont-3x liked_btn like">
+                                    <small id="" class="text-muted total">{{ post.num_likes }}</small>
+                                </button>
+                            {% else %}
+                                <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}" class="icofont icofont-thumbs-up icofont-3x unliked_btn like">
+                                    <small id="" class="text-muted total">{{ post.num_likes }}</small>
+                                </button>
                             {% endif %}
-                        {%  endfor %}
-                        {% if page_obj.has_next %}
-                            <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
-                            <a class="btn btn-outline-primary"
-                               href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                        {% endif %}
-                    {% endif %}
+
+                            <i class="icofont icofont-ui-chat icofont-2x msg-btn"></i>
+                        </form>
+                    </div>
+                    <div class="col-12 col-md-4" style="background-color: #dc3545; padding: 0 !important;">
+
+                    </div>
+
 
                 </div>
+                    
+            {% endfor %}
+        </div>
+        <aside class="col-sm-3" style="height: 100%; background-color: #FFFFDD;">
+           
+        </aside>
+    </article> <!-- end of outter container row row -->
 
+
+<div class="offset-sm-2">
+                {% if is_paginated %}
+                    {% if page_obj.has_previous %}
+                        <a class="btn btn-outline-primary" href="?page=1">First</a>
+                        <a class="btn btn-outline-primary"
+                           href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                    {% endif %}
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page_obj.has_next %}
+                        <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
+                        <a class="btn btn-outline-primary"
+                           href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+                    {% endif %}
+                {% endif %}
             </div>
-        </article>
-
-    </section>
+</section> <!-- end of container wrapper -->
 
 {% endblock content %}

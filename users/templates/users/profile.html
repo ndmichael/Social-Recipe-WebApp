@@ -6,7 +6,10 @@
     <div class="container mt-5">
         <div class="row" id="about-page" >
             <div class="offset-sm-2 col-sm-4 mb-4">
-                <a href="{{ user.profile.image.url }}" target="_blank"><img class="img-thumbnail img-fluid rounded-circle" style="max-height: 250px; width: 250px; height: 100%;" src="{{ user.profile.image.url }}">
+                <a href="{{ user.profile.photo_url }}" target="_blank">
+                    <img class="img-thumbnail img-fluid rounded-circle" 
+                    style="max-height: 250px; width: 250px; height: 100%;" 
+                    src="{{ user.profile.photo_url }}">   
                 </a>
             </div>
             <div class="col-sm-6">
@@ -50,7 +53,7 @@
                         {{ p_form|crispy }}
                     </fieldset>
                     <div>
-                        <button type="submit" class="btn btn-primary btn-lg">Update Profile</button>
+                        <button type="submit" class="btn btn-outline-danger btn-lg">Update Profile</button>
                     </div>
                 </form>
             {% endif %}

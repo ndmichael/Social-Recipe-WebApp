@@ -8,7 +8,7 @@
             <div class="col-sm-8 ">
                 <section class="col-sm-12 general-style">
                     <p class="">
-                        <img src="{{ post.author.profile.image.url }}" class="img-fluid img-thumbnail rounded-circle"
+                        <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail rounded-circle"
                              alt="..."/>
                         <span class="mr-3"><a href="{% url 'profile' post.author.username %}">{{ post.author }} </a></span><small>{{ post.date_created|date:"F d, Y" }}</small>
                     </p>

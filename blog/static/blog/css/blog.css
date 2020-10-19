@@ -7,14 +7,16 @@
 	margin: 4.5em auto;
 }
 .general-style{
-	padding: 30px;
 	background-color: #fff;
+	border-radius: 10px;
+	overflow: hidden;
 	color: black;
-	box-shadow: 0 5px 10px -5px #05ABE7;
-	margin-bottom: 2em;
-	margin-right: 0;
-	margin-left: 0;
-	width: 100%;
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
+	transition: box-shadow .5s;
+}
+
+#blog-container .general-style span{
+	color: #000000 !important;
 }
 
 #asideside{
@@ -23,13 +25,36 @@
 
 }
 
+#blog-container .header_link{
+	color: #dc3545;
+}
+
+#blog-container .general-style .header_link:hover{
+	color: #000000 !important;
+}
+
+
 .general-style img{
 	min-width:70px !important;
 	max-width:70px !important;
 	min-height: 70px;
 	max-height: 70px;
-	background-color: #145679;
+	/* background-color: #dc3545; */
 	border-radius: 50%;
+	transform: rotate(-20deg);
+	transition: transform .3s, border-radius .7s;
+	
+}
+
+.general-style:hover{
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .25);
+	
+}
+
+
+.general-style:hover img{
+	transform: rotate(0deg);
+	border-radius: 0;
 }
 
 
