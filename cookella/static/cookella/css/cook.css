@@ -89,6 +89,18 @@ strong {
     height: 70px;
 }
 
+.carousel-caption p a button{
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 50px;
+}
+
+.carousel-indicators li  {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
 
 
 
