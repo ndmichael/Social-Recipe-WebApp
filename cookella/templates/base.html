@@ -50,10 +50,17 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link nav-auth" href="{% url 'login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <button class="btn btn-light">
+                                LOGIN
+                            </button></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-auth" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link nav-auth" href="{% url 'account_signup' %}">
+                            <button class="btn btn-warning">
+                                SIGN UP
+                            </button>
+                        </a>
                     </li>
                     {% endif %}
                 </ul>
