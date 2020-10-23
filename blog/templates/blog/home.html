@@ -21,80 +21,80 @@
 
 
 
-    <section class="container" id="blog-container">
-        <article class="row">
-            <div class="col-12 offset-md-1 col-md-7">
-                {% for post in posts %}
-                    <div class="row general-style mr-md-2 mb-4">
-                        <div class="col-sm-8 my-3">
-                            <p class="border-bottom">
-                                <img src="{{ post.author.profile.photo_url }}"
-                                     class="img-fluid img-thumbnail p-0"
-                                     alt="..."/>
-                                <a href="{% url 'profile' post.author.username %}"  class="mr-4">
-                                    <span>
-                                        {{ post.author }} 
-                                    </span>
-                                </a>
-                                <small>{{ post.date_created|date:"F d, Y" }}</small>
-                            </p>
-                            <h3>
-                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">{{ post.title }}</a>
-                            </h3>
-                            <p>
-                                {{ post.content|truncatechars:250 }} ...
-                            </p>
-                            <form class="form1" method="post">
-                                {% csrf_token %}
-                                {% if user in post.liked.all %}
-                                    <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}" class="icofont icofont-thumbs-up icofont-3x liked_btn like">
-                                        <small id="" class="text-muted total">{{ post.num_likes }}</small>
-                                    </button>
-                                {% else %}
-                                    <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}" class="icofont icofont-thumbs-up icofont-3x unliked_btn like">
-                                        <small id="" class="text-muted total">{{ post.num_likes }}</small>
-                                    </button>
-                                {% endif %}
+<section class="container" id="blog-container">
+    <article class="row">
+        {% for post in posts %}
+        <div class="col-12 offset-md-1 col-md-7">
+            
+            <div class="row general-style mr-md-2 mb-4" >
+                <div class="col-sm-8 my-3">
+                    <p class="border-bottom">
+                        <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic" alt="..." />
+                        <a href="{% url 'profile' post.author.username %}" class="mr-4">
+                            <span>
+                                {{ post.author }}
+                            </span>
+                        </a>
+                        <small>{{ post.date_created|date:"F d, Y" }}</small>
+                    </p>
+                    <h4>
+                        <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">
+                            {{ post.title }}
+                        </a>
+                    </h4>
+                    <p>
+                        {{ post.content|truncatechars:100 }} ...
+                    </p>
+                    <form class="form1" method="post">
+                        {% csrf_token %}
+                        {% if user in post.liked.all %}
+                        <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}"
+                            class="icofont icofont-thumbs-up icofont-3x liked_btn like">
+                            <small id="" class="text-muted total">{{ post.num_likes }}</small>
+                        </button>
+                        {% else %}
+                        <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}"
+                            class="icofont icofont-thumbs-up icofont-3x unliked_btn like">
+                            <small id="" class="text-muted total">{{ post.num_likes }}</small>
+                        </button>
+                        {% endif %}
 
-                                <i class="icofont icofont-ui-chat icofont-2x msg-btn"></i>
-                            </form>
-                        </div>
-                        <div class="col-12 col-md-4" style="background-color: #dc3545; padding: 0 !important;">
+                        <i class="icofont icofont-ui-chat icofont-2x msg-btn"></i>
+                    </form>
+                </div>
+                <div class="col-12 col-md-4 order-first order-sm-last " style="background-color: #dc3545; padding: 0";>
+                    {% if post.image %}
+                        <img src="{{post.image.url}}" class="img-fluid"  alt="{{post.title}}" style="height:100%; max-height:100%; width: 100%;">
+                    {% endif %}
+                </div>
+            </div>        
+        </div>
+        {% endfor %}
+        <aside class="col-sm-3" style="height: 250px; background-color: #FFFFDD;">
 
-                        </div>
-
-
-                    </div>
-                        
-                {% endfor %}
-            </div>
-            <aside class="col-sm-3" style="height: 100%; background-color: #FFFFDD;">
-                why is nothing showing
-            </aside>
-        </article> <!-- end of outter container row row -->
+        </aside>
+    </article> <!-- end of outter container row row -->
 
 
     <div class="offset-sm-2">
-                    {% if is_paginated %}
-                        {% if page_obj.has_previous %}
-                            <a class="btn btn-outline-primary" href="?page=1">First</a>
-                            <a class="btn btn-outline-primary"
-                               href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                        {% endif %}
-                        {% for num in page_obj.paginator.page_range %}
-                            {% if page_obj.number == num %}
-                                <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
-                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                                <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
-                            {% endif %}
-                        {% endfor %}
-                        {% if page_obj.has_next %}
-                            <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
-                            <a class="btn btn-outline-primary"
-                               href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-                        {% endif %}
-                    {% endif %}
-                </div>
-    </section> <!-- end of container wrapper -->
+        {% if is_paginated %}
+        {% if page_obj.has_previous %}
+        <a class="btn btn-outline-primary" href="?page=1">First</a>
+        <a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+        <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-primary" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+        {% endif %}
+    </div>
+</section> <!-- end of container wrapper -->
 
 {% endblock content %}

@@ -32,7 +32,7 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'image']
     success_message = "Blog post successful"
 
     def form_valid(self, form):  # pre-populate author field with the current user
@@ -47,7 +47,7 @@ class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     model = Post
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'image']
     success_message = "Post updated successful"
 
     def form_valid(self, form):  # pre-populate author field with the current user
