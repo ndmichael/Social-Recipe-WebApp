@@ -39,7 +39,7 @@
                     </p>
                     <h4>
                         <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">
-                            {{ post.title }}
+                            {{ post.title|truncatechars:50 }}
                         </a>
                     </h4>
                     <p>
@@ -62,9 +62,9 @@
                         <i class="icofont icofont-ui-chat icofont-2x msg-btn"></i>
                     </form>
                 </div>
-                <div class="col-12 col-md-4 order-first order-sm-last " style="background-color: #dc3545; padding: 0";>
+                <div class="col-12 col-md-4 order-first order-sm-last border-left" style="background-color: #dc3545; padding: 0";>
                     {% if post.image %}
-                        <img src="{{post.image.url}}" class="img-fluid"  alt="{{post.title}}" style="height:100%; max-height:100%; width: 100%;">
+                        <img src="{{post.image.url}}" class="img-fluid product-img"  alt="{{post.title}}">
                     {% endif %}
                 </div>
             </div>        

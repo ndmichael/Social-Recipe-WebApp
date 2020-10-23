@@ -13,7 +13,7 @@
 	color: black;
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
 	transition: box-shadow .5s;
-	height: 260px;
+	height: 270px;
 }
 
 #blog-container .general-style span{
@@ -47,6 +47,14 @@
 	
 }
 
+.general-style .product-img{
+	width:100%; 
+	height: 100%; 
+	max-height: 100%;
+	object-fit: cover;
+		object-position: center;
+}
+
 .general-style:hover{
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .25);
 	
@@ -62,7 +70,15 @@
 @media(max-width: 48em){
 	.general-style{
 		padding: 10px;
+		height: auto;
 	}
+
+	.general-style .product-img{
+		height: 200px;
+		object-fit: cover;
+		object-position: center;
+	}
+
 
 }
 
