@@ -5,7 +5,7 @@
 {%  block content  %}
 
 <section class="container" id="blog-container">
-    <div class="col-12 col-md-12 center">
+    <div class="col-12 col-md-12 center mb-3">
         <h3>{{ view.kwargs.username }} has {{ page_obj.paginator.count }} total post</h1>
     </div>
     <article class="row">
@@ -15,8 +15,9 @@
                     <div class="col-sm-8 my-3">
                         <p class="border-bottom">
                             <img src="{{ post.author.profile.photo_url }}"
-                                 class="img-fluid img-thumbnail p-0"
-                                 alt="..."/>
+                                 class="img-fluid img-thumbnail p-0 profile-pic"
+                                 alt="{{post.author}}"
+                            />
                             <a href="{% url 'profile' post.author.username %}"  class="mr-4">
                                 <span>
                                     {{ post.author }} 

@@ -40,7 +40,7 @@ strong {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-item img {
@@ -52,8 +52,8 @@ strong {
 
 .carousel-item {
     text-align: center;
-    height: 100vh;
-    min-height: 300px;
+    /* height: 100vh; */
+    min-height: 100vh;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     background-size: cover;
@@ -446,9 +446,12 @@ span {
 }
 
 @media(max-width: 48em) {
+    .carousel-item{
+        min-height: 95vh;
+    }
     .carousel-caption {
         text-align: center;
-        margin-bottom: 25vh;
+        margin-bottom: 20vh;
     }
     .carousel-caption p {
         min-width: 100% !important;

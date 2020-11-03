@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% if title %}
-    <title>cookella-{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="autoRotate: disabled"> 
+    {% if title %}
+        <title>cookella-{{ title }}</title>
     {% else %}
     <title>Cookella</title>
     {% endif %}
@@ -32,8 +33,12 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'cookella-index' %}">CookElla</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
+            </button> -->
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="" role="button" ><i class="fa fa-bars fa-2x" aria-hidden="true" style="color:#e6e6ff"></i></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -49,11 +54,10 @@
                         <a class="nav-link nav-auth" href="{% url 'create-post' %}">New Post</a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">
-                            <button class="btn btn-light">
+                    <li class="nav-item mt-2">
+                        <a class="nav-link" href="{% url 'account_login' %}">
                                 LOGIN
-                            </button></a>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-auth" href="{% url 'account_signup' %}">

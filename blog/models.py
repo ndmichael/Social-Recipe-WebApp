@@ -22,6 +22,7 @@ class Post(models.Model):
     status = models.CharField(max_length=15, choices=STATUS_POST, default='published')
     liked = models.ManyToManyField(User, default=None, related_name='user_like', blank=True)
     slug = models.SlugField(max_length=150,)
+    image = models.ImageField(upload_to='post_images/%Y/%m/%d', default="",  blank=True, null=True)
 
     def __str__(self):
         return f"{self.title}"
