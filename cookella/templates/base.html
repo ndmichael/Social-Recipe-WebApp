@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% if title %}
-    <title>cookella-{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="autoRotate: disabled"> 
+    {% if title %}
+        <title>cookella-{{ title }}</title>
     {% else %}
     <title>Cookella</title>
     {% endif %}
@@ -53,11 +54,10 @@
                         <a class="nav-link nav-auth" href="{% url 'create-post' %}">New Post</a>
                     </li>
                     {% else %}
-                    <li class="nav-item">
+                    <li class="nav-item mt-2">
                         <a class="nav-link" href="{% url 'account_login' %}">
-                            <button class="btn btn-light">
                                 LOGIN
-                            </button></a>
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-auth" href="{% url 'account_signup' %}">
