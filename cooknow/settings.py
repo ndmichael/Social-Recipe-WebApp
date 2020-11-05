@@ -25,15 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't567@n+)9x=1x1&1rs5v6j6@y)6nj#onpabm!d^06oyb%vofhr'
+# SECRET_KEY = 't567@n+)9x=1x1&1rs5v6j6@y)6nj#onpabm!d^06oyb%vofhr'
 
-# SECRET_KEY=os.environ.get('SECRET_KEY_COOKELLA') 
+SECRET_KEY=os.environ.get('SECRET_KEY_COOKELLA') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG_VALUE') == 'True'
 # DEBUG = True
 
-ALLOWED_HOSTS = ["cookella.herokuapp.com"]
+ALLOWED_HOSTS = ["cookella.herokuapp.com", 'localhost', '127.0.0.1']
 
 SITE_ID = 2
 
@@ -103,9 +103,9 @@ DATABASES = {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cooknow_db',
-        'USER': 'postgres',
-        'PASSWORD': 'daliMIKE0417',
+        'NAME': os.environ.get('COOKELLA_DB_NAME') ,
+        'USER': os.environ.get('COOKELLA_DB_USER') ,
+        'PASSWORD': os.environ.get('COOKELLA_DB_PW') ,
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -181,7 +181,7 @@ AWS_S3_REGION_NAME='us-east-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 AWS_DEFAULT_UCL=None
-# DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 
 
 
@@ -203,18 +203,18 @@ ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 django_heroku.settings(locals())
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
+#         },
+#     },
+# }

@@ -23,11 +23,11 @@
 
 <section class="container" id="blog-container">
     <article class="row">
-        {% for post in posts %}
-        <div class="col-12 offset-md-1 col-md-7">
-            
+        
+        <div class="col-12  col-md-12 col-lg-8">
+            {% for post in posts %}     
             <div class="row general-style mr-md-2 mb-4" >
-                <div class="col-sm-8 my-3">
+                <div class="col-sm-8 col-md-8 my-3">
                     <p class="border-bottom">
                         <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic" alt="..." />
                         <a href="{% url 'profile' post.author.username %}" class="mr-4">
@@ -62,14 +62,15 @@
                         <i class="icofont icofont-ui-chat icofont-2x msg-btn"></i>
                     </form>
                 </div>
-                <div class="col-12 col-md-4 order-first order-sm-last border-left" style="background-color: #dc3545; padding: 0";>
+                <div class="col-12 col-sm-4 col-md-4 order-first order-sm-last border-left" style="background-color: #dc3545; padding: 0";>
                     {% if post.image %}
                         <img src="{{post.image.url}}" class="img-fluid product-img"  alt="{{post.title}}">
                     {% endif %}
                 </div>
-            </div>        
+            </div> 
+            {% endfor %}       
         </div>
-        {% endfor %}
+        
         <aside class="col-sm-3" style="height: 250px; background-color: #FFFFDD;">
 
         </aside>
