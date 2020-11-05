@@ -30,8 +30,8 @@ SECRET_KEY = 't567@n+)9x=1x1&1rs5v6j6@y)6nj#onpabm!d^06oyb%vofhr'
 # SECRET_KEY=os.environ.get('SECRET_KEY_COOKELLA') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG_VALUE') == 'True'
-DEBUG = True
+DEBUG = os.environ.get('DEBUG_VALUE') == 'True'
+# DEBUG = True
 
 ALLOWED_HOSTS = ["cookella.herokuapp.com", 'localhost', '127.0.0.1']
 
@@ -181,7 +181,7 @@ AWS_S3_REGION_NAME='us-east-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 AWS_DEFAULT_UCL=None
-# DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 
 
 
@@ -203,18 +203,18 @@ ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 django_heroku.settings(locals())
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
+#         },
+#     },
+# }
