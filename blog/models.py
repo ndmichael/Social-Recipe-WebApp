@@ -20,7 +20,8 @@ class Post(models.Model):
     date_published = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.CharField(max_length=15, choices=STATUS_POST, default='published')
-    liked = models.ManyToManyField(User, default=None, related_name='user_like', blank=True)
+    likes = models.ManyToManyField(User, default=None, related_name='user_like', blank=True)
+    like_count = models.BigIntegerField(default="0")
     slug = models.SlugField(max_length=150,)
     image = models.ImageField(upload_to='post_images/%Y/%m/%d', default="",  blank=True, null=True)
 
@@ -31,11 +32,6 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
 
-    @property
-    def num_likes(self):
-        return self.liked.all().count()
-
-    # i set the reverse which returns string. the update post view will use this, the create post will use reverse_lazy
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk, 'year': self.date_created.year, 'title': self.slug})
 

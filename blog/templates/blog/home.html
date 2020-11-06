@@ -5,22 +5,6 @@
 
 
 {%  block content  %}
-
-<!--{#    <section class="container" id="blog-container">#}-->
-<!--{#        <div class="row" style="color: #0b2e13; width: 100%; height: 100%;">#}-->
-<!--{#            {% for post in posts %}#}-->
-<!--{#                <div class="col-sm-12">#}-->
-<!--{#                hello everyone#}-->
-<!--{#                </div>#}-->
-<!--{#            {% endfor %}#}-->
-<!--{#            <aside style="color: purple; width: 100%; height: 100%;">#}-->
-<!--{#                hey hello#}-->
-<!--{#            </aside>#}-->
-<!--{#        </div>#}-->
-<!--{#    </section>#}-->
-
-
-
 <section class="container" id="blog-container">
     <article class="row">
         
@@ -45,22 +29,16 @@
                     <p>
                         {{ post.content|truncatechars:100 }} ...
                     </p>
-                    <form class="form1" method="post">
-                        {% csrf_token %}
-                        {% if user in post.liked.all %}
-                        <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}"
-                            class="icofont icofont-thumbs-up icofont-3x liked_btn like">
-                            <small id="" class="text-muted total">{{ post.num_likes }}</small>
+                    <div>
+                        <span id="like_count{{ post.pk}}" class="like_count">{{post.like_count}}</span>
+                        <button type="submit" name="post_id" id="{{ post.pk }}"  value="{{ post.pk }}"
+                            class="icofont icofont-thumbs-up icofont-1x like_btn">
                         </button>
-                        {% else %}
-                        <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}"
-                            class="icofont icofont-thumbs-up icofont-3x unliked_btn like">
+                        <!-- <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}"
+                            class="icofont icofont-thumbs-up icofont-2x unliked_btn like">
                             <small id="" class="text-muted total">{{ post.num_likes }}</small>
-                        </button>
-                        {% endif %}
-
-                        <i class="icofont icofont-ui-chat icofont-2x msg-btn"></i>
-                    </form>
+                        </button> -->
+                    </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-4 order-first order-sm-last border-left" style="background-color: #dc3545; padding: 0";>
                     {% if post.image %}
