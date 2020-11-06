@@ -19,7 +19,7 @@ class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'
     context_object_name = 'posts'
-    ordering = ['-date_created', '-date_published']
+    ordering = ['-date_created', '-date_published', 'id']
     paginate_by = 5
 
 
@@ -77,45 +77,27 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixi
 
 @login_required
 def post_like(request):
-    user = request.user
-    if request.method == 'POST' and request.is_ajax():
-        post_id = request.POST.get('post_id')
-        post_obj = get_object_or_404(Post, id=post_id)
+    # user = request.user
+    # if request.method == 'POST' and request.is_ajax():
+    if request.POST.get('action') == 'post':
+        result = ''
+        postid = int(request.POST.get('post_id'))
+        post_obj = get_object_or_404(Post, id=postid)
 
-        if user in post_obj.liked.all():
-            post_obj.liked.remove(user)
-            is_liked = False
+        if post_obj.likes.filter(id=request.user.id).exists():
+            post_obj.likes.remove(request.user)
+            post_obj.like_count -= 1
+            result = post_obj.like_count
+            post_obj.save()
         else:
-            post_obj.liked.add(user)
-            is_liked = True
-        total_likes = str(post_obj.num_likes)
-        context = {
-            'total_likes': total_likes,
-            'is_liked': is_liked,
-            'id': post_id,
-        }
-
-        return JsonResponse(context)
+            post_obj.likes.add(request.user)
+            post_obj.like_count += 1
+            result = post_obj.like_count
+            post_obj.save()
+        
+        return JsonResponse({'result': post_obj.like_count,})
     return HttpResponse("Error access denied")
 
-
-# def post_like(request):
-#     user = request.user
-#     if request.method == 'POST':
-#         post_id = request.POST.get('post_id')
-#         page_num = request.POST.get('page_num')
-#         post_obj = get_object_or_404(Post, id=post_id)
-# 
-#         if user in post_obj.liked.all():
-#             post_obj.liked.remove(user)
-#         else:
-#             post_obj.liked.add(user)
-# 
-#         like, created = Like.objects.get_or_create(user=user, post_id=post_id)
-#         like.save()
-#     if page_num:
-#         return HttpResponseRedirect('/blog/'+'?page='+page_num)
-#     return HttpResponseRedirect(post_obj.get_absolute_url())
 
 
 

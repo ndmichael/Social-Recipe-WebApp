@@ -25,8 +25,11 @@
                         {{ post.content  }}
                     </p>
                     <!-- like and comment section for ajax calls -->
-                    <div id="like-section">
-                        {% include 'blog/like_section.html' %}
+                    <div>
+                        <span id="like_count{{ post.pk}}" class="like_count">{{post.like_count}}</span>
+                        <button type="submit" name="post_id" id="{{ post.pk }}"  value="{{ post.pk }}"
+                            class="icofont icofont-thumbs-up icofont-2x like_btn">
+                        </button>
                     </div>
                 </section>
                <!-- <span class="fb-comments-count" data-href="https://example.com/"></span>awesome comments -->
