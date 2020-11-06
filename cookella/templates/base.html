@@ -128,38 +128,55 @@
 
     <script>
         $(document).ready(function() {
-            $('.like').bind('click', function(event) {
-                event.preventDefault();
-                var pk = $(this).attr('id');
-                console.log(pk);
-
+            $(".like_btn").click(function(event) {
+                event.preventDefault()
+                var ansid = $(this).attr('id');
+                console.log(ansid)
                 $.ajax({
                     url: '{% url "like-post" %}',
                     type: 'POST',
                     data: {
-                        'post_id': pk,
-                        'csrfmiddlewaretoken': "{{ csrf_token }}"
+                        'post_id': $('#'+ansid).val(),
+                        'csrfmiddlewaretoken': "{{ csrf_token }}",
+                        'action': 'post'
                     },
                     success: function(response) {
-
-                        if (response['is_liked']) {
-                            $('#' + pk).removeClass('unliked_btn like');
-                            $('#' + pk).addClass('liked_btn like');
-                            console.log()
-                        } else {
-                            $('#' + pk).removeClass('liked_btn like');
-                            $('#' + pk).addClass('unliked_btn like');
-
-                        }
+                        // document.getElementById("like_count").innerHTML = response['result']
+                        $('#like_count'+ansid).html(response['result']);
+                        console.log($('#like_count'+ansid))
                     },
                     error: function(rs, e) {
-                        console.log(rs.responseText)
+                        console.log(rs.response)
                     }
                 });
             });
         });
-    </script>
 
+
+        // $(document).ready(function() {
+        //     $(document).on('click', '#like_button', function(event) {
+        //         event.preventDefault()
+        //         console.log($('#like_button').val());
+        //         $.ajax({
+        //             url: '{% url "like-post" %}',
+        //             type: 'POST',
+        //             data: {
+        //                 'post_id': $('#like_button').val(),
+        //                 'csrfmiddlewaretoken': "{{ csrf_token }}",
+        //                 'action': 'post'
+        //             },
+        //             success: function(response) {
+        //                 document.getElementById("like_count").innerHTML = response['result']
+        //                 // $(this).closest('.like_count').html(response['result'])
+        //                 console.log(response)
+        //             },
+        //             error: function(rs, e) {
+        //                 console.log(rs.response)
+        //             }
+        //         });
+        //     });
+        // });
+    </script>
 
 
     <script>
