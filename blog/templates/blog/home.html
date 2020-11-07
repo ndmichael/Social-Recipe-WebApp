@@ -7,13 +7,14 @@
 {%  block content  %}
 <section class="container" id="blog-container">
     <article class="row">
-        
+
         <div class="col-12  col-md-12 col-lg-8">
-            {% for post in posts %}     
-            <div class="row general-style mr-md-2 mb-4" >
+            {% for post in posts %}
+            <div class="row general-style mr-md-2 mb-4">
                 <div class="col-sm-8 col-md-8 my-3">
                     <p class="border-bottom">
-                        <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic" alt="..." />
+                        <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
+                            alt="..." />
                         <a href="{% url 'profile' post.author.username %}" class="mr-4">
                             <span>
                                 {{ post.author }}
@@ -31,24 +32,33 @@
                     </p>
                     <div>
                         <span id="like_count{{ post.pk}}" class="like_count">{{post.like_count}}</span>
-                        <button type="submit" name="post_id" id="{{ post.pk }}"  value="{{ post.pk }}"
-                            class="icofont icofont-thumbs-up icofont-1x like_btn">
+                        {% if post.like_state %}
+                        <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}"
+                            class="btn border-0 like_btn text-danger">
+                            <i id="icons" class="icofont icofont-thumbs-up icofont-2x"></i>
                         </button>
-                        <!-- <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}"
-                            class="icofont icofont-thumbs-up icofont-2x unliked_btn like">
-                            <small id="" class="text-muted total">{{ post.num_likes }}</small>
-                        </button> -->
+                        <span>{{post.like_state}}</span>
+                        {% else %}
+                        <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}"
+                            class="btn border-0 like_btn">
+                            <i id="icons" class="icofont icofont-thumbs-up icofont-2x"></i>
+                        </button>
+                        <span>{{post.like_state}}</span>
+                        {% endif %}
+                        
+                        
                     </div>
                 </div>
-                <div class="col-12 col-sm-4 col-md-4 order-first order-sm-last border-left" style="background-color: #dc3545; padding: 0";>
+                <div class="col-12 col-sm-4 col-md-4 order-first order-sm-last border-left"
+                    style="background-color: #dc3545; padding: 0" ;>
                     {% if post.image %}
-                        <img src="{{post.image.url}}" class="img-fluid product-img"  alt="{{post.title}}">
+                    <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
                     {% endif %}
                 </div>
-            </div> 
-            {% endfor %}       
+            </div>
+            {% endfor %}
         </div>
-        
+
         <aside class="col-sm-3" style="height: 250px; background-color: #FFFFDD;">
 
         </aside>

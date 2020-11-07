@@ -426,19 +426,6 @@ span {
 
 /*For the like and unlike button in django css */
 
-.liked_btn {
-    background-color: transparent !important;
-    color: #05ABE7;
-    border-color: transparent !important;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
-}
-
-.unliked_btn {
-    background-color: transparent !important;
-    -webkit-text-stroke: 1px rgb(0, 0, 0);
-    color: #FFFFFF;
-    border-color: transparent !important;
-}
 
 .msg-btn {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);

@@ -81,21 +81,26 @@ def post_like(request):
     # if request.method == 'POST' and request.is_ajax():
     if request.POST.get('action') == 'post':
         result = ''
+        flag = None
         postid = int(request.POST.get('post_id'))
         post_obj = get_object_or_404(Post, id=postid)
 
         if post_obj.likes.filter(id=request.user.id).exists():
             post_obj.likes.remove(request.user)
             post_obj.like_count -= 1
+            post_obj.like_state = False
             result = post_obj.like_count
             post_obj.save()
+            flag = False
         else:
             post_obj.likes.add(request.user)
             post_obj.like_count += 1
+            post_obj.like_state = True
             result = post_obj.like_count
             post_obj.save()
+            flag = True
         
-        return JsonResponse({'result': post_obj.like_count,})
+        return JsonResponse({'result': post_obj.like_count, 'flag': flag,})
     return HttpResponse("Error access denied")
 
 

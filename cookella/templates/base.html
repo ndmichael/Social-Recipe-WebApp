@@ -1,12 +1,12 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="autoRotate: disabled"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="autoRotate: disabled">
     {% if title %}
-        <title>cookella-{{ title }}</title>
+    <title>cookella-{{ title }}</title>
     {% else %}
     <title>Cookella</title>
     {% endif %}
@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}" />
     <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
     <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+    <link rel="stylesheet" href="{% static 'cookella/css/iconate-master/dist/iconate.min.css' %}">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron&family=Roboto&family=Ubuntu+Condensed&display=swap');
     </style>
@@ -29,7 +31,8 @@
 <body>
     <!-- facebook fdk -->
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=543675512490996"></script>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=543675512490996"></script>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'cookella-index' %}">CookElla</a>
@@ -37,15 +40,18 @@
                 <span class="navbar-toggler-icon"></span>
             </button> -->
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="" role="button" ><i class="fa fa-bars fa-2x" aria-hidden="true" style="color:#e6e6ff"></i></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="" role="button"><i class="fa fa-bars fa-2x" aria-hidden="true"
+                        style="color:#e6e6ff"></i></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item nav-auth">
-                        <a class="nav-link nav-auth" href="{% url 'profile' request.user.username %}">{{ request.user.username }}, Profile</a>
+                        <a class="nav-link nav-auth"
+                            href="{% url 'profile' request.user.username %}">{{ request.user.username }}, Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-auth" href="{% url 'account_logout' %}">Logout </a>
@@ -56,7 +62,7 @@
                     {% else %}
                     <li class="nav-item mt-2">
                         <a class="nav-link" href="{% url 'account_login' %}">
-                                LOGIN
+                            LOGIN
                         </a>
                     </li>
                     <li class="nav-item">
@@ -125,10 +131,11 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="{% static "cookella/js/bootstrap.min.js " %}"></script>
+    <script type="text/javascript" src="{% static "cookella/css/iconate-master/dist/iconate.min.js" %}"></script>
 
     <script>
-        $(document).ready(function() {
-            $(".like_btn").click(function(event) {
+        $(document).ready(function () {
+            $(".like_btn").click(function (event) {
                 event.preventDefault()
                 var ansid = $(this).attr('id');
                 console.log(ansid)
@@ -136,21 +143,38 @@
                     url: '{% url "like-post" %}',
                     type: 'POST',
                     data: {
-                        'post_id': $('#'+ansid).val(),
+                        'post_id': $('#' + ansid).val(),
                         'csrfmiddlewaretoken': "{{ csrf_token }}",
                         'action': 'post'
                     },
-                    success: function(response) {
+                    success: function (response) {
                         // document.getElementById("like_count").innerHTML = response['result']
-                        $('#like_count'+ansid).html(response['result']);
-                        console.log($('#like_count'+ansid))
+                        $('#like_count' + ansid).html(response['result']);
+                        // console.log(response['stated'])
+                        if (response['flag']){
+                            $('#' + ansid).addClass('text-danger');
+                        }else{
+                            $('#' + ansid).removeClass('text-danger');
+                        }
+
+                        console.log($('#like_count' + ansid))
                     },
-                    error: function(rs, e) {
+                    error: function (rs, e) {
                         console.log(rs.response)
                     }
                 });
             });
         });
+
+        var iconElement = document.getElementById('icon');
+        console.log(iconElement);
+        var options = {
+            from: 'icofont-thumbs-up',
+            to: "icofont-anchor",
+            animation: 'rubberBand'
+        };
+
+        iconate(iconElement, options);
 
 
         // $(document).ready(function() {
@@ -180,7 +204,7 @@
 
 
     <script>
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             $('nav').toggleClass('scrolled', $(this).scrollTop() > 30);
         });
     </script>

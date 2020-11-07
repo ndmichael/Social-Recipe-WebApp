@@ -1,0 +1,29 @@
+{
+  "name": "iconate",
+  "version": "0.2.4",
+  "author": "Jignesh Kakadiya",
+  "description": "Transform your icons with trendy animations.",
+  "main": [
+    "dist/iconate.min.js",
+    "dist/iconate.min.css"
+  ],
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "icon",
+    "animation",
+    "transition",
+    "ux",
+    "javascript",
+    "library"
+  ],
+  "license": "MIT",
+  "homepage": "http://bitshadow.github.io/iconate",
+  "ignore": [
+    ".jscsrc",
+    "**/*.txt",
+    "Gruntfile.js"
+  ]
+}
