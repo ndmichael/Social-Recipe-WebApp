@@ -137,7 +137,6 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="{% static "cookella/js/bootstrap.min.js " %}"></script>
-    <script type="text/javascript" src="{% static "cookella/css/iconate-master/dist/iconate.min.js" %}"></script>
 
     <script>
         $(document).ready(function () {
@@ -172,30 +171,6 @@
             });
         });
 
-
-        // $(document).ready(function() {
-        //     $(document).on('click', '#like_button', function(event) {
-        //         event.preventDefault()
-        //         console.log($('#like_button').val());
-        //         $.ajax({
-        //             url: '{% url "like-post" %}',
-        //             type: 'POST',
-        //             data: {
-        //                 'post_id': $('#like_button').val(),
-        //                 'csrfmiddlewaretoken': "{{ csrf_token }}",
-        //                 'action': 'post'
-        //             },
-        //             success: function(response) {
-        //                 document.getElementById("like_count").innerHTML = response['result']
-        //                 // $(this).closest('.like_count').html(response['result'])
-        //                 console.log(response)
-        //             },
-        //             error: function(rs, e) {
-        //                 console.log(rs.response)
-        //             }
-        //         });
-        //     });
-        // });
     </script>
 
 
