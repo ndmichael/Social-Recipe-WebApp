@@ -6,7 +6,8 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active drk">
-            <img src="{% static "cookella/images/slidefood_img7.jpg " %}" class="mx-auto d-block w-100" alt="...">
+            <img src="{% static "cookella/images/jeff-siepman-z-ixdgq7lpu-unsplash.jpg" %}" class="d-block mx-auto d-block w-100"
+                alt="..." />
             <div class="carousel-caption">
                 <h5 class="animated fadeInUp" style=" animation-delay: 1s;">Dish Recipe</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
@@ -35,8 +36,7 @@
         </div>
 
         <div class="carousel-item drk">
-            <img src="{% static "cookella/images/jeff-siepman-z-IxdGQ7lPU-unsplash.jpg" %}" class="d-block mx-auto d-block w-100"
-                alt="..." />
+            <img src="{% static "cookella/images/slidefood_img7.jpg " %}" class="mx-auto d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 class="animated  lightSpeedIn" style=" animation-delay: 1s;">Join our Community</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
@@ -163,22 +163,28 @@
 <section id="details">
     <section class="container">
         <div class="row">
-            <div class="col-lg-4 col-sm-4 col-12">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h1>For Foodies, By Foodies</h1>
+                <p>
+                    Cookella is a community for professional chef and cooking enthusiast. <br />
+                    We provide a platform for you to upload your recipes, blog about anything,
+                    and keep track of your activities. All for FREE.
+                </p>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-12 mb-2">
                 <p><i class="icofont icofont-5x icofont-blogger"></i></p>
                 <h2>Blogger</h2>
                 <p>
                     How cool is it, posting and blogging about your passion? We provide a platform that makes you a
                     blogger without the stress of creating a blog.
-                <p>
+                </p>
                     <a href="{% url 'blog-home' %}">
                         <button class="btn btn-danger btn-lg">
                             Blog Now
                         </button>
                     </a>
-                </p>
-                </p>
             </div>
-            <div class="col-lg-4 col-sm-4 col-12">
+            <div class="col-lg-4 col-sm-4 col-12 border  mt-md-5  mb-2 p-3">
                 <p><i class="icofont icofont-5x icofont-users-social"></i></p>
                 <h2>User Profile</h2>
                 <p>
@@ -193,12 +199,12 @@
                 </p>
                 </p>
             </div>
-            <div class="col-lg-4 col-sm-4 col-12">
+            <div class="col-lg-4 col-sm-4 col-12 mb2">
                 <p><i class="icofont icofont-5x icofont-addons"></i></p>
                 <h2>Contributors</h2>
                 <p>
-                    You can post your recipes on our page for everyone to see your cooking skills. Users can see your
-                    recipe, like, and comment on it. You can update your recipes at any time.
+                    You can post your recipes on our page for Users to see your
+                    recipes, like, and comment on it. You can update your recipes at any time.
 
                 <p>
                     <a href="{% url 'cookella-add-recipe' %}">

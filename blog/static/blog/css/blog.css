@@ -65,11 +65,27 @@
 	
 }
 
-
 .general-style:hover .profile-pic{
 	transform: rotate(0deg);
 	border-radius: 0;
 }
+
+
+/*
+**
+**  userpost section css
+**
+*/
+#userpost{
+	margin-top: 6em;
+}
+
+#userpost img {
+	width: 150px;
+	height: 150px;
+}
+
+
 
 
 @media(max-width: 40em){
@@ -87,6 +103,11 @@
 		height: 220px;
 		object-fit: cover;
 		object-position: center;
+	}
+
+	#userpost{
+		margin-top: 6em;
+		text-align: center;;
 	}
 
 

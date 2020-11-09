@@ -181,7 +181,9 @@ AWS_S3_REGION_NAME='us-east-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 AWS_DEFAULT_UCL=None
-DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
+
+if not DEBUG:
+    DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 
 
 
@@ -203,19 +205,19 @@ ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 django_heroku.settings(locals())
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console'],
+#             'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
+#         },
+#     },
+# }
 # DEBUG_PROPAGATE_EXCEPTIONS = True
