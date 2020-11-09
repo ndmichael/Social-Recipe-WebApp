@@ -1,4 +1,4 @@
-{% if post.like_state %}
+{% if request.user in post.likes.all %}
     <button type="submit" name="post_id" id="{{ post.pk }}" value="{{ post.pk }}" class="btn border-0 like_btn text-danger">
         <i id="icons" class="icofont icofont-thumbs-up icofont-2x"></i>
     </button>

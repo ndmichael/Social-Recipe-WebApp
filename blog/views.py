@@ -86,6 +86,7 @@ def post_like(request):
         post_obj = get_object_or_404(Post, id=postid)
 
         if post_obj.likes.filter(id=request.user.id).exists():
+            post_obj.like_state = True
             post_obj.likes.remove(request.user)
             post_obj.like_count -= 1
             post_obj.like_state = False

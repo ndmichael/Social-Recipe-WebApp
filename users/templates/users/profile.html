@@ -43,6 +43,7 @@
         <!-- display form only when the profile belongs to the requesting user
             if user who makes request == user who owns the profile then display else don't
          -->
+         
             {% if request.user.username == user.username %}
                 <form method="POST" enctype="multipart/form-data" class="offset-sm-3 col-sm-6 form-override">
                     {% csrf_token %}
