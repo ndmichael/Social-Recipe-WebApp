@@ -20,7 +20,7 @@ class Post(models.Model):
     date_published = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.CharField(max_length=15, choices=STATUS_POST, default='published')
-    likes = models.ManyToManyField(User,related_name='user_like', null=True, )
+    likes = models.ManyToManyField(User,related_name='user_like', blank=True)
     like_count = models.BigIntegerField(default="0")
     like_state = models.BooleanField(help_text="this set flag when page refreshes even after updating likes with json request")
     slug = models.SlugField(max_length=150,)

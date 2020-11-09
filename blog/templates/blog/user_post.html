@@ -22,17 +22,26 @@
                     <div class="col-12 col-md-8">
                         <div>
                             <h4 class="text=black">
-                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class=" text-dark">
+                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}"
+                                    class=" text-dark">
                                     {{post.title}}
                                 </a>
                             </h4>
-                            <small class="mr-2">{{ post.date_created|date:"F d, Y" }}</small>
-                                <a href="{% url 'post-delete' post.pk %}" class="icofont icofont-1x icofont-delete-alt text-danger mr-2">
+                            {% if post.author == user %}
+                            <div class="border-bottom">
+                                <small class="mr-2">{{ post.date_created|date:"F d, Y" }}</small>
+                                <a href="{% url 'post-delete' post.pk %}"
+                                    class="icofont icofont-1x icofont-delete-alt text-danger mr-2">
                                     <small class=" text-black-50">delete</small>
                                 </a>
-                            <a href="{% url 'post-update' post.pk %}" class="icofont icofont-1x icofont-edit-alt text-warning">
-                                <small class=" text-black-50">edit</small>
-                            </a>
+                                <a href="{% url 'post-update' post.pk %}"
+                                    class="icofont icofont-1x icofont-edit-alt text-warning">
+                                    <small class=" text-black-50">edit</small>
+                                </a>
+                            </div>
+                            {% endif %}
+                           
+
                         </div>
                         <div id="like_button" class="pt-4">
                             {% include "blog/likebutton.html" %}
