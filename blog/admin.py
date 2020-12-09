@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Like
+from .models import Post
 
 # Register your models here.
 
@@ -12,7 +12,6 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_published'
 
 
-admin.site.register(Like)
 
 
 

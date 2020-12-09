@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount', 
     # 'allauth.socialaccount.providers.google', 
     # 'allauth.socialaccount.providers.facebook', 
-
     'storages',
 ]
 
@@ -160,7 +159,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-COMMENTS_APP = 'django_comments_xtd'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'account_login'

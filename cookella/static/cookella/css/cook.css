@@ -123,17 +123,18 @@ strong {
     margin: 2.5em auto;
 }
 
-#welcome_section #welcome-dish {
+#welcome-dish {
     /* background-image: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
     background: linear-gradient(to right top, #e1e1e1, #f8f9fa);
+    box-shadow: 0 7px 10px rgba(08, 08, 08, 0.25);
 }
 
-#welcome_section #welcome-community {
+#welcome-community {
     /* background-image: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
     background: linear-gradient(to right top, #dbdcdc, #DEE6E3);
 }
 
-#welcome_section #welcome-learning {
+#welcome-learning {
     /* background: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
     background: linear-gradient(to right top, #dbdcdc, #DEE6E3);
 }
@@ -248,7 +249,7 @@ strong {
 /* css for features section */
 
 #features {
-    background-image: linear-gradient(to left, rgb(108 117 125 / 0.8), rgb(108 117 125 / 0.8)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
+    background-image: linear-gradient(to left, rgb(108 117 125 / 0.6), rgb(108 117 125 / 0.6)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -362,7 +363,7 @@ span {
     margin: 5em auto;
     padding: 20px;
     font-weight: 550;
-    box-shadow: 0 5px 10px grey;
+    box-shadow: 0 5px 10px rgba(08, 08, 08, .25);
 
 }
 
@@ -430,8 +431,6 @@ span {
 
 
 /*For the like and unlike button in django css */
-
-
 .msg-btn {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
     color: #007bff;

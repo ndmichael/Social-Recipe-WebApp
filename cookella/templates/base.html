@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="autoRotate: disabled">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, autoRotate= disabled">
     {% if title %}
     <title>cookella-{{ title }}</title>
     {% else %}
@@ -116,7 +116,7 @@
 
 
     <!-- footer of the website -->
-    <footer class="container-fluid" id="footer-id">
+    <footer class="container-fluid static-bottom" id="footer-id">
         <div class="row">
             <div class="col-sm-12">
                 <p>Copyright &#64; 2020 Alright reserved <br />
@@ -160,8 +160,7 @@
                             $('#' + ansid).addClass('text-danger');
                         }else{
                             $('#' + ansid).removeClass('text-danger');
-                        }
-
+                        } 
                         console.log($('#like_count' + ansid))
                     },
                     error: function (rs, e) {

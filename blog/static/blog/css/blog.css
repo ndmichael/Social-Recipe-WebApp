@@ -70,10 +70,31 @@
 	border-radius: 0;
 }
 
+.general-style .text-danger{
+	animation: thumbs-up 2s;
+	
+}
+
+@keyframes thumbs-up {
+	10% {
+		transform: scale(1.5, 1.5);
+	}
+	20% {
+		transform: rotate(-40deg);
+	}
+	30% {
+		transform: rotate3D(40deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+}
+
+
 
 /*
 **
-**  userpost section css
+**  userpost and user recipe section css
 **
 */
 #userpost{
@@ -81,6 +102,15 @@
 }
 
 #userpost img {
+	width: 150px;
+	height: 150px;
+}
+
+#user-recipes{
+	margin-top: 6em;
+}
+
+#user-recipes img {
 	width: 150px;
 	height: 150px;
 }
@@ -108,7 +138,7 @@
 
 	#userpost{
 		margin-top: 6em;
-		text-align: center;;
+		text-align: center;
 	}
 
 

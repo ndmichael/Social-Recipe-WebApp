@@ -10,9 +10,8 @@
     </div>
     <div class="row">
         {% for post in posts %}
-
         <div class="col-12 col-md-6">
-            <div class="border m-2 p-3">
+            <div class="border m-2 p-3" style="background: white;">
                 <div class="row h-100">
                     <div class="col-12 col-md-4">
                         {% if post.image %}
@@ -27,9 +26,10 @@
                                     {{post.title}}
                                 </a>
                             </h4>
-                            {% if post.author == user %}
+
                             <div class="border-bottom">
                                 <small class="mr-2">{{ post.date_created|date:"F d, Y" }}</small>
+                                {% if post.author == request.user %}
                                 <a href="{% url 'post-delete' post.pk %}"
                                     class="icofont icofont-1x icofont-delete-alt text-danger mr-2">
                                     <small class=" text-black-50">delete</small>
@@ -38,41 +38,38 @@
                                     class="icofont icofont-1x icofont-edit-alt text-warning">
                                     <small class=" text-black-50">edit</small>
                                 </a>
+                                {% endif %}
                             </div>
-                            {% endif %}
-                           
-
                         </div>
+                        <!--the like button div-->
                         <div id="like_button" class="pt-4">
                             {% include "blog/likebutton.html" %}
                         </div>
                     </div>
-
-                </div>
+                </div> <!-- end of internal row -->
             </div>
         </div>
-
         {% endfor %}
-    </div>
+    </div> <!-- end of outter row -->
 
 
     <div class="offset-sm-2">
         {% if is_paginated %}
-        {% if page_obj.has_previous %}
-        <a class="btn btn-outline-primary" href="?page=1">First</a>
-        <a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
-        {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-        <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-        <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a class="btn btn-outline-primary" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-        {% endif %}
+            {% if page_obj.has_previous %}
+            <a class="btn btn-outline-primary" href="?page=1">First</a>
+            <a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+                {% if page_obj.number == num %}
+                <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-primary" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
         {% endif %}
     </div>
 </section> <!-- end of container wrapper -->

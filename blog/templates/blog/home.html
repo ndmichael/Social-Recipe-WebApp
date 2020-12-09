@@ -5,9 +5,9 @@
 
 
 {%  block content  %}
+
 <section class="container" id="blog-container">
     <article class="row">
-
         <div class="col-12  col-md-12 col-lg-8">
             {% for post in posts %}
             <div class="row general-style mr-md-2 mb-5">
@@ -28,13 +28,18 @@
                         </a>
                     </h4>
                     <p>
-                        {{ post.content|truncatechars:100 }} ...
+                        {{ post.content|truncatechars:100 }}
                     </p>
+                    <!--
+                        - the like button
+                    -->
                     <div id="like_button">
                         {% include "blog/likebutton.html" %}
                     </div>
                 </div>
-
+                <!--
+                    - the product image 
+                -->
                 <div class="col-12 col-sm-4 col-md-4 order-first order-sm-last border-left"
                     style="background-color: #dc3545; padding: 0" ;>
                     {% if post.image %}
@@ -45,10 +50,13 @@
             {% endfor %}
         </div>
 
+        <!--
+            - Aside section will be here
+        -->
         <aside class="col-sm-3" style="height: 250px; background-color: #FFFFDD;">
 
         </aside>
-    </article> <!-- end of outter container row row -->
+    </article> <!-- end of outter container row  -->
 
 
     <div class="offset-sm-2">

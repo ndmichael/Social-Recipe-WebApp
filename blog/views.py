@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect, reverse
-from .models import Post, Like
+from .models import Post
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
@@ -11,10 +11,6 @@ from django.views.generic import View
 from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
-
-
-# model for the post list for the blog
 class PostListView(ListView):
     model = Post
     template_name = 'blog/home.html'
@@ -23,7 +19,6 @@ class PostListView(ListView):
     paginate_by = 5
 
 
-# model for details for the view
 class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/post-detail.html'
@@ -33,18 +28,18 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Post
     fields = ['title', 'content', 'image']
-    success_message = "Blog post successful"
+    success_message = "Blog post created successful"
 
     def form_valid(self, form):  # pre-populate author field with the current user
         form.instance.author = self.request.user  # assign author field with the user
         return super(PostCreateView, self).form_valid(form)
 
-    # to use kwargs access using object i.e. use self.object.name
     # remove this if you want to use get_absolute_url
     def get_success_url(self):
         return reverse_lazy('blog-home')
 
 
+# user must be login and the author to update this post
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     model = Post
     fields = ['title', 'content', 'image']
@@ -61,6 +56,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixi
         return False
 
 
+# user must be login and the author to delete this post
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = Post
     success_url = '/blog/'
@@ -71,13 +67,11 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixi
         if self.request.user == post.author:
             return True
         return False
-    # def get_success_url(self):
-    #     return reverse_lazy('blog-home')
 
 
+# the like button view
 @login_required
 def post_like(request):
-    # user = request.user
     # if request.method == 'POST' and request.is_ajax():
     if request.POST.get('action') == 'post':
         result = ''
@@ -86,22 +80,19 @@ def post_like(request):
         post_obj = get_object_or_404(Post, id=postid)
 
         if post_obj.likes.filter(id=request.user.id).exists():
-            post_obj.like_state = True
             post_obj.likes.remove(request.user)
             post_obj.like_count -= 1
-            post_obj.like_state = False
             result = post_obj.like_count
             post_obj.save()
             flag = False
         else:
             post_obj.likes.add(request.user)
             post_obj.like_count += 1
-            post_obj.like_state = True
             result = post_obj.like_count
             post_obj.save()
             flag = True
         
-        return JsonResponse({'result': post_obj.like_count, 'flag': flag,})
+        return JsonResponse({'result': result, 'flag': flag,})
     return HttpResponse("Error access denied")
 
 

@@ -22,7 +22,6 @@ class Post(models.Model):
     status = models.CharField(max_length=15, choices=STATUS_POST, default='published')
     likes = models.ManyToManyField(User,related_name='user_like', blank=True)
     like_count = models.BigIntegerField(default="0")
-    like_state = models.BooleanField(help_text="this set flag when page refreshes even after updating likes with json request")
     slug = models.SlugField(max_length=150,)
     image = models.ImageField(upload_to='post_images/%Y/%m/%d', default="",  blank=True, null=True)
 
@@ -38,12 +37,6 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={'pk': self.pk, 'year': self.date_created.year, 'title': self.slug})
 
 
-class Like(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return str(f"{self.post}")
 
 
 
