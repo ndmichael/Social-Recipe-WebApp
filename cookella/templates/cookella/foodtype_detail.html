@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cookella_tags %}
+
+{% block content %}
+    <section class="container">    
+        <div class="row" id="food_recipe">
+            
+            <div class="col-12 col-md-12 my-4">
+                <h1>{{ object.food_name }} Recipes</h1>
+            </div>
+            <br />
+
+            <div class="col-12 col-md-3">
+                <p><img class="img-thumbnail img-responsive" src="{{ object.food_image.url }}" /></p>
+            </div>
+
+            <div class="col-12 col-md-6 border-right" >
+                <div>
+                    <h2>Country: <span class="text-muted">{{ object.country.name }}</span></h2>
+                    <h3>Ingredients: <br /> <small class="text-muted">{{ object.food_type.ingredient }}</small></h3>
+                <br /><br />
+                    <h3>PROCEDURES</h3>
+                    <ol>
+                        {% for steps in object.food_type.recipe|split:'.'  %}
+                            {% if steps %}
+                                <li><p>{{ steps|capfirst }}. </p></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ol>
+                    <!-- <p></p> -->
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div>
+                    <p><img class="img-thumbnail img-responsive" src="{{ object.contributor.profile.url }}" /></p>
+                    <p><strong>Contributor: </strong>{{ object.contributor }}</p>
+                    <!-- only display the update button if requesting person is the contributor -->
+                    {% if request.user.username == object.contributor  %}
+                        <a href="{% url "recipe-update" object.pk object.slug %}" class="btn btn-lg btn-danger">Update Recipe</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}
+
+
+
