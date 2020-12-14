@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{%  load crispy_forms_tags %}
+
+
+
+{%  block content  %}
+
+<section class="container" id="blog-container">
+    <article class="row">
+        <div class="col-12  col-md-8">
+            {% for post in posts %}
+            <div class="row general-style mx-md-5 mb-5">
+                <div class="col-sm-8 col-md-8 my-3">
+                    <p class="border-bottom">
+                        <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
+                            alt="..." />
+                        <a href="{% url 'profile' post.author.username %}" class="mr-4">
+                            <span>
+                                {{ post.author }}
+                            </span>
+                        </a>
+                        <small>{{ post.date_created|date:"F d, Y" }}</small>
+                    </p>
+                    <h4>
+                        <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">
+                            {{ post.title|truncatechars:50 }}
+                        </a>
+                    </h4>
+                    <p>
+                        {{ post.content|truncatechars:70 }}
+                    </p>
+                    <!--
+                        - the like button
+                    -->
+                    <div id="like_button">
+                        {% include "blog/likebutton.html" %}
+                    </div>
+                </div>
+                <!--
+                    - the product image 
+                -->
+                <div class="col-12 col-md-4 order-first order-sm-last border-left"
+                    style="background-color: #dc3545; padding: 0" ;>
+                    {% if post.image %}
+                    <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!--
+            -
+            - Aside section will be here
+            -
+        -->
+        <aside class="col-sm-3" style="height: 250px; background-color: #FFFFDD;">
+
+        </aside>
+    </article> <!-- end of outter container row  -->
+
+
+    <div class="offset-sm-2">
+        {% if is_paginated %}
+        {% if page_obj.has_previous %}
+        <a class="btn btn-outline-primary" href="?page=1">First</a>
+        <a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+        <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-primary" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        {% endif %}
+        {% endif %}
+    </div>
+</section> <!-- end of container wrapper -->
+
+{% endblock content %}
