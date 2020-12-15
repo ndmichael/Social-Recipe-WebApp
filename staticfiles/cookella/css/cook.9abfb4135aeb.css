@@ -107,7 +107,7 @@ strong {
 }
 
 #ft_recipes .bg_layer{
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.jpg");
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.03ebbf5403ac.jpg");
     background-size: cover;
     padding: 8em 5em;
     text-align: center;
@@ -196,7 +196,7 @@ strong {
 }
 
 #mission .join-mission {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.jpg");
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.03ebbf5403ac.jpg");
     background-size: cover;
     padding: 8em 5em;
     text-align: center;
@@ -258,7 +258,7 @@ strong {
 /* css for features section */
 
 #features {
-    background-image: linear-gradient(to left, rgb(108 117 125 / 0.6), rgb(108 117 125 / 0.6)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
+    background-image: linear-gradient(to left, rgb(108 117 125 / 0.6), rgb(108 117 125 / 0.6)), url("/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.57fc970d1c4b.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
