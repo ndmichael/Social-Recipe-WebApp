@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import FoodType, FoodRecipe
+from blog.models import Post
 from django.views.generic import (ListView,
                                   DetailView, CreateView)
 from .forms import FoodTypeForm, FoodRecipeForm
@@ -12,7 +13,9 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request, 'cookella/index.html', {'title': 'home'})
+    ft_recipes = FoodType.objects.all().order_by('date_added')[:4]
+    porp_post = Post.objects.all().order_by('-like_count')[:4]
+    return render(request, 'cookella/index.html', {'title': 'home', 'ft_recipes': ft_recipes})
 
 
 def about(request):
