@@ -184,8 +184,6 @@ if not DEBUG:
     DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
 
 
-
-
 #django-allauth registraion settings 
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
 ACCOUNT_EMAIL_REQUIRED = True
