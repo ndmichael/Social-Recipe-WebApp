@@ -19,7 +19,7 @@
 
                 <p class="animated zoomIn pt-4" style=" animation-delay: 1s;">
                     <a href="{% url 'dish_list' %}" class="d-inline-block mb-2">
-                        <button class="btn btn-warning  btn-lg">
+                        <button class="btn btn-danger  btn-lg">
                             View Recipe
                         </button>
                     </a>
@@ -70,7 +70,7 @@
 </div>
 
 <section>
-    <div class="container my-3" id="ft_recipes">
+    <div class="container bg-white my-3" id="ft_recipes">
         <div class=" row">
             <div class="col-12 col-md-4 bg_layer">
                 <h3 class=" text-white">Featured Recipes</h3>
@@ -100,7 +100,7 @@
 
 <!-- block section -->
 <div class="">
-    <div class="container-fluid bg-white p-5">
+    <div class="container-fluid bg-white p-3 p-md-4">
         <div class="row">
             <div class="col-12 mb-5">
                 <h3>Top Featured blogs for your consumptions</h3>
@@ -108,17 +108,17 @@
             
             {% for post in posts %}
             <div class="col-md-3">
-                <a href="">
+                <a href="" class=" text-dark rounded p-3">
                     <div class=" rounded" style="box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);">
                         {% if post.image %}
-                            <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
+                            <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}" style="height: 270px; width: 100%;">
                         {% endif %}
-                        <div class="p-3 bg-light">
-                            <p>By: {{ post.author }} </p>
-                            <hr />
-                            <h4> {{ post.title|truncatechars:50 }} </h4>
+                        <div class="p-3 bg-white">
+                            <p><b>By</b>: {{ post.author }} </p>
+                            
+                            <h4 class="py-2"> {{ post.title|truncatechars:40 }} </h4>
                             <p>
-                                {{ post.content|truncatechars:50 }}
+                                {{ post.content|truncatechars:70 }}
                             </p>
                         </div>
                     </div>
