@@ -70,12 +70,12 @@
 </div>
 
 <section>
-    <div class="container bg-white my-3" id="ft_recipes">
+    <div class="container bg-white my-5" id="ft_recipes">
         <div class=" row">
             <div class="col-12 col-md-4 bg_layer">
                 <h3 class=" text-white">Featured Recipes</h3>
             </div>
-            <div class="col-12 col-md-8 border" >
+            <div class="col-12 col-md-8 py-3 border" >
                 <div class="row">
                     {% for recipe in ft_recipes %}
                     <div class="col-6">
@@ -102,21 +102,21 @@
 <div class="">
     <div class="container-fluid bg-white p-3 p-md-4">
         <div class="row">
-            <div class="col-12 mb-5">
-                <h3>Top Featured blogs for your consumptions</h3>
+            <div class="col-12 col-md-8 offset-md-2 text-center">
+                <h3 class="mt-4">Top Featured Blogs For You</h3>
             </div>
             
             {% for post in posts %}
             <div class="col-md-3">
                 <a href="" class=" text-dark rounded p-3">
-                    <div class=" rounded" style="box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);">
+                    <div class="my-4" style="box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2); border-radius: 10px;">
                         {% if post.image %}
                             <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}" style="height: 270px; width: 100%;">
                         {% endif %}
                         <div class="p-3 bg-white">
                             <p><b>By</b>: {{ post.author }} </p>
                             
-                            <h4 class="py-2"> {{ post.title|truncatechars:40 }} </h4>
+                            <h5 class="py-2"> {{ post.title|truncatechars:40 }} </h5>
                             <p>
                                 {{ post.content|truncatechars:70 }}
                             </p>
@@ -129,58 +129,6 @@
     </div>
 </div>
 
-<!-- welcome section -->
-<section id="welcome">
-    <section class="container" id="welcome_section">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1>Welcome</h1>
-            </div>
-
-            <div class="col-sm-4 col-12 hvr-float-shadow">
-                <a href="{% url 'cookella-add-recipe' %}">
-                    <div class="col-sm-12 welcome-class hvr-curl-top-right " id="welcome-learning">
-                        <p><span class="icofont icofont-page icofont-5x"></span></p>
-                        <h3>Add Recipe</h3>
-                        <p>
-                            Add Recipes today and watch them grow in popularity, and Appreciated by other foodies. 
-                            Enjoy what you do, dowhat you enjoy.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <!-- end of col -->
-
-            <div class="col-sm-4 col-12 hvr-float-shadow">
-                <a href="{% url 'dish_list' %}">
-                    <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-dish">
-                        <p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
-                        <h3>Dish & Recipe</h3>
-                        <p>
-                            Over 3000+ Recipes,contributed by cooking enthusiast and foodies alike. Share your Recipes and
-                            learn new Recipes.
-                        </p>
-
-                    </div>
-                </a>
-            </div>
-            <!-- end of col -->
-            <div class="col-sm-4 col-12 hvr-float-shadow">
-                <a href="{% url 'blog-home' %}">
-                    <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-community">
-                        <p><span class="icofont icofont-5x icofont-rss-feed" aria-hidden="true"></span></p>
-                        <h3>Community</h3>
-                        <p>
-                            Get in touch with multitude of cooking enthusiast, foodies and expert chefs. 
-                            Blog and post anything related to food health and recipes.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <!-- end of col -->
-        </div>
-    </section>
-</section>
 
 <!-- categories section -->
 <section id="mission">
@@ -220,7 +168,64 @@
 
 </section>
 
-<!-- details -->
+<!-- welcome section -->
+<section id="welcome">
+    <section class="container" id="welcome_section">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h1>For Foodies, By Foodies</h1>
+                <p>
+                    Cookella is a community for professional chef and cooking enthusiast. 
+                </p>
+            </div>
+
+            <div class="col-sm-4 col-12 hvr-float-shadow">
+                <a href="{% url 'cookella-add-recipe' %}">
+                    <div class="col-sm-12 welcome-class hvr-curl-top-right " id="welcome-learning">
+                        <p><span class="icofont icofont-page icofont-5x"></span></p>
+                        <h3 class="py-3">Add Recipe</h3>
+                        <p>
+                            Add Recipes today and watch them grow in popularity, and Appreciated by other foodies. 
+                            Enjoy what you do, dowhat you enjoy.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- end of col -->
+
+            <div class="col-sm-4 col-12 hvr-float-shadow">
+                <a href="{% url 'dish_list' %}">
+                    <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-dish">
+                        <p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
+                        <h3 class="py-3">Dish & Recipe</h3>
+                        <p>
+                            Over 3000+ Recipes,contributed by cooking enthusiast and foodies alike. Share your Recipes and
+                            learn new Recipes.
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+            <!-- end of col -->
+            <div class="col-sm-4 col-12 hvr-float-shadow">
+                <a href="{% url 'blog-home' %}">
+                    <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-community">
+                        <p><span class="icofont icofont-5x icofont-rss-feed" aria-hidden="true"></span></p>
+                        <h3 class="py-3">Community</h3>
+                        <p>
+                            Get in touch with multitude of cooking enthusiast, foodies and expert chefs. 
+                            Blog and post anything related to food health and recipes.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- end of col -->
+        </div>
+    </section>
+</section>
+
+
+<!-- details
 <section id="details">
     <section class="container">
         <div class="row">
@@ -277,7 +282,7 @@
             </div>
         </div>
     </section>
-</section>
+</section> -->
 
 <!-- the features section -->
 <section id="features">
