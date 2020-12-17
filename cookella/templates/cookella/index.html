@@ -6,13 +6,14 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active drk">
-            <img src="{% static "cookella/images/cheffslide1.jpg" %}" class="d-block mx-auto d-block w-100"
+                <img src="{% static "cookella/images/christian-fregnan-IJ8KKgbG-_4-unsplash-min.jpg" %}" class="d-block mx-auto d-block w-100 "
                 alt="..." />
+            
             <div class="carousel-caption">
-                <h5 class="animated fadeInUp" style=" animation-delay: 1s;">Dish Recipe</h5>
+                <h5 class="animated fadeInUp" style=" animation-delay: 1s;">Food and Recipe</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    Learn how to prepare different varieties of dishes, Both Africa and Intercontinental Including
-                    ingredients and recipes, from expert cooks just for you.
+                    We are a community of cooking and food enthusiast.
+                    A platform where You can upload your recipes online, and blog about it.
 
                 </p>
 
@@ -36,12 +37,12 @@
         </div>
 
         <div class="carousel-item drk">
-            <img src="{% static "cookella/images/slidefood_img7.jpg " %}" class="mx-auto d-block w-100" alt="...">
+            <img src="{% static "cookella/images/cheffslide1.jpg" %}" class="mx-auto d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 class="animated  lightSpeedIn" style=" animation-delay: 1s;">Join our Community</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    Why build your own blog when you can be a blogger with us. <br /> Join our community today to blog,
-                    interact and learn.
+                    Join us today and enjoy all our awesome features. <br /> 
+                    Earn your recognition for your cooking skills.
                 </p>
                 <p class="animated zoomIn pt-3" style=" animation-delay: 1s;">
                     <a href="{% url 'blog-home' %}">
@@ -90,15 +91,43 @@
                             </div>
                         </a>
                     </div>
-                   {% endfor %} 
-
-                    
-                    
+                   {% endfor %}           
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- block section -->
+<div class="">
+    <div class="container-fluid bg-white p-5">
+        <div class="row">
+            <div class="col-12 mb-5">
+                <h3>Top Featured blogs for your consumptions</h3>
+            </div>
+            
+            {% for post in posts %}
+            <div class="col-md-3">
+                <a href="">
+                    <div class=" rounded" style="box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);">
+                        {% if post.image %}
+                            <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
+                        {% endif %}
+                        <div class="p-3 bg-light">
+                            <p>By: {{ post.author }} </p>
+                            <hr />
+                            <h4> {{ post.title|truncatechars:50 }} </h4>
+                            <p>
+                                {{ post.content|truncatechars:50 }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 <!-- welcome section -->
 <section id="welcome">
