@@ -14,8 +14,8 @@ from django.http import HttpResponse
 
 def index(request):
     ft_recipes = FoodType.objects.all().order_by('date_added')[:4]
-    porp_post = Post.objects.all().order_by('-like_count')[:4]
-    return render(request, 'cookella/index.html', {'title': 'home', 'ft_recipes': ft_recipes})
+    posts = Post.objects.all().order_by('-like_count')[:4]
+    return render(request, 'cookella/index.html', {'title': 'home', 'ft_recipes': ft_recipes, 'posts': posts })
 
 
 def about(request):
