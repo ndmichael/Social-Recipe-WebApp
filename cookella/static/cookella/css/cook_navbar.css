@@ -20,7 +20,7 @@
     display: inline-block;
     height: auto;
     /* background-color: rgba(178, 34, 34, 1); */
-    background: maroon;
+    background: #374F75;
 }
 
 .navbar-brand {
@@ -41,7 +41,8 @@
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9em;
-    color: #ffffff;
+    color: #dee2e6;
+    opacity: 0.8;
     padding: 20px 7px;
     margin: -20px auto;
     font-family: 'Roboto', sans-serif;
@@ -56,21 +57,21 @@
 .navbar-light .navbar-nav .nav-item>.community {
     color: #000000;
     font-weight: 900;
-    background-color: #ffc800;
-    opacity: 1;
+    background-color: #dee2e6;
+    opacity: 0.8;
 }
 
 .navbar-light .navbar-nav .nav-item>.community:hover {
     transition: opacity 0.2s ease-in-out;
     color: #080808;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 
 /* i just want the nav auth to have different color */
 
 .navbar-light .navbar-nav .nav-item>.nav-auth {
-    color: #ffc800;
+    color: #dc3545;
     font-size: 14px;
     font-weight: 900;
     margin-left: 10px;
@@ -87,7 +88,7 @@
 
 .navbar-light .navbar-nav>.nav-item>a:active,
 .navbar-light .navbar-nav>.nav-item>a:hover {
-    color: #ffc800;
+    opacity: 1;
     transition: background-color 0.2s ease-in;
 }
 
