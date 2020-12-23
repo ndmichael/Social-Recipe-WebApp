@@ -257,7 +257,7 @@ strong {
 /* css for features section */
 
 #features {
-    background-image: linear-gradient(to left, rgb(108 117 125 / 0.6), rgb(108 117 125 / 0.8)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
+    background-image: linear-gradient(to left, rgb(108 117 125 / 0.65), rgb(108 117 125 / 0.8)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -317,22 +317,25 @@ span {
 /* footer css*/
 
 #footer-id {
-    background-color: #292929;
     bottom:0;
     padding: 2em;
     width: 100%;
     text-align: center;
-    color: whitesmoke;
     font-weight: 700;
+    background-color: #333;
+    border-top: 2px solid grey;
 }
 
+#footer-id p {
+    color: #dc3545;
+}
 
 #footer-id a {
-    color: #d1d1d1;
+    color: #dee2e6;
 }
 
 #footer-id a:hover {
-    color: #ffc800;
+    color: #dc3545;
 }
 
 
