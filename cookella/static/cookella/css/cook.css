@@ -45,7 +45,7 @@ strong {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.82);
 }
 
 .carousel-item img {
@@ -106,6 +106,16 @@ strong {
     border-radius: 50%;
 }
 
+#ft_recipes .bg_layer{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+     url("/static/cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg");
+    background-size: cover;
+    padding: 8em 5em;
+    text-align: center;
+    width: auto;
+    border-radius: 50px 0 0 50px;
+}
+
 
 
 
@@ -124,9 +134,7 @@ strong {
 }
 
 #welcome-dish {
-    /* background-image: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
-    background: linear-gradient(to right top, #e1e1e1, #f8f9fa);
-    box-shadow: 0 7px 10px rgba(08, 08, 08, 0.25);
+    box-shadow: 0 4px 10px rgba(08, 08, 08, 0.25);
 }
 
 #welcome-community {
@@ -134,10 +142,10 @@ strong {
     background: linear-gradient(to right top, #dbdcdc, #DEE6E3);
 }
 
-#welcome-learning {
-    /* background: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
-    background: linear-gradient(to right top, #dbdcdc, #DEE6E3);
-}
+    #welcome-learning {
+        /* background: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
+        background: linear-gradient(to right top, #dbdcdc, #DEE6E3);
+    }
 
 #welcome_section .welcome-class {
     padding: 2.3em;
@@ -249,7 +257,7 @@ strong {
 /* css for features section */
 
 #features {
-    background-image: linear-gradient(to left, rgb(108 117 125 / 0.6), rgb(108 117 125 / 0.6)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
+    background-image: linear-gradient(to left, rgb(108 117 125 / 0.65), rgb(108 117 125 / 0.8)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -294,45 +302,40 @@ span {
 
 #features .ft-features {
     border-radius: 20px;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 30px;
     margin: 1em auto;
-    background-color: rgba(200, 200, 200, 0.5) !important;
     transition: All 2000s ease-in !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.45);
+    -moz-backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    
 }
-
-
-/* Shutter In Horizontal */
-
-.hvr-shutter-in-horizontal {
-    background: rgba(255, 255, 255, 0.102) !important;
-}
-
-.hvr-shutter-in-horizontal:before {
-    background: rgba(255, 255, 255, 0.102) !important;
-    border-radius: 20px;
-}
-
 
 /* footer css*/
 
 #footer-id {
-    background-color: #292929;
     bottom:0;
     padding: 2em;
     width: 100%;
     text-align: center;
-    color: whitesmoke;
     font-weight: 700;
+    background-color: #333;
+    border-top: 2px solid grey;
 }
 
+#footer-id p {
+    color: #dc3545;
+}
 
 #footer-id a {
-    color: #d1d1d1;
+    color: #dee2e6;
 }
 
 #footer-id a:hover {
-    color: #ffc800;
+    color: #dc3545;
 }
 
 

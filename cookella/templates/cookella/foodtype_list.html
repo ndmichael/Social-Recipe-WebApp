@@ -16,12 +16,12 @@
                                     </div>
                                 {% endif %}
                                 <div class="recipe-detail">
-                                    <h5 class="text-muted">{{ dish.country.name }} <i
+                                    <h6 class="text-muted">{{ dish.country.name }} <i
                                         class="{{ dish.country.flag_css }}"></i>
-                                    </h5>
-                                    <h6>
-                                        {{ dish.food_name }}
                                     </h6>
+                                    <h5>
+                                        {{ dish.food_name }}
+                                    </h5>
                                     <p><strong>By:</strong> {{ dish.contributor }}</p>
                                     <a href="{%  url 'recipes' dish.pk dish.slug %}" >
                                         <button type="button" class="btn btn-danger btn-block btn-lg rounded-0">

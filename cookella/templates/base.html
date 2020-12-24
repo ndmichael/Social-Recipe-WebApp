@@ -73,7 +73,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-auth" href="{% url 'account_signup' %}">
-                            <button class="btn btn-warning">
+                            <button class="btn btn-danger">
                                 SIGN UP
                             </button>
                         </a>
@@ -138,40 +138,11 @@
     <!-- Latest compiled JavaScript -->
     <script src="{% static "cookella/js/bootstrap.min.js " %}"></script>
 
-    <script>
-        $(document).ready(function () {
-            $(".like_btn").click(function (event) {
-                event.preventDefault()
-                var ansid = $(this).attr('id');
-                console.log(ansid)
-                $.ajax({
-                    url: '{% url "like-post" %}',
-                    type: 'POST',
-                    data: {
-                        'post_id': $('#' + ansid).val(),
-                        'csrfmiddlewaretoken': "{{ csrf_token }}",
-                        'action': 'post'
-                    },
-                    success: function (response) {
-                        // document.getElementById("like_count").innerHTML = response['result']
-                        $('#like_count' + ansid).html(response['result']);
-                        // console.log(response['stated'])
-                        if (response['flag']){
-                            $('#' + ansid).addClass('text-danger');
-                        }else{
-                            $('#' + ansid).removeClass('text-danger');
-                        } 
-                        console.log($('#like_count' + ansid))
-                    },
-                    error: function (rs, e) {
-                        console.log(rs.response)
-                    }
-                });
-            });
-        });
+    <script src="{% static "cookella/js/main.js" %}">
+        
 
     </script>
-
+ 
 
     <script>
         $(window).scroll(function () {

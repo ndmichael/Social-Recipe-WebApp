@@ -70,27 +70,6 @@
 	border-radius: 0;
 }
 
-.general-style .text-danger{
-	animation: thumbs-up 2s;
-	
-}
-
-@keyframes thumbs-up {
-	10% {
-		transform: scale(1.5, 1.5);
-	}
-	20% {
-		transform: rotate(-40deg);
-	}
-	30% {
-		transform: rotate3D(40deg);
-	}
-	50% {
-		transform: rotate(0deg);
-	}
-}
-
-
 
 /*
 **

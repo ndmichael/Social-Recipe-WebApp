@@ -6,19 +6,20 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active drk">
-            <img src="{% static "cookella/images/cheffslide1.jpg" %}" class="d-block mx-auto d-block w-100"
-                alt="..." />
+            <img src="{% static "cookella/images/christian-fregnan-IJ8KKgbG-_4-unsplash-min.jpg" %}"
+                class="d-block mx-auto d-block w-100 " alt="..." />
+
             <div class="carousel-caption">
-                <h5 class="animated fadeInUp" style=" animation-delay: 1s;">Dish Recipe</h5>
+                <h5 class="animated fadeInUp" style=" animation-delay: 1s;">Food and Recipe</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    Learn how to prepare different varieties of dishes, Both Africa and Intercontinental Including
-                    ingredients and recipes, from expert cooks just for you.
+                    We are a community of cooking and food enthusiast.
+                    A platform where You can upload your recipes online, and blog about it.
 
                 </p>
 
                 <p class="animated zoomIn pt-4" style=" animation-delay: 1s;">
                     <a href="{% url 'dish_list' %}" class="d-inline-block mb-2">
-                        <button class="btn btn-warning  btn-lg">
+                        <button class="btn btn-danger  btn-lg">
                             View Recipe
                         </button>
                     </a>
@@ -29,19 +30,19 @@
                         <button class="btn btn-light  btn-lg">
                             Add Recipe
                         </button>
-                    </a>                 
+                    </a>
                 </p>
 
             </div>
         </div>
 
         <div class="carousel-item drk">
-            <img src="{% static "cookella/images/slidefood_img7.jpg " %}" class="mx-auto d-block w-100" alt="...">
+            <img src="{% static "cookella/images/cheffslide1.jpg" %}" class="mx-auto d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 class="animated  lightSpeedIn" style=" animation-delay: 1s;">Join our Community</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    Why build your own blog when you can be a blogger with us. <br /> Join our community today to blog,
-                    interact and learn.
+                    Join us today and enjoy all our awesome features. <br />
+                    Earn your recognition for your cooking skills.
                 </p>
                 <p class="animated zoomIn pt-3" style=" animation-delay: 1s;">
                     <a href="{% url 'blog-home' %}">
@@ -68,58 +69,69 @@
     </a>
 </div>
 
-<!-- welcome section -->
-<section id="welcome">
-    <section class="container" id="welcome_section">
-        <div class="row">
-            <div class="col-sm-12">
-                <h1>Welcome</h1>
+<section>
+    <div class="container my-5" id="ft_recipes">
+        <div class=" row">
+            <div class="col-12 col-md-4 bg_layer">
+                <h3 class=" text-white">Featured Recipes</h3>
             </div>
-
-            <div class="col-sm-4 col-12 hvr-float-shadow">
-                <a href="{% url 'cookella-add-recipe' %}">
-                    <div class="col-sm-12 welcome-class hvr-curl-top-right " id="welcome-learning">
-                        <p><span class="icofont icofont-page icofont-5x"></span></p>
-                        <h3>Add Recipe</h3>
-                        <p>
-                            Add Recipes today and watch them grow in popularity, and Appreciated by other foodies. 
-                            Enjoy what you do, dowhat you enjoy.
-                        </p>
+            <div class="col-12 col-md-8 py-3 border bg-white">
+                <div class="row">
+                    {% for recipe in ft_recipes %}
+                    <div class="col-6">
+                        <a href="{%  url 'recipes' recipe.pk recipe.slug %}"
+                            class="d-flex justify-content-lg-start p-3">
+                            <div>
+                                <img class="img-fluid m-0 p-0" src="{{ recipe.food_image.url }}"
+                                    style="min-width: 100%; width: 200px; height: 120px; padding-right: 5px; object-fit: cover;">
+                            </div>
+                            <div class="p-2" style="width: 100%;">
+                                <h6><b class="text-dark">{{recipe.food_name}}</b></h6>
+                                <h6 class="text-danger"><small>{{recipe.country.name}}</small></h6>
+                                <p>{{recipe.contributor}}</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                    {% endfor %}
+                </div>
             </div>
-            <!-- end of col -->
-
-            <div class="col-sm-4 col-12 hvr-float-shadow">
-                <a href="{% url 'dish_list' %}">
-                    <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-dish">
-                        <p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
-                        <h3>Dish & Recipe</h3>
-                        <p>
-                            Over 3000+ Recipes,contributed by cooking enthusiast and foodies alike. Share your Recipes and
-                            learn new Recipes.
-                        </p>
-
-                    </div>
-                </a>
-            </div>
-            <!-- end of col -->
-            <div class="col-sm-4 col-12 hvr-float-shadow">
-                <a href="{% url 'blog-home' %}">
-                    <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-community">
-                        <p><span class="icofont icofont-5x icofont-rss-feed" aria-hidden="true"></span></p>
-                        <h3>Community</h3>
-                        <p>
-                            Get in touch with multitude of cooking enthusiast, foodies and expert chefs. 
-                            Blog and post anything related to food health and recipes.
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <!-- end of col -->
         </div>
-    </section>
+    </div>
 </section>
+
+<!-- block section -->
+<div class="">
+    <div class="container-fluid bg-white p-4 p-md-5">
+        <div class="row">
+            <div class="col-12 col-md-8 my-3 offset-md-2 text-center">
+                <h3 class="">Top Featured Blogs For You</h3>
+            </div>
+
+            {% for post in posts %}
+            <div class="col-md-3 my-5">
+                <div class="h-100" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);">
+                    <a href="" class=" text-dark">
+                        {% if post.image %}
+                        <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}"
+                            style="height: 270px; width: 100%; object-fit: cover; object-position: center;">
+                        {% endif %}
+                        <div class="p-4">
+                            <p><b>By</b>: {{ post.author }} </p>
+
+                            <h5 class="py-2"> {{ post.title|truncatechars:50 }} </h5>
+                            <p>
+                                {{ post.content|truncatechars:70 }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
 
 <!-- categories section -->
 <section id="mission">
@@ -136,7 +148,7 @@
                     <strong>Gain the recognition you deserve today!!!</strong> <br />
                     <br />
                     <a href="{% url 'cookella-about' %}">
-                        <button class="btn btn-lg btn-danger">
+                        <button class="btn btn-lg btn-light">
                             Know More
                         </button>
                     </a>
@@ -148,7 +160,7 @@
                 <p>Register Today and Enjoy all our exciting features</p> <br />
                 <p>
                     <a href="{% url 'account_signup' %}">
-                        <button class="btn btn-lg btn-warning">
+                        <button class="btn btn-lg btn-danger">
                             Join Now
                         </button>
                     </a>
@@ -159,7 +171,65 @@
 
 </section>
 
-<!-- details -->
+<!-- welcome section -->
+<section id="welcome">
+    <section class="container" id="welcome_section">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h1>For Foodies, By Foodies</h1>
+                <p>
+                    Cookella is a community for professional chef and cooking enthusiast.
+                </p>
+            </div>
+
+            <div class="col-sm-4 col-12 hvr-float-shadow">
+                <a href="{% url 'cookella-add-recipe' %}">
+                    <div class="col-sm-12 welcome-class hvr-curl-top-right " id="welcome-learning">
+                        <p><span class="icofont icofont-page icofont-5x"></span></p>
+                        <h3 class="py-3">Add Recipe</h3>
+                        <p>
+                            Add Recipes today and watch them grow in popularity, and Appreciated by other foodies.
+                            Enjoy what you do, dowhat you enjoy.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- end of col -->
+
+            <div class="col-sm-4 col-12 hvr-float-shadow">
+                <a href="{% url 'dish_list' %}">
+                    <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-dish">
+                        <p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
+                        <h3 class="py-3">Dish & Recipe</h3>
+                        <p>
+                            Over 3000+ Recipes,contributed by cooking enthusiast and foodies alike. Share your Recipes
+                            and
+                            learn new Recipes.
+                        </p>
+
+                    </div>
+                </a>
+            </div>
+            <!-- end of col -->
+            <div class="col-sm-4 col-12 hvr-float-shadow">
+                <a href="{% url 'blog-home' %}">
+                    <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-community">
+                        <p><span class="icofont icofont-5x icofont-rss-feed" aria-hidden="true"></span></p>
+                        <h3 class="py-3">Community</h3>
+                        <p>
+                            Get in touch with multitude of cooking enthusiast, foodies and expert chefs.
+                            Blog and post anything related to food health and recipes.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- end of col -->
+        </div>
+    </section>
+</section>
+
+
+<!-- details
 <section id="details">
     <section class="container">
         <div class="row">
@@ -216,7 +286,7 @@
             </div>
         </div>
     </section>
-</section>
+</section> -->
 
 <!-- the features section -->
 <section id="features">
@@ -227,7 +297,7 @@
                 <p>What we offer and what you can post about</p>
             </div>
             <div class="col-sm-4">
-                <div class="ft-features hvr-shutter-in-horizontal">
+                <div class="ft-features ">
                     <i class="icofont icofont-1x icofont-culinary"></i>
                     <h3>Dishes</h3>
                     <p>
@@ -236,7 +306,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="ft-features hvr-shutter-in-horizontal">
+                <div class="ft-features">
                     <i class="icofont icofont-cup-cake"></i>
                     <h3>Baking</h3>
                     <p>
@@ -245,7 +315,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="ft-features hvr-shutter-in-horizontal">
+                <div class="ft-features ">
                     <i class="icofont icofont-restaurant"></i>
                     <h3>Dinner</h3>
                     <p>
@@ -254,7 +324,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="ft-features hvr-shutter-in-horizontal">
+                <div class="ft-features ">
                     <i class="icofont icofont-birthday-cake"></i>
                     <h3>Birthdays</h3>
                     <p>
@@ -263,7 +333,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="ft-features hvr-shutter-in-horizontal">
+                <div class="ft-features ">
                     <i class="icofont icofont-blogger"></i>
                     <h3>Blogging</h3>
                     <p>
@@ -272,7 +342,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="ft-features hvr-shutter-in-horizontal ">
+                <div class="ft-features ">
                     <i class="icofont icofont-diners-club"></i>
                     <h3>Events</h3>
                     <p>

@@ -8,9 +8,9 @@
 
 <section class="container" id="blog-container">
     <article class="row">
-        <div class="col-12  col-md-12 col-lg-8">
+        <div class="col-12  col-md-8">
             {% for post in posts %}
-            <div class="row general-style mr-md-2 mb-5">
+            <div class="row general-style mx-md-5 mb-5">
                 <div class="col-sm-8 col-md-8 my-3">
                     <p class="border-bottom">
                         <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
@@ -28,7 +28,7 @@
                         </a>
                     </h4>
                     <p>
-                        {{ post.content|truncatechars:100 }}
+                        {{ post.content|truncatechars:70 }}
                     </p>
                     <!--
                         - the like button
@@ -40,7 +40,7 @@
                 <!--
                     - the product image 
                 -->
-                <div class="col-12 col-sm-4 col-md-4 order-first order-sm-last border-left"
+                <div class="col-12 col-md-4 order-first order-sm-last border-left"
                     style="background-color: #dc3545; padding: 0" ;>
                     {% if post.image %}
                     <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
@@ -51,7 +51,9 @@
         </div>
 
         <!--
+            -
             - Aside section will be here
+            -
         -->
         <aside class="col-sm-3" style="height: 250px; background-color: #FFFFDD;">
 
