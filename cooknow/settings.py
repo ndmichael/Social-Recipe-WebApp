@@ -185,7 +185,6 @@ if not DEBUG:
 
 
 
-
 #django-allauth registraion settings 
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
 ACCOUNT_EMAIL_REQUIRED = True
