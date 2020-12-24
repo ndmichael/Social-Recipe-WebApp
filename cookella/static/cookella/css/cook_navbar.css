@@ -42,7 +42,6 @@
     font-weight: 500;
     font-size: 0.9em;
     color: #dee2e6;
-    opacity: 0.8;
     padding: 20px 7px;
     margin: -20px auto;
     font-family: 'Roboto', sans-serif;
@@ -71,7 +70,7 @@
 /* i just want the nav auth to have different color */
 
 .navbar-light .navbar-nav .nav-item>.nav-auth {
-    color: #dc3545;
+    color: #ffc800;
     font-size: 14px;
     font-weight: 900;
     margin-left: 10px;
@@ -88,7 +87,7 @@
 
 .navbar-light .navbar-nav>.nav-item>a:active,
 .navbar-light .navbar-nav>.nav-item>a:hover {
-    opacity: 1;
+    color: #ffc800;
     transition: background-color 0.2s ease-in;
 }
 
