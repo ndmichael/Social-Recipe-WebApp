@@ -95,22 +95,20 @@
 
 
 @media(max-width: 48em) {
-    .navbar-light {
+    .navbar-expand-lg{
         background-color: rgba(08, 08, 08, 0.8);
         padding: 5px 2px;
+        text-align: center;
         
     }
     .navbar-nav>.nav-item>a:hover {
         background-color: transparent!important;
-        color: #ffc800;
+        color: #dc4535;
     }
      .navbar-nav .nav-item>.nav-link {
-        padding: 50px 0;
+        padding: 30px 0;
         font-weight: 900;
         font-size: 16px;
-    }
-    .navbar-nav .nav-item>.community {
-        color: #e8554e;
-        background-color: transparent !important;
+        color: #dee2e6;
     }
 }
