@@ -8,15 +8,17 @@
 
 .navbar-expand-lg {
     background: rgba(08, 08, 08, 0.65);
+    text-align: center;
     transition: .5s;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
     color: #FFFFFF;
     padding: 20px 10px ;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .scrolled{
