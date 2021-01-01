@@ -13,7 +13,10 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Orbitron', sans-serif; */
+    font-family: 'Tungsten';
+    text-transform: capitalize;
+    letter-spacing: 0.7px;
 }
 
 h1 {
@@ -72,11 +75,12 @@ strong {
 }
 
 .carousel-caption h5 {
-    font-size: 40px;
+    font-size: 100px;
     font-weight: 900;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-top: 25px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Tungsten';
+    letter-spacing: 2px;
     padding-bottom: 15px;
 }
 
@@ -153,14 +157,6 @@ strong {
     margin: 1em auto;
 }
 
-#welcome_section h1 {
-    text-transform: uppercase;
-}
-
-#welcome_section h2 {
-    font-family: 'RopaSans-Regular';
-}
-
 #welcome_section p .icofont {
     background: -moz-linear-gradient(maroon, #dc3545);
     background: -webkit-linear-gradient(maroon, #dc3545);
@@ -206,8 +202,6 @@ strong {
 #mission .join-mission h2 {
     color: #FFFFFF;
     font-weight: 900;
-    font-size: xx-large;
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
@@ -269,12 +263,8 @@ strong {
     text-align: center;
 }
 
-#ft-txt h1 {
-    text-transform: uppercase;
-}
-
 #ft-txt p {
-    color: #ffc800;
+    color: #fff;
 }
 
 #features .ft-features>p {
@@ -388,6 +378,10 @@ span {
 
 /* food details css*/
 
+#recipe-section {
+    margin: 6em auto;
+}
+
 #recipe-section .img-box img {
     width: 100%;
     height: 220px;
@@ -400,10 +394,6 @@ span {
 
 .container .row .col-sm-3 .col-sm-12 {
     padding: 0 !important;
-}
-
-#recipe-section {
-    margin: 4em auto;
 }
 
 #recipe-section p {

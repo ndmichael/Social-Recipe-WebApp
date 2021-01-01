@@ -42,9 +42,12 @@
 }
 
 .navbar-brand {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: rgb(255, 255, 255);
+    font-family: 'Tungsten';
+    letter-spacing: 5px;
+    font-weight: 900;
 }
 
 .navbar-brand:hover {
