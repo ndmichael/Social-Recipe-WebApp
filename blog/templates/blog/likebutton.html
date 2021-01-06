@@ -1,12 +1,21 @@
+{% if request.user.is_authenticated %} 
 {% if request.user in post.likes.all %}
-    <button type="button" id="{{ post.pk }}" data-url="{% url 'like-post' %}" data-csrf="" value="{{ post.pk }}" class="btn border-0 like_btn  text-danger">
+    <button type="button" id="{{ post.pk }}" data-url="{% url 'like-post' %}" data-csrf="" value="{{ post.pk }}" class="btn border-0 text-danger likebtn">
         <i id="icons" class="icofont icofont-thumbs-up icofont-2x"></i>
     </button>
-{% else %}
-    <button type="button" id="{{ post.pk }}" data-url="{% url 'like-post' %}" value="{{ post.pk }}" class="btn border-0 like_btn">
+{% else%}
+    <button type="button" id="{{ post.pk }}" data-url="{% url 'like-post' %}" value="{{ post.pk }}" class="btn border-0 likebtn">
         <i id="icons" class="icofont icofont-thumbs-up icofont-2x"></i>
     </button>
 {% endif %}
+{% else %}
+    <a href="{% url 'account_login' %}"  id="{{ post.pk }}" 
+    data-url="{% url 'like-post' %}" value="{{ post.pk }}" 
+    data-toggle="tooltip" data-placement="top" title="you must be login to like"
+    class="btn border-0">
+        <i id="icons" class="icofont icofont-thumbs-up icofont-2x"></i>
+    </a>
+{% endif %}
 
-<span id="like_count{{post.pk}}" class="like_count mt-3"><b>{{post.like_count}}</b></span>
+<span id="like_count{{post.pk}}" class="like_count mt-3">{{post.like_count}}</span>
 
