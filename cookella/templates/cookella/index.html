@@ -86,8 +86,8 @@
                                     style="min-width: 100%; width: 200px; height: 120px; padding-right: 5px; object-fit: cover;">
                             </div>
                             <div class="p-2" style="width: 100%;">
-                                <h6><b class="text-dark">{{recipe.food_name}}</b></h6>
-                                <h6 class="text-danger"><small>{{recipe.country.name}}</small></h6>
+                                <h5><b class="text-dark">{{recipe.food_name}}</b></h5>
+                                <p class="text-danger"><small>{{recipe.country.name}}</small></p>
                                 <p>{{recipe.contributor}}</p>
                             </div>
                         </a>
@@ -109,7 +109,7 @@
 
             {% for post in posts %}
             <div class="col-md-3 my-5">
-                <div class="h-100" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);">
+                <div class="h-100 hvr-shrink" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);">
                     <a href="" class=" text-dark">
                         {% if post.image %}
                         <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}"
@@ -118,7 +118,7 @@
                         <div class="p-4">
                             <p><b>By</b>: {{ post.author }} </p>
 
-                            <h5 class="py-2"> {{ post.title|truncatechars:50 }} </h5>
+                            <h4 class="py-2"> {{ post.title|truncatechars:50 }} </h4>
                             <p>
                                 {{ post.content|truncatechars:70 }}
                             </p>

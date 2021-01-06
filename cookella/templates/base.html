@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}" />
     <link rel="stylesheet" href="{% static 'flags/sprite-hq.css' %}">
     <link rel="stylesheet" href="{% static 'flags/sprite.css' %}">
+    <link rel="stylesheet" href="{% static 'cookella/css/fonts/Tungsten-SemiBold/style.css' %}" />
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Orbitron&family=Roboto&family=Ubuntu+Condensed&display=swap');
@@ -32,7 +34,7 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=543675512490996"></script>
-    <nav class="navbar navbar-expand-lg fixed-top" >
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'cookella-index' %}">CookElla</a>
             <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,6 +43,7 @@
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span>MENU</span>
                 <span class="" role="button"><i class="fa fa-bars fa-2x" aria-hidden="true"
                         style="color:#dc4535"></i></span>
             </button>
@@ -49,20 +52,21 @@
                 <ul class="navbar-nav mr-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown nav-item nav-auth">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ request.user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'profile' request.user.username %}">
                                 <p>Profile</p>
                             </a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="{% url 'account_logout' %}">Logout </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout </a>
                         </div>
-                      </li>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link nav-auth" href="{% url 'create-post' %}">New Post</a>
-                    </li> 
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">
@@ -138,11 +142,36 @@
     <!-- Latest compiled JavaScript -->
     <script src="{% static "cookella/js/bootstrap.min.js " %}"></script>
 
-    <script src="{% static "cookella/js/main.js" %}">
-        
-
+    <script>
+        $(document).ready(function () {
+            $(".like_btn").click(function (event) {
+                event.preventDefault()
+                var ansid = $(this).attr('id');
+                $.ajax({
+                    url: $(this).data('url'),
+                    type: 'POST',
+                    data: {
+                        'post_id': $('#' + ansid).val(),
+                        'csrfmiddlewaretoken': "{{ csrf_token }}",
+                        'action': 'post'
+                    },
+                    success: function (response) {
+                        $('#like_count' + ansid).html(response['result']);
+                        // console.log(response['stated'])
+                        if (response['flag']) {
+                            $('#' + ansid).addClass('text-danger animated zoomIn');
+                        } else {
+                            $('#' + ansid).removeClass('text-danger animated zoomIn');
+                        }
+                    },
+                    error: function (rs, e) {
+                        console.log(rs.response)
+                    }
+                });
+            });
+        });
     </script>
- 
+
 
     <script>
         $(window).scroll(function () {
