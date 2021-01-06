@@ -1,5 +1,5 @@
 {% if request.user in post.likes.all %}
-    <button type="button" id="{{ post.pk }}" data-url="{% url 'like-post' %}" data-csrf="{{ csrf_token }}" value="{{ post.pk }}" class="btn border-0 like_btn  text-danger">
+    <button type="button" id="{{ post.pk }}" data-url="{% url 'like-post' %}" data-csrf="" value="{{ post.pk }}" class="btn border-0 like_btn  text-danger">
         <i id="icons" class="icofont icofont-thumbs-up icofont-2x"></i>
     </button>
 {% else %}
@@ -7,5 +7,6 @@
         <i id="icons" class="icofont icofont-thumbs-up icofont-2x"></i>
     </button>
 {% endif %}
-<span id="like_count{{post.pk}}" class="like_count mt-2">{{post.like_count}}</span>
+
+<span id="like_count{{post.pk}}" class="like_count mt-3"><b>{{post.like_count}}</b></span>
 
