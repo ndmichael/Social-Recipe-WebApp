@@ -182,7 +182,7 @@ strong {
 }
 
 #mission .mission-class {
-    padding: 5em 2em 3em 0.5em;
+    padding: 6em 2em 3em 0.5em;
 }
 
 #mission .goal-mission {
@@ -194,12 +194,12 @@ strong {
 #mission .join-mission {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.jpg");
     background-size: cover;
-    padding: 8em 5em;
+    padding: 6em 5em;
     text-align: center;
     width: auto;
 }
 
-#mission .join-mission h2 {
+#mission .join-mission h1 {
     color: #FFFFFF;
     font-weight: 900;
     letter-spacing: 1px;

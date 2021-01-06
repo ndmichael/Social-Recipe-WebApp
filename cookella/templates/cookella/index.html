@@ -73,7 +73,7 @@
     <div class="container my-5" id="ft_recipes">
         <div class=" row">
             <div class="col-12 col-md-4 bg_layer">
-                <h3 class=" text-white">Featured Recipes</h3>
+                <h1 class=" text-white">Featured Recipes</h1>
             </div>
             <div class="col-12 col-md-8 py-3 border bg-white">
                 <div class="row">
@@ -104,12 +104,12 @@
     <div class="container-fluid bg-white p-4 p-md-5">
         <div class="row">
             <div class="col-12 col-md-8 my-3 offset-md-2 text-center">
-                <h3 class="">Top Featured Blogs For You</h3>
+                <h1 class="">Top Featured Blogs About Food and Recipes For You</h1>
             </div>
 
             {% for post in posts %}
             <div class="col-md-3 my-5">
-                <div class="h-100 hvr-shrink" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);">
+                <div class="h-100 hvr-shrink" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);">
                     <a href="" class=" text-dark">
                         {% if post.image %}
                         <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}"
@@ -118,7 +118,7 @@
                         <div class="p-4">
                             <p><b>By</b>: {{ post.author }} </p>
 
-                            <h4 class="py-2"> {{ post.title|truncatechars:50 }} </h4>
+                            <h2 class="py-2 h3"> {{ post.title|truncatechars:50 }} </h2>
                             <p>
                                 {{ post.content|truncatechars:70 }}
                             </p>
@@ -138,7 +138,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 goal-mission mission-class">
-                <h1>Who we are and What we do?</h1>
+                <h2>Who we are and What we do?</h2>
                 <p>
                     A community where you can post on a variety of topics related to Food, Health, and Recipes. We
                     provide Cooking Enthusiasts, Food Experts, and Users a user profile, Recipes page, and a blogging
@@ -156,7 +156,7 @@
                 </p>
             </div>
             <div class="col-sm-6 join-mission mission-class">
-                <h2>Join Us For Free <br /> Today</h2>
+                <h1>Join Our Awesome Community Today For Free </h1>
                 <p>Register Today and Enjoy all our exciting features</p> <br />
                 <p>
                     <a href="{% url 'account_signup' %}">
