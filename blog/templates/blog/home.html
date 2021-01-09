@@ -14,28 +14,29 @@
             <div class="row">
                 <div class="col-sm-8 col-md-7">
                     <div class="p-3">
-                    <p class="border-bottom">
-                        <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
-                            alt="..." />
-                        <a href="{% url 'profile' post.author.username %}" class="mr-4">
-                            <span>
-                                {{ post.author }}
-                            </span>
-                        </a>
-                        <small>{{ post.date_created|date:"F d, Y" }}</small>
-                    </p>
-                    <h1 class="h2">
-                        <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">
-                            {{ post.title|truncatechars:70 }}
-                        </a>
-                    </h1>
-                    <p>
-                        <small>{{ post.content|truncatechars:100 }}</small>
-                    </p>
+                        <p class="border-bottom">
+                            <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
+                                alt="..." />
+                            <a href="{% url 'profile' post.author.username %}" class="mr-4">
+                                <span>
+                                    {{ post.author }}
+                                </span>
+                            </a>
+                            <small>{{ post.date_created|date:"F d, Y" }}</small>
+                        </p>
+                        <h1 class="h2">
+                            <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">
+                                {{ post.title|truncatechars:70 }}
+                            </a>
+                        </h1>
+                        <p>
+                            <small>{{ post.content|truncatechars:100 }}</small>
+                        </p>
+                    
                     <!--
                         - the like button
                     -->
-                    <div id="like_button" class=" d-flex justify-content-left align-items-end">
+                    <div id="like_button" class="">
                         {% include "blog/likebutton.html" %}
                     </div>
                 </div>
@@ -44,7 +45,7 @@
                     - the product image 
                 -->
                 <div class="col-12 col-md-5 order-first order-sm-last p-0">
-                    <div style="background-color: #dc3545; padding: 0; width: 100%; height: inherit;">
+                    <div style="background-color: #dc3545; padding: 0; width: 100%; height: 100%;">
                         {% if post.image %}
                         <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
                         {% endif %}
@@ -62,7 +63,12 @@
             -
         -->
         <aside class="col-sm-3" style="height: 250px; background-color: #FFFFDD;">
-
+            <div class="form w-100 py-3">
+                <form class=" form-inline " method="GET" action="{% url 'post_search' %}" >
+                    <input class="form-control form-control-lg p-2" type="search" name="search" placeholder="title author username" />
+                    <button type="submit" class="btn btn-outline-danger my-2">Search Post</button>
+                </form>
+            </div>
         </aside>
     </article> <!-- end of outter container row  -->
 

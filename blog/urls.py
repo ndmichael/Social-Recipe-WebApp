@@ -5,8 +5,10 @@ from blog import views as blog_views
 
 
 
+
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
+    path ('search/', blog_views.post_search, name="post_search"),
     path('post/<int:pk>/<year>/<slug:title>/', PostDetailView.as_view(), name='post-detail'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/new/', PostCreateView.as_view(), name='create-post'),

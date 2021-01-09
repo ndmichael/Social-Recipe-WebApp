@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class=" row mb-3">
+        <div class="col-12 col-md-6">
+            <div class="mt-5 py-1">
+                <form method="GET">
+                    {{ form|crispy }}
+                </form>
+            </div>
+        </div>
+        <div class="col-12">
+            {% if q %}
+            <h1>Post containing {{q}} </h1>
+            {% with results.count as total_result %}
+            <p>Found {{ total_result }} result{{ total_result|pluralize }}</p>
+            {% endwith %}
+            {% endif %}
+        </div>
+    </div>
+        <div class="row">
+            {% for post in results %}
+            <div class="col-4">
+                <div class="h-100 hvr-shrink"
+                    style="box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25); overflow: hidden; border-radius: 20px 0;">
+                    <a href="" class=" text-dark">
+                        {% if post.image %}
+                        <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}"
+                            style="height: 270px; width: 100%; object-fit: cover; object-position: center;">
+                        {% endif %}
+                        <div class="p-4">
+                            <p><b>By</b>: {{ post.author }} </p>
+
+                            <h2 class="py-2 h3"> {{ post.title|truncatechars:50 }} </h2>
+                            <p>
+                                {{ post.content|truncatechars:70 }}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

@@ -9,6 +9,8 @@ from django.http import JsonResponse, HttpResponse
 from django.template.loader import render_to_string
 from django.views.generic import View
 from django.contrib.auth.decorators import login_required
+from .forms import PostSearchForm
+from django.db.models import Q
 
 
 class PostListView(ListView):
@@ -96,6 +98,27 @@ def post_like(request):
     return HttpResponse("Error access denied")
 
 
+def post_search (request):
+    form = PostSearchForm()
+    q = ''
+    results = []
+    query = Q()
 
+    if 'search' in request.GET:
+        form = PostSearchForm (request.GET)
+        if form.is_valid():
+            q = form.cleaned_data['search']
+
+            if q is not None:
+                query &= Q(title__contains=q)
+            results = Post.objects.filter(query)
+
+    context = {
+        'form': form,
+        'q': q,
+        'results': results,
+    }
+
+    return render(request, 'blog/search.html', context)
 
 
