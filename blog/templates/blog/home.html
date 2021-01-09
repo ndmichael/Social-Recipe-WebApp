@@ -10,8 +10,10 @@
     <article class="row">
         <div class="col-12  col-md-8">
             {% for post in posts %}
-            <div class="row general-style mx-md-5 mb-5">
-                <div class="col-sm-8 col-md-8 my-3">
+            <div class=" general-style mx-md-4 mb-5">
+            <div class="row">
+                <div class="col-sm-8 col-md-7">
+                    <div class="p-3">
                     <p class="border-bottom">
                         <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
                             alt="..." />
@@ -22,31 +24,35 @@
                         </a>
                         <small>{{ post.date_created|date:"F d, Y" }}</small>
                     </p>
-                    <h4>
+                    <h1 class="h2">
                         <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">
-                            {{ post.title|truncatechars:50 }}
+                            {{ post.title|truncatechars:70 }}
                         </a>
-                    </h4>
+                    </h1>
                     <p>
-                        {{ post.content|truncatechars:70 }}
+                        <small>{{ post.content|truncatechars:100 }}</small>
                     </p>
                     <!--
                         - the like button
                     -->
-                    <div id="like_button">
+                    <div id="like_button" class=" d-flex justify-content-left align-items-end">
                         {% include "blog/likebutton.html" %}
                     </div>
+                </div>
                 </div>
                 <!--
                     - the product image 
                 -->
-                <div class="col-12 col-md-4 order-first order-sm-last border-left"
-                    style="background-color: #dc3545; padding: 0" ;>
-                    {% if post.image %}
-                    <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
-                    {% endif %}
+                <div class="col-12 col-md-5 order-first order-sm-last p-0">
+                    <div style="background-color: #dc3545; padding: 0; width: 100%; height: inherit;">
+                        {% if post.image %}
+                        <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
+                        {% endif %}
+                    </div>
+                    
                 </div>
             </div>
+        </div>
             {% endfor %}
         </div>
 
