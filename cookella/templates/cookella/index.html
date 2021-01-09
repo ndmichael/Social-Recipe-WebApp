@@ -109,7 +109,7 @@
 
             {% for post in posts %}
             <div class="col-md-3 my-5">
-                <div class="h-100 hvr-shrink" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);">
+                <div class="h-100 hvr-shrink" style="box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25); overflow: hidden; border-radius: 20px 0;">
                     <a href="" class=" text-dark">
                         {% if post.image %}
                         <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}"
@@ -297,7 +297,7 @@
                 <p>What we offer and what you can post about</p>
             </div>
             <div class="col-sm-4">
-                <div class="ft-features ">
+                <div class="ft-features">
                     <i class="icofont icofont-1x icofont-culinary"></i>
                     <h3>Dishes</h3>
                     <p>
