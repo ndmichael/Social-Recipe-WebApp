@@ -7,6 +7,11 @@ body {
     background-color: #f8f9fa;
 }
 
+.container-fluid {
+	padding-left: 7em;
+	padding-right: 7em;
+}
+
 h1,
 h2,
 h3,
@@ -431,6 +436,10 @@ span {
 }
 
 @media(max-width: 48em) {
+.container-fluid {
+    padding: 10px;
+}
+
     .carousel-item{
         min-height: 95vh;
     }
