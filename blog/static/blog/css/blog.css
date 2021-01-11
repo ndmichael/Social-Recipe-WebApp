@@ -3,7 +3,8 @@
 
 
 #blog-container{
-	margin: 6em auto;
+	margin: 5em auto;
+
 }
 
 /* #like_button {
@@ -11,16 +12,13 @@
 } */
 
 .general-style{
-	background-color: #fff;
+	/* background-color: #fff; */
+	width: 100%;
 	border-radius: 20px 0;
 	overflow: hidden;
 	color: black;
-	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .15);
-	transition: box-shadow .5s;
-}
-
-#blog-container .general-style span{
-	color: #000000 !important;
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .15);
+	transition: box-shadow .2s;
 }
 
 #asideside{
@@ -30,12 +28,12 @@
 }
 
 #blog-container .header_link{
-	color: #dc3545;
-	/* color: #080808; */
+	/* color: #dc3545; */
+	color: #080808;
 }
 
 #blog-container .general-style .header_link:hover{
-	color: #080808 !important;
+	color: #dc3545 !important;
 }
 
 
@@ -54,12 +52,13 @@
 .general-style .product-img{
 	object-fit: cover;
 	object-position: center;
-	height:320px;
+	height:312px;
 	width: 100%;
 }
 
 .general-style:hover{
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .25);
+	background: white;
 	
 }
 
