@@ -7,6 +7,9 @@ from django.views.generic import (ListView,
                                   DetailView, CreateView)
 from .forms import FoodTypeForm, FoodRecipeForm
 from django.http import HttpResponse
+from .forms import RecipeSearchForm
+from django.db.models import Q
+from django.contrib.postgres.search import SearchVector, SearchQuery
 
 
 # Create your views here.
@@ -90,3 +93,24 @@ def recipeUpdateView(request, pk, slug):
         'r_form': r_form,
     }
     return render(request, 'cookella/update_recipe.html', context)
+
+
+
+def recipe_search (request):
+    form = RecipeSearchForm()
+    q = ''
+    results = []
+
+
+    if 'search' in request.GET:
+        form = RecipeSearchForm (request.GET)
+        if form.is_valid():
+            q = form.cleaned_data['search']
+
+            results = FoodType.objects.annotate (search=SearchVector('food_name','country.name'),).filter(search=SearchQuery(q))
+    context = {
+        'form': form,
+        'q': q,
+        'results': results,
+    }
+    return render(request, 'cookella/search.html', context)
