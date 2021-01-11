@@ -15,3 +15,6 @@ class FoodRecipeForm(forms.ModelForm):
     class Meta:
         model = FoodRecipe
         fields = ['ingredient', 'recipe', 'note']
+
+class RecipeSearchForm (forms.Form):
+    search = forms.CharField ();
