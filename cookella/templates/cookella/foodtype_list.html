@@ -16,7 +16,7 @@
                                     </div>
                                 {% endif %}
                                 <div class="recipe-detail">
-                                    <h6 class="text-muted">{{ dish.country.name }} <i
+                                    <h6 class="text-muted">{{ dish.country }} <i
                                         class="{{ dish.country.flag_css }}"></i>
                                     </h6>
                                     <h5>
@@ -36,10 +36,13 @@
                     {% endfor %}
                 </div>   
             </div>
-            <aside class="col-12 col-md-3" >
-                <div style="width: 100%; height: 600px; background-color: #ffc800;">
-
-                </div>
+            <aside class="col-12 col-md-3" style="width: 100%; height: 600px; background-color: #ffc800;">
+                    <div class="form w-100 py-3">
+                        <form class=" form-inline " method="GET" action="{% url 'recipe_search' %}" >
+                            <input class="form-control form-control-lg p-2 col-12" type="search" name="search" placeholder="title content" />
+                            <button type="submit" class="btn btn-outline-danger my-2">Search Post</button>
+                        </form>
+                    </div>
             </aside>
         </div>
 

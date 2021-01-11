@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class=" row mb-3">
+        <div class="col-12 col-md-6">
+            <div class="mt-5 py-1">
+                <form method="GET">
+                    {{ form|crispy }}
+                </form>
+            </div>
+        </div>
+        <div class="col-12">
+            {% if q %}
+            <h1>Recipes containing {{q}} </h1>
+            {% with results.count as total_result %}
+            <p>Found {{ total_result }} result{{ total_result|pluralize }}</p>
+            {% endwith %}
+            {% endif %}
+        </div>
+    </div>
+        <div class="row">
+            {% for dish in results %}
+            <div class="col-3">
+                <div class="recipe-wrapper h-100">
+                    {% if dish.food_image %}
+                        <div class="img-box border-bottom">
+                            <img src="{{ dish.food_image.url }}" class="img-fluid"/>
+                        </div>
+                    {% endif %}
+                    <div class="recipe-detail">
+                        <h6 class="text-muted">{{ dish.country.name }} <i
+                            class="{{ dish.country }}"></i>
+                        </h6>
+                        <h5>
+                            {{ dish.food_name }}
+                        </h5>
+                        <p><strong>By:</strong> {{ dish.contributor }}</p>
+                        <a href="{%  url 'recipes' dish.pk dish.slug %}" >
+                            <button type="button" class="btn btn-danger btn-block btn-lg rounded-0">
+                                Cook Now
+                            </button>
+                        </a>
+
+                    </div>
+                        
+            </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

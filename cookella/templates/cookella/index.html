@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
+
 <div id="carouselExampleIndicators" class="carousel" data-ride="carousel" data-interval="false">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -113,9 +114,9 @@
                     <a href="" class=" text-dark">
                         {% if post.image %}
                         <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}"
-                            style="height: 270px; width: 100%; object-fit: cover; object-position: center;">
+                            style="height: 200px; width: 100%; object-fit: cover; object-position: center;">
                         {% endif %}
-                        <div class="p-4">
+                        <div class="p-3">
                             <p><b>By</b>: {{ post.author }} </p>
 
                             <h2 class="py-2 h3"> {{ post.title|truncatechars:50 }} </h2>
