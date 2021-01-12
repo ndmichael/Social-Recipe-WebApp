@@ -8,13 +8,13 @@
 
 <section class="container-fluid" id="blog-container">
     <article class="row">
-        <div class="col-12  col-md-8">
+        <div class="col-12 col-md-7 offset-md-1 mx-auto">
             {% for post in posts %}
-            <div class=" general-style bg-white mx-auto mx-md-2 mb-5">
+            <div class=" general-style border-bottom my-5">
             <div class="row">
                 <div class="col-sm-8 col-md-7">
                     <div class="p-3" style="margin-right: -20px;">
-                        <p class="border-bottom">
+                        <p class="">
                             <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
                                 alt="..." />
                             <a href="{% url 'profile' post.author.username %}" class="mr-4 text-dark">
@@ -48,6 +48,8 @@
                     <div>
                         {% if post.image %}
                         <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
+                        {% else %}
+                            <img src="/media/1.png" alt="no thumbnail" class="img-fluid product-img" />
                         {% endif %}
                     </div>
                     
@@ -62,8 +64,8 @@
             - Aside section will be here
             -
         -->
-        <aside class="col-sm-3 mx-auto" style="height: 250px; background-color: #FFFFDD;">
-            <div class="form w-100 py-3">
+        <aside class="col-sm-3 mx-auto" style="height: auto; background-color: #FFFFDD;">
+            <div class="form py-3">
                 <form class=" form-inline " method="GET" action="{% url 'post_search' %}" >
                     <input class="form-control form-control-lg p-2 col-12" type="search" name="search" placeholder="title content" />
                     <button type="submit" class="btn btn-outline-danger my-2">Search Post</button>
