@@ -50,7 +50,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     {% if user.is_authenticated %}
-                    <li class="nav-item dropdown nav-item nav-auth">
+                    <li class="nav-item dropdown nav-item nav-auth pt-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ request.user.username }}
@@ -64,7 +64,11 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-auth" href="{% url 'create-post' %}">New Post</a>
+                        <a class="nav-link" href="{% url 'create-post' %}">
+                            <button class="btn btn-danger">
+                                WRITE POST
+                            </button>
+                        </a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -125,22 +129,18 @@
     <footer class="container-fluid static-bottom" id="footer-id">
         <div class="row">
             <div class="col-sm-12">
-                <p>Copyright &#64; 2020 Alright reserved <br />
-
+                <p>Copyright &#64; 2020 nokrecipes, all rights reserved<br />
                     <a href="https://ndmichael.github.io/ndmichael/" , target="_blank">
-                        <small> want to know more about the developer?. visit </small> my portfolio.
+                        <small> built on django?. visit </small> my portfolio.
                     </a>
                 </p>
             </div>
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
-    </script>
     <!-- jQuery library -->
     <script src="{% static "cookella/js/jquery-3.4.1.min.js " %}"></script>
-
-
+    
     <!-- Latest compiled JavaScript -->
     <script src="{% static "cookella/js/bootstrap.min.js " %}"></script>
 
@@ -153,7 +153,7 @@
                     url: $(this).data('url'),
                     type: 'POST',
                     data: {
-                        'post_id': $('#' + ansid).val(),
+                        'post_id': ansid,
                         'csrfmiddlewaretoken': "{{ csrf_token }}",
                         'action': 'post'
                     },
