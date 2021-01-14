@@ -17,7 +17,7 @@ from django.contrib.postgres.search import SearchVector, SearchQuery
 
 def index(request):
     ft_recipes = FoodType.objects.all().order_by('date_added')[:4]
-    posts = Post.objects.all().order_by('-like_count')[:4]
+    posts = Post.objects.all().order_by('-like_count')[:6]
     return render(request, 'cookella/index.html', {'title': 'home', 'ft_recipes': ft_recipes, 'posts': posts })
 
 
