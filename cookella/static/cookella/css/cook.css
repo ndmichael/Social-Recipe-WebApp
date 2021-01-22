@@ -358,7 +358,7 @@ span {
 
 .form-override {
     background-color: #fff;
-    margin: 5em auto;
+    margin: 7.5em auto;
     padding: 20px;
     font-weight: 550;
     box-shadow: 0 5px 10px rgba(08, 08, 08, .25);
@@ -370,7 +370,7 @@ span {
 }
 
 .message-override {
-    margin: 4.5em auto -5em auto;
+    margin: 6em auto -5em auto;
     text-align: center;
 }
 
