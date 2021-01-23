@@ -191,7 +191,6 @@ if not DEBUG:
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
-
 )
 
 
@@ -207,6 +206,8 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
 
 #or any other page 
 ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
+
+ACCOUNT_FORMS = {'signup': 'users.forms.SelfSignUpForm'}
 
 django_heroku.settings(locals())
 
