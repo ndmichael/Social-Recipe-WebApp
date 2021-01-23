@@ -29,7 +29,7 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- facebook fdk -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
@@ -37,10 +37,9 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <span>
-                <i class="icofont icofont-chef icofont-2x text-danger"></i>
                 <a class="navbar-brand" href="{% url 'cookella-index' %}">CookElla</a>
             </span>
-            
+
             <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button> -->
@@ -48,8 +47,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="" role="button">
-                    <i class="fa fa-bars fa-2x" aria-hidden="true"
-                        style="color:#dc4535"></i>
+                    <i class="fa fa-bars fa-2x" aria-hidden="true" style="color:#dc4535"></i>
                 </span>
             </button>
 
@@ -126,13 +124,14 @@
         </div>
     </div>
     {% endif %}
-    {% block content %} 
-    {% endblock %} 
+    {% block content %}
+    {% endblock %}
     {% block comment %} {% endblock comment %}
 
 
     <!-- footer of the website -->
-    <footer class="container-fluid static-bottom" id="footer-id">
+
+    <footer class="container-fluid" id="footer-id">
         <div class="row">
             <div class="col-sm-12">
                 <p>Copyright &#64; 2020 nokrecipes, all rights reserved<br />
@@ -144,9 +143,10 @@
         </div>
     </footer>
 
+
     <!-- jQuery library -->
     <script src="{% static "cookella/js/jquery-3.4.1.min.js " %}"></script>
-    
+
     <!-- Latest compiled JavaScript -->
     <script src="{% static "cookella/js/bootstrap.min.js " %}"></script>
 
