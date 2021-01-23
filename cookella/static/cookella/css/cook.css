@@ -361,7 +361,7 @@ span {
     margin: 7.5em auto 3.5em auto;
     padding: 20px;
     font-weight: 550;
-    box-shadow: 0 3px 20px rgba(08, 08, 08, .25);
+    box-shadow: 0 3px 10px rgba(08, 08, 08, .25);
     border-radius: 10px 20px;
 
 }
