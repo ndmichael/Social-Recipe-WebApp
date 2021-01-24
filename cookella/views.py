@@ -107,7 +107,7 @@ def recipe_search (request):
         if form.is_valid():
             q = form.cleaned_data['search']
 
-            results = FoodType.objects.annotate (search=SearchVector('food_name','country.name'),).filter(search=SearchQuery(q))
+            results = FoodType.objects.annotate (search=SearchVector('food_name',),).filter(search=SearchQuery(q))
     context = {
         'form': form,
         'q': q,
