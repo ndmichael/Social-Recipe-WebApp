@@ -17,7 +17,7 @@
 
 .navbar-expand-lg .navbar-nav .nav-link {
     color: #080808;
-    padding: 20px 10px ;
+    padding: 15px 10px ;
     text-transform: uppercase;
     font-weight: 400;
 }
@@ -102,7 +102,7 @@
         color: #dc4535;
     }
      .navbar-nav .nav-item>.nav-link {
-        padding: 30px 0;
+        padding: 20px 0;
         font-weight: 900;
         font-size: 16px;
         color: #dee2e6;
