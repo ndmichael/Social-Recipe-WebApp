@@ -183,6 +183,7 @@ strong {
 #mission {
     margin: 0 auto 0 auto;
     background: #e9ecef;
+    width: 100%;
 }
 
 #mission .mission-class {
@@ -373,6 +374,7 @@ span {
 .message-override {
     margin: 6em auto -5em auto;
     text-align: center;
+    width: 100%;
 }
 
 #food_recipe {
