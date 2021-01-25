@@ -21,7 +21,7 @@ class FoodType(models.Model):
     )
     food_name = models.CharField(max_length=50, null=False)
     country = CountryField(blank_label="(select a country)",)
-    food_image = models.ImageField(upload_to='food_photos', default='default.jpg')
+    food_image = models.ImageField(upload_to='food_photos', default='default.jpg', )
     slug = models.SlugField(max_length=100, unique_for_date='date_added')
     active = models.BooleanField(default=True)
     date_added = models.DateTimeField(default=timezone.now)

@@ -8,7 +8,7 @@ from PIL import Image
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     details = models.TextField(max_length=200, default='No profile details set yet by the user')
-    image = models.ImageField(default='avatar.png', upload_to='profile_pics/')
+    image = models.ImageField(default='avatar.png', upload_to='profile_pics/', blank=True, null=True)
 
     @property
     def photo_url(self):
