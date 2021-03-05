@@ -70,13 +70,13 @@
     </a>
 </div>
 
-<section>
+<section class="bg-white">
     <div class="container my-5" id="ft_recipes">
         <div class=" row">
             <div class="col-12 col-md-4 bg_layer">
                 <h1 class=" text-white">Featured Recipes</h1>
             </div>
-            <div class="col-12 col-md-8 py-3 border bg-white">
+            <div class="col-12 col-md-8 py-3 border ">
                 <div class="row">
                     {% for recipe in ft_recipes %}
                     <div class="col-12 col-sm-6">
@@ -101,7 +101,7 @@
 </section>
 
 <!-- block section -->
-<div class=" bg-white">
+<div class="">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2 my-5 text-center">
@@ -110,26 +110,34 @@
 
             {% for post in posts %}
             <div class="col-md-4 mb-5">
-                <div class="h-100 border-bottom">
-                    <a href="" class="text-dark hvr-shrink " style="width: 100%;">
-                        {% if post.image %}
-                        <img src="{{post.image.url}}"  class="img-fluid product-img" alt="{{post.title}}"
-                            style="height: 220px; width: 100% !important; object-fit: cover; object-position: center; border-radius: 10px 0;">
-                        {% else %}
-                            <img src="{% static "blog/images/blogdefault.png" %}" alt="no thumbnail" 
-                            
-                            style="height: 220px; width: 100%; object-fit: cover; object-position: center;" />
-                        {% endif %}
-                        <div class="px-4 pt-4">
-                            <p><b>By</b>: {{ post.author }} </p>
+                <!-- <div class="h-100 w-100 border bg-danger"> -->
+                <a href="" class="text-dark  bg-white hvr-shrink"
+                    style="width: 100%; height: 100%; border-radius: 20px 0; ">
+                    {% if post.image %}
 
-                            <h2 class="py-2 h3"> {{ post.title|truncatechars:70 }} </h2>
+                    <img src="{{post.image.url}}" class="img-fluid product-img p-0" alt="{{post.title}}"
+                        style="height: 240px; width: 100% !important; object-fit: cover; ">
+
+                    {% else %}
+                    <img src="{% static "blog/images/blogdefault.png" %}" alt="no thumbnail"
+                        style="height: 240px; width: 100%; object-fit: cover; object-position: center;" />
+                    {% endif %}
+                        <div class="py-4 px-4">
+                            <h2 class="h3 py-2"> {{ post.title|truncatechars:70 }} </h2>
                             <p>
                                 {{ post.content|truncatechars:100 }}
                             </p>
                         </div>
-                    </a>
-                </div>
+    
+                        <div class=" d-flex justify-content-between align-items-end flex-grow-1 border-top pt-3 px-4 ">
+                            <p><i class="icofont icofont-ui-user text-danger"></i> {{ post.author }} </p>
+                            <p><i class="icofont icofont-ui-calendar text-info"></i> {{ post.date_created|date:"M d, Y"  }}
+                            </p>
+                        </div>
+
+
+                </a>
+                <!-- </div> -->
             </div>
             {% endfor %}
         </div>
@@ -144,9 +152,10 @@
             <div class="col-sm-6 goal-mission mission-class">
                 <h2>Who we are and What we do?</h2>
                 <p>
-                    A Social community where you can post on a variety of topics related to Food, Health, and Recipes. We
+                    A Social community where you can post on a variety of topics related to Food, Health, and Recipes.
+                    We
                     provide Cooking Enthusiasts, and Food Experts a profile, Recipes page, and a blogging
-                    system, where every registered user is a blogger.  <br />
+                    system, where every registered user is a blogger. <br />
                     <strong>Gain the recognition you deserve today!!!</strong> <br />
                     <br />
                     <a href="{% url 'cookella-about' %}">
@@ -353,7 +362,7 @@
                     <i class="icofont icofont-diners-club"></i>
                     <h3>Events Planning &amp; Tips</h3>
                     <p>
-                        Here you can find tips for event planning or get to meet clients 
+                        Here you can find tips for event planning or get to meet clients
                         who are ready to hire your service.
                     </p>
                 </div>
