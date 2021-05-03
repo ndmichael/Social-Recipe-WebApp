@@ -38,7 +38,7 @@
         </div>
 
         <div class="carousel-item drk">
-            <img src="{% static "cookella/images/cheffslide1.jpg" %}" class="mx-auto d-block w-100" alt="...">
+            <img src="{% static 'cookella/images/cheffslide1.jpg' %}" class="mx-auto d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 class="animated  lightSpeedIn" style=" animation-delay: 1s;">Join our Community</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
@@ -124,9 +124,7 @@
                     {% endif %}
                         <div class="py-4 px-4">
                             <h2 class="h3 py-2"> {{ post.title|truncatechars:70 }} </h2>
-                            <p>
-                                {{ post.content|truncatechars:100 }}
-                            </p>
+                            
                         </div>
     
                         <div class=" d-flex justify-content-between align-items-end flex-grow-1 border-top pt-3 px-4 ">
