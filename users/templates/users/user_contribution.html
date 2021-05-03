@@ -3,82 +3,73 @@
 
 
 {% block content %}
-<section class="container" id="user-recipes">
-    <div class="col-12 col-md-12 center my-5">
-        <h1 style="text-align: center;">{{ view.kwargs.username }} has {{ page_obj.paginator.count }} total
-            Contributions</h1>
+
+<section class="container" id="user-recipes" style="padding: 4em;">
+    <div class="row pb-3">
+        <div class="col-12 offset-2 col-md-8">
+            <h1>{{ view.kwargs.username }} has {{ page_obj.paginator.count }} total
+                Contributions
+            </h1>
+        </div>
     </div>
 
     <div class="row">
-        {% for dish in object_list %}
-        <!-- <a href="{%  url 'recipes' dish.pk dish.slug %}"> -->
-        <div class="col-12 col-md-6">
-            <div class="border rounded m-2 p-3" style="background: white;">
-                <div class="row h-100">
-                    <div class="col-12 col-md-4">
-                        {% if dish.food_image %}
-                        <img src="{{ dish.food_image.url }}" class="img-fluid rounded-circle mx-auto w-100"
-                            style="height:150px; width:150px;" />
-                        {% endif %}
-                    </div>
-                    <div class="col-12 col-md-8">
-                        <div class="mt-2">
-                            <p class="text=black">
-                                <a href="{% url 'profile' dish.contributor %}" class=" text-dark">
-                                    <b>{{ dish.contributor }}</b>
-                                    <small>{{ dish.country.name }} <i class="{{ dish.country.flag_css }}"></i></small>
-
+        <div class=" col-12 col-md-8 offset-lg-2">
+            <table class="table table-striped table-sm table-responsive-sm">
+                <caption>List of Recipes Contributions</caption>
+                <tbody>
+                    {% for dish in object_list %}
+                    <tr class="p-3">
+                        <td scope="row">
+                            {% if dish.food_image %}
+                            <img src="{{ dish.food_image.url }}" class="img-fluid rounded-circle mx-auto"
+                                style="height:70px; width:70px;" />
+                            {% endif %}
+                        </td>
+                        <td>
+                            <p>{{ dish.food_name }}</p>
+                            <small class=" text-muted">
+                                {{ dish.country.name }} 
+                                <i class="{{ dish.country.flag_css }}"></i>
+                            </small>
+                        </td>
+                        <td>
+                            {% if dish.contributor == user.username %}
+                            
+                                <a href="{% url "recipe-update" dish.pk dish.slug %}" 
+                                class="btn btn-warning mt-3">
+                                    <span class="icofont icofont-ui-edit text-dark "></span>
                                 </a>
-                                <small class=" pull-right">{{ dish.date_added|date:"F d, Y" }}</small>
-                            </p>
 
-                            <div class="border-bottom">
-                                <h4>
-                                    {{ dish.food_name }}
-                                </h4>
-                                    {% if dish.contributor == user.username %}
-                                    <a href="{% url "recipe-update" dish.pk dish.slug %}"
-                                        class="icofont icofont-ui-edit text-dark pull-right" style="font-size:20px;">
-                                        <small class=" text-black-50">Edit</small>
-                                    </a>
-                                    {% endif %}
-                                
-
-                            </div>
-                        </div>
-                        <div id="like_button" class="pt-4">
-                            {% include "blog/likebutton.html" %}
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-        <!-- </a> -->
-
-        {% endfor %}
     </div>
 
-
-    <div class="offset-sm-2">
-        {% if is_paginated %}
-        {% if page_obj.has_previous %}
-        <a class="btn btn-outline-primary" href="?page=1">First</a>
-        <a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
-        {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-        <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-        <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a class="btn btn-outline-primary" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-        {% endif %}
-        {% endif %}
+    <div class="row">
+        <div class="offset-sm-3 col-6">
+            {% if is_paginated %}
+            {% if page_obj.has_previous %}
+            <a class="btn btn-outline-primary" href="?page=1">First</a>
+            <a class="btn btn-outline-primary" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <a class="btn btn-primary btn" href="?page={{ num }}">{{ num }}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+            <a class="btn btn-outline-primary" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <a class="btn btn-outline-primary" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-outline-primary" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+            {% endif %}
+        </div>
     </div>
 </section> <!-- end of container wrapper -->
 
