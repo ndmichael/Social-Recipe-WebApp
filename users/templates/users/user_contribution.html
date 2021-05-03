@@ -15,7 +15,7 @@
 
     <div class="row">
         <div class=" col-12 col-md-8 offset-lg-2">
-            <table class="table table-striped table-sm table-responsive-sm">
+            <table class="table table-striped  table-responsive-sm">
                 <caption>List of Recipes Contributions</caption>
                 <tbody>
                     {% for dish in object_list %}
@@ -37,7 +37,7 @@
                             {% if dish.contributor == user.username %}
                             
                                 <a href="{% url "recipe-update" dish.pk dish.slug %}" 
-                                class="btn btn-warning mt-3">
+                                class="btn btn-warning mt-3" data-toggle="tooltip" title="edit" data-placement="bottom">
                                     <span class="icofont icofont-ui-edit text-dark "></span>
                                 </a>
 
