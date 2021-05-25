@@ -4,11 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?&family=Orbitron&display=swap');
-
-
 .navbar-expand-lg {
-    background: transparent !important;
-    box-shadow: 0 2px 10px rgba(08,08,08, 0.3);
+    background: transparent;
+    box-shadow: 0 2px 10px rgba(08, 08, 08, 0.3);
     text-align: center;
     transition: .5s;
     padding: 0;
@@ -17,12 +15,12 @@
 
 .navbar-expand-lg .navbar-nav .nav-link {
     color: #080808;
-    padding: 15px 10px ;
+    padding: 15px 10px;
     text-transform: uppercase;
     font-weight: 400;
 }
 
-.scrolled{
+.scrolled {
     display: inline-block;
     height: auto;
     background: #FFFFFF;
@@ -79,19 +77,17 @@
     transition: background-color 0.2s ease-in;
 }
 
-
 @media(max-width: 48em) {
     .navbar-nav>.nav-item>a:hover {
         background-color: transparent!important;
         color: #dc4535;
     }
-     .navbar-nav .nav-item>.nav-link {
+    .navbar-nav .nav-item>.nav-link {
         padding: 20px 0;
         font-weight: 900;
         font-size: 16px;
         color: #080808;
     }
-
     .navbar-brand {
         padding: 0 0 0 5px !important;
         font-weight: 900;

@@ -18,25 +18,20 @@
                 </p>
 
                 <p class="animated zoomIn pt-4" style=" animation-delay: 1s;">
-                    <a href="{% url 'dish_list' %}" class="d-inline-block mb-2">
-                        <button class="btn btn-danger  btn-lg">
-                            View Recipe
-                        </button>
+                    <a href="{% url 'dish_list' %}" class="d-inline-block mb-2 mb-md-0 btn btn-danger rounded-pill  btn-lg shadow-sm">
+                        View Recipe
                     </a>
-
                     <!-- <span class="d"></span> -->
 
-                    <a href="{% url 'cookella-add-recipe'%}">
-                        <button class="btn btn-light  btn-lg">
-                            Add Recipe
-                        </button>
+                    <a href="{% url 'cookella-add-recipe'%}" class="btn btn-light rounded-pill btn-lg shadow-sm ">
+                        Add Recipe
                     </a>
                 </p>
 
             </div>
         </div>
 
-        <div class="carousel-item drk">
+        <div class="carousel-item drk con">
             <img src="{% static 'cookella/images/cheffslide1.jpg' %}" class="mx-auto d-block w-100" alt="...">
             <div class="carousel-caption">
                 <h5 class="animated  lightSpeedIn" style=" animation-delay: 1s;">Join our Community</h5>
@@ -46,7 +41,7 @@
                 </p>
                 <p class="animated zoomIn pt-3" style=" animation-delay: 1s;">
                     <a href="{% url 'blog-home' %}">
-                        <button class="btn btn-warning btn-lg">
+                        <button class="btn btn-warning btn-lg ">
                             REGISTER FREE
                         </button>
                     </a>
@@ -121,16 +116,16 @@
                     <img src="{% static "blog/images/blogdefault.png" %}" alt="no thumbnail"
                         style="height: 240px; width: 100%; object-fit: cover; object-position: center;" />
                     {% endif %}
-                        <div class="py-4 px-4">
-                            <h2 class="h3 py-2"> {{ post.title|truncatechars:70 }} </h2>
-                            
-                        </div>
-    
-                        <div class=" d-flex justify-content-between align-items-end flex-grow-1 border-top pt-3 px-4 ">
-                            <p><i class="icofont icofont-ui-user text-danger"></i> {{ post.author }} </p>
-                            <p><i class="icofont icofont-ui-calendar text-info"></i> {{ post.date_created|date:"M d, Y"  }}
-                            </p>
-                        </div>
+                    <div class="py-4 px-4">
+                        <h2 class="h3 py-2"> {{ post.title|truncatechars:70 }} </h2>
+
+                    </div>
+
+                    <div class=" d-flex justify-content-between align-items-end flex-grow-1 border-top pt-3 px-4 ">
+                        <p><i class="icofont icofont-ui-user text-danger"></i> {{ post.author }} </p>
+                        <p><i class="icofont icofont-ui-calendar text-info"></i> {{ post.date_created|date:"M d, Y"  }}
+                        </p>
+                    </div>
 
 
                 </a>
@@ -206,7 +201,7 @@
 
             <div class="col-sm-4 col-12 hvr-float-shadow">
                 <a href="{% url 'dish_list' %}">
-                    <div class="col-sm-12 welcome-class shadow hvr-curl-top-right" >
+                    <div class="col-sm-12 welcome-class shadow hvr-curl-top-right">
                         <p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
                         <h3 class="py-3">Dish & Recipe</h3>
                         <p>
