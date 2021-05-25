@@ -56,7 +56,7 @@ strong {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.72);
+    background: rgba(255, 229, 123, 0.72);
 }
 
 .carousel-item img {
@@ -68,7 +68,6 @@ strong {
 
 .carousel-item {
     text-align: center;
-    /* height: 100vh; */
     min-height: 100vh;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -85,7 +84,7 @@ strong {
 .carousel-caption h5 {
     font-size: 100px;
     font-weight: 900;
-    color: #FFFFFF;
+    color: #080808;
     text-transform: capitalize;
     margin-top: 25px;
     font-family: 'Tungsten';
@@ -98,7 +97,7 @@ strong {
     margin: auto;
     font-size: 20px;
     font-weight: 300;
-    color: #dee2e6;
+    /* color: #dee2e6; */
     padding-bottom: 15px;
 }
 
