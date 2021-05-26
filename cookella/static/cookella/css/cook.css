@@ -12,8 +12,8 @@ body {
 }
 
 .container-fluid {
-	padding-left: 7em;
-	padding-right: 7em;
+    padding-left: 7em;
+    padding-right: 7em;
 }
 
 h1,
@@ -101,35 +101,32 @@ strong {
     padding-bottom: 15px;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon{
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
     width: 70px;
     height: 70px;
 }
 
-.carousel-caption p a button{
+.carousel-caption p a button {
     text-transform: uppercase;
     font-weight: 700;
     border-radius: 50px;
 }
 
-.carousel-indicators li  {
+.carousel-indicators li {
     width: 18px;
     height: 18px;
     border-radius: 50%;
 }
 
-#ft_recipes .bg_layer{
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-     url("/static/cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg");
+#ft_recipes .bg_layer {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg");
     background-size: cover;
     padding: 8em 5em;
     text-align: center;
     width: auto;
     border-radius: 50px 0 0 50px;
 }
-
-
-
 
 
 /*css for the welcome section */
@@ -154,10 +151,10 @@ strong {
     background: linear-gradient(to right top, #dbdcdc, #DEE6E3);
 }
 
-    #welcome-learning {
-        /* background: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
-        background: linear-gradient(to right top, #dbdcdc, #DEE6E3);
-    }
+#welcome-learning {
+    /* background: linear-gradient(to right top, #ffa423, #ffd100, #ffff00); */
+    background: linear-gradient(to right top, #dbdcdc, #DEE6E3);
+}
 
 #welcome_section .welcome-class {
     padding: 2.3em;
@@ -202,7 +199,7 @@ strong {
 #mission .join-mission {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.jpg");
     background-size: cover;
-    padding: 6em ;
+    padding: 6em;
     text-align: center;
     width: auto;
 }
@@ -310,13 +307,13 @@ span {
     -moz-backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    
 }
+
 
 /* footer css*/
 
 #footer-id {
-    bottom:0;
+    bottom: 0;
     padding: 2em;
     width: 100%;
     text-align: center;
@@ -347,7 +344,6 @@ span {
     text-align: left;
 }
 
-
 #about-page img {
     height: 300px;
     width: 100%;
@@ -367,10 +363,9 @@ span {
     font-weight: 550;
     box-shadow: 0 3px 10px rgba(08, 08, 08, .25);
     border-radius: 10px 20px;
-
 }
 
-.form-override h1{
+.form-override h1 {
     color: #dc3545;
 }
 
@@ -386,6 +381,7 @@ span {
     margin: 4.5em auto;
 }
 
+
 /* food details css*/
 
 #recipe-section {
@@ -397,7 +393,7 @@ span {
     height: 220px;
     padding: 20px;
     transform: scale(1, 1) !important;
-    transition: padding 0.4s ease-out, filter  0.4s 0.5s ease-out ;
+    transition: padding 0.2s ease-out, filter 0.2s 0.3s ease-out;
     object-fit: cover;
     object-position: center;
 }
@@ -410,7 +406,7 @@ span {
     font-size: 0.9em;
 }
 
-.recipe-wrapper a{
+.recipe-wrapper a {
     text-decoration: none;
 }
 
@@ -424,28 +420,27 @@ span {
 }
 
 .recipe-wrapper:hover .img-box img {
-   filter: grayscale(0.3);
-   padding: 0 !important;
+    filter: grayscale(0.3);
+    padding: 0 !important;
 }
 
-.recipe-wrapper .recipe-detail{
+.recipe-wrapper .recipe-detail {
     padding: 20px 20px 0 20px;
-    
 }
 
 
 /*For the like and unlike button in django css */
+
 .msg-btn {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
     color: #007bff;
 }
 
 @media(max-width: 48em) {
-.container-fluid {
-    padding: 10px;
-}
-
-    .carousel-item{
+    .container-fluid {
+        padding: 10px;
+    }
+    .carousel-item {
         min-height: 95vh;
     }
     .carousel-caption {
@@ -473,11 +468,9 @@ span {
         margin: 4em auto;
         text-align: left;
     }
-
     #details {
         padding: 5vh 10px;
     }
-
     #features {
         background-attachment: scroll;
     }
