@@ -23,7 +23,7 @@
                     </a>
                     <!-- <span class="d"></span> -->
 
-                    <a href="{% url 'cookella-add-recipe'%}" class="btn btn-light rounded-pill btn-lg shadow-sm ">
+                    <a href="{% url 'cookella-add-recipe'%}" class="btn btn-light rounded-pill btn-lg shadow-sm">
                         Add Recipe
                     </a>
                 </p>
@@ -96,7 +96,7 @@
 
 <!-- block section -->
 <div class="">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2 my-5 text-center">
                 <h1 class="">Top Featured Blogs About Food and Recipes For You</h1>
@@ -106,7 +106,7 @@
             <div class="col-md-4 mb-5">
                 <!-- <div class="h-100 w-100 border bg-danger"> -->
                 <a href="" class="text-dark  bg-white hvr-shrink shadow-sm"
-                    style="width: 100%; height: 100%; border-radius: 20px 0; ">
+                    style="width: 100%; height: 100%; border-radius: 10px 20px; overflow: hidden; ">
                     {% if post.image %}
 
                     <img src="{{post.image.url}}" class="img-fluid product-img p-0" alt="{{post.title}}"
@@ -117,7 +117,7 @@
                         style="height: 240px; width: 100%; object-fit: cover; object-position: center;" />
                     {% endif %}
                     <div class="py-4 px-4">
-                        <h2 class="h3 py-2"> {{ post.title|truncatechars:70 }} </h2>
+                        <h2 class="h3"> {{ post.title|truncatechars:55 }} </h2>
 
                     </div>
 
