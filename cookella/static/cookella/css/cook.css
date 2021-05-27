@@ -97,7 +97,7 @@ strong {
     margin: auto;
     font-size: 20px;
     font-weight: 300;
-    /* color: #dee2e6; */
+    color: #393939;
     padding-bottom: 15px;
 }
 
@@ -441,7 +441,7 @@ span {
         padding: 10px;
     }
     .carousel-item {
-        min-height: 95vh;
+        min-height: 90vh;
     }
     .carousel-caption {
         text-align: center;
@@ -452,8 +452,13 @@ span {
         font-size: 18px;
     }
     .carousel-caption h5 {
-        font-size: 30px;
+        font-size: 40px;
         width: 100%;
+    }
+    #mission .join-mission {
+        padding: 3em;
+        text-align: center;
+        width: auto;
     }
     #welcome_section .welcome-class {
         padding: 0.6em;
