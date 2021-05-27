@@ -7,7 +7,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active drk">
-            <img src="{% static "cookella/images/christian-fregnan-IJ8KKgbG-_4-unsplash-min.jpg" %}"
+            <img src="{% static "cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg" %}"
                 class="d-block mx-auto d-block w-100 " alt="..." />
             <div class="carousel-caption">
                 <h5 class="animated fadeInUp" style=" animation-delay: 1s;">Food, Recipe &amp; Blog</h5>
@@ -70,12 +70,12 @@
             <div class="col-12 col-md-4 bg_layer">
                 <h1 class=" text-white">Featured Recipes</h1>
             </div>
-            <div class="col-12 col-md-8 py-3 border ">
+            <div class="col-12 col-md-8 py-3">
                 <div class="row">
                     {% for recipe in ft_recipes %}
-                    <div class="col-12 col-sm-6">
+                    <div class="col-12 col-sm-6 pb-3">
                         <a href="{%  url 'recipes' recipe.pk recipe.slug %}"
-                            class="d-flex justify-content-lg-start p-3">
+                            class="d-flex justify-content-lg-start p-3 shadow">
                             <div>
                                 <img class="img-fluid m-0 p-0" src="{{ recipe.food_image.url }}"
                                     style="min-width: 100%; width: 200px; height: 120px; padding-right: 5px; object-fit: cover;">
