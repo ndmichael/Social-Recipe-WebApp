@@ -111,11 +111,11 @@
                     {% if post.image %}
 
                     <img src="{{post.image.url}}" class="img-fluid product-img p-0" alt="{{post.title}}"
-                        style="height: 240px; width: 100% !important; object-fit: cover; ">
+                        style="height: 300px; width: 100% !important; object-fit: cover; ">
 
                     {% else %}
                     <img src="{% static "blog/images/blogdefault.png" %}" alt="no thumbnail"
-                        style="height: 240px; width: 100%; object-fit: cover; object-position: center;" />
+                        style="height: 300px; width: 100%; object-fit: cover; object-position: center;" />
                     {% endif %}
                     <div class="py-4 px-4">
                         <h2 class="h3"> {{ post.title|truncatechars:55 }} </h2>
