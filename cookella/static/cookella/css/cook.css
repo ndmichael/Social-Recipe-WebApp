@@ -56,7 +56,8 @@ strong {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(255, 229, 123, 0.72);
+    background: linear-gradient(rgba(255, 165, 0, 0.45), rgba(255, 165, 0, 0.9));
+    /* background: rgba(255, 229, 123, 0.72); */
 }
 
 .carousel-item img {
