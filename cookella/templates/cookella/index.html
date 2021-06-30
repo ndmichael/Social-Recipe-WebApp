@@ -96,7 +96,7 @@
 </section>
 
 <!-- block section -->
-<div class="">
+<div id="ft-blogs">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2 my-5 text-center">
@@ -106,8 +106,10 @@
             {% for post in posts %}
             <div class="col-md-4 mb-5">
                 <!-- <div class="h-100 w-100 border bg-danger"> -->
-                <a href="{{ post.get_absolute_url }}" class="text-dark  bg-white hvr-shrink shadow-sm"
-                    style="width: 100%; height: 100%; border-radius: 10px 20px; overflow: hidden; ">
+                <a href="{{ post.get_absolute_url }}" class="text-dark  hvr-shrink shadow"
+                    style="width: 100%; height: 100%; border-radius: 10px 20px; overflow: hidden;
+                    backdrop-filter: blur(10px); rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.01);
+                     ">
                     {% if post.image %}
 
                     <img src="{{post.image.url}}" class="img-fluid product-img p-0" alt="{{post.title}}"
@@ -142,7 +144,8 @@
 <section id="mission">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 goal-mission mission-class">
+            <div class="col-sm-6 d-flex align-items-center">
+                <div>
                 <h2>Who we are and What we do?</h2>
                 <p>
                     A Social community where you can post on a variety of topics related to Food, Health, and Recipes.
@@ -158,6 +161,7 @@
                     </a>
 
                 </p>
+                </div>
             </div>
             <div class="col-sm-6 join-mission mission-class">
                 <h1>Join Our Awesome Community Today For Free </h1>
