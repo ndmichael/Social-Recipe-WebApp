@@ -32,7 +32,7 @@ h1 {
 }
 
 p {
-    color: #5f6368;
+    color: #241c15;
     line-height: 1.6;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -68,7 +68,8 @@ strong {
 
 .carousel-item {
     text-align: center;
-    min-height: 100vh;
+    min-height: 80vh;
+    height: 80vh;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     background-size: cover;
@@ -78,7 +79,7 @@ strong {
 
 .carousel-caption {
     display: block;
-    margin-bottom: 22vh;
+    margin-bottom: 17vh;
 }
 
 .carousel-caption h5 {
@@ -87,8 +88,8 @@ strong {
     color: #080808;
     text-transform: capitalize;
     margin-top: 25px;
-    font-family: 'Tungsten';
-    text-shadow: 2px 2px whitesmoke;
+    font-family: 'Bourgeois Rounded';
+    text-shadow: 1.5px 2px whitesmoke;
     padding-bottom: 15px;
 }
 
@@ -96,8 +97,8 @@ strong {
     width: 60%;
     margin: auto;
     font-size: 20px;
-    font-weight: 300;
-    color: #393939;
+    font-weight: 600;
+    color: #241c15;
     padding-bottom: 15px;
 }
 
