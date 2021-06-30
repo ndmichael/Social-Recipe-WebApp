@@ -183,13 +183,9 @@ strong {
 /* css for category section */
 
 #mission {
-    margin: 0 auto 0 auto;
+    margin: 3em 0 auto;
     background: #e9ecef;
     width: 100%;
-}
-
-#mission .mission-class {
-    padding: 6em 2em 6em 0;
 }
 
 #mission .goal-mission {
@@ -262,7 +258,7 @@ strong {
     background-image: linear-gradient(to left, rgb(225, 225, 225, 0.55), rgb(225, 225, 225, 0.55)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     padding: 3.0em 0;
 }
 
