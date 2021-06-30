@@ -76,9 +76,9 @@
                     {% for recipe in ft_recipes %}
                     <div class="col-12 col-sm-6 pb-3">
                         <a href="{%  url 'recipes' recipe.pk recipe.slug %}"
-                            class="d-flex justify-content-lg-start p-3 shadow">
+                            class="d-flex justify-content-lg-start p-3 shadow rounded">
                             <div>
-                                <img class="img-fluid m-0 p-0" src="{{ recipe.food_image.url }}"
+                                <img class="img-fluid m-0 p-0 rounded-circle" src="{{ recipe.food_image.url }}"
                                     style="min-width: 100%; width: 200px; height: 120px; padding-right: 5px; object-fit: cover;">
                             </div>
                             <div class="p-2" style="width: 100%;">
