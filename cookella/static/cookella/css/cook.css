@@ -124,7 +124,6 @@ strong {
 #ft_recipes .bg_layer {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg");
     background-size: cover;
-    padding: 8em 5em;
     text-align: center;
     width: auto;
     border-radius: 50px 0 0 50px;
