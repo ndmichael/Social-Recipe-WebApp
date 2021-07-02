@@ -124,7 +124,11 @@
                     </div>
 
                     <div class=" d-flex justify-content-between align-items-end flex-grow-1 border-top pt-3 px-2 ">
-                        <p><i class="icofont icofont-ui-user text-danger"></i> {{ post.author }} </p>
+                        {% comment %} <p><i class="icofont icofont-ui-user text-danger"></i> {{ post.author }} </p> {% endcomment %}
+                        <p><img class="img-fluid rounded-circle shadow-lg" src="{{ post.author.profile.photo_url }}"
+                                    style="width: 30px; height: 30px; object-fit: cover;">
+                                    {{ post.author }} 
+                        </p>
                         <p><i class="icofont icofont-ui-calendar text-secondary"></i> {{ post.date_created|date:"M d, Y"  }}
                         </p>
                     </div>
