@@ -32,7 +32,7 @@ h1 {
 }
 
 p {
-    color: #241c15;
+    color: #3c3c3c;
     line-height: 1.6;
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
@@ -99,7 +99,6 @@ strong {
     margin: auto;
     font-size: 20px;
     font-weight: 600;
-    color: #241c15;
     padding-bottom: 15px;
 }
 
@@ -259,21 +258,6 @@ strong {
     background-position: center;
     /* background-attachment: fixed; */
     padding: 3.0em 0;
-}
-
-#ft-txt {
-    text-align: center;
-}
-
-#ft-txt p {
-    color: #fff;
-}
-
-#features .ft-features>p {
-    color: #05131c;
-    font-family: poppins;
-    font-size: 1.1em;
-    font-weight: 500;
 }
 
 #features h2,
