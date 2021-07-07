@@ -16,7 +16,7 @@
                     <div class="p-3" style="margin-right: -20px;">
                         <p class="">
                             <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
-                                alt="..." />
+                                alt="{{post.title}}" />
                             <a href="{% url 'profile' post.author.username %}" class="mr-4 text-dark">
                                 <span>
                                     {{ post.author }}
@@ -24,13 +24,13 @@
                             </a>
                             <small>{{ post.date_created|date:"F d, Y" }}</small>
                         </p>
-                        <h1 class="h1">
+                        <h1 class="h2">
                             <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">
                                 {{ post.title|truncatechars:70 }}
                             </a>
                         </h1>
                         <p>
-                            <small>{{ post.content|truncatechars:100 }}</small>
+                            <small>{{ post.content|truncatechars:70 }}</small>
                         </p>
                     
                     <!--
