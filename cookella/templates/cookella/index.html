@@ -68,7 +68,7 @@
 <section class="bg-white">
     <div class="container my-5" id="ft_recipes">
         <div class=" row">
-            <div class="col-12 col-md-4 d-flex align-items-center text-center  bg_layer">
+            <div class="col-12 col-md-4 d-flex align-items-center justify-content-center text-center  bg_layer">
                 <h1 class=" text-white ">Featured Recipes</h1>
             </div>
             <div class="col-12 col-md-8 py-3">
@@ -123,14 +123,17 @@
 
                     </div>
 
-                    <div class=" d-flex justify-content-between align-items-end flex-grow-1 border-top pt-3 px-2 ">
+                    <div class="d-flex justify-content-between pt-2 px-3 border-top  ">
                         {% comment %} <p><i class="icofont icofont-ui-user text-danger"></i> {{ post.author }} </p> {% endcomment %}
-                        <p><img class="img-fluid rounded-circle shadow-lg" src="{{ post.author.profile.photo_url }}"
+                        <p>
+                            <img class="img-fluid rounded-circle shadow-lg" src="{{ post.author.profile.photo_url }}"
                                     style="width: 30px; height: 30px; object-fit: cover;">
-                                    {{ post.author }} 
+                            {{ post.author }} 
                         </p>
-                        <p><i class="icofont icofont-ui-calendar text-secondary"></i> {{ post.date_created|date:"M d, Y"  }}
-                        </p>
+                        <span>
+                            <i class="icofont icofont-ui-calendar text-secondary"></i> 
+                            <small> {{ post.date_created|date:"M d, Y"  }} </small>
+                        </span>
                     </div>
 
 
