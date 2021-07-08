@@ -11,51 +11,57 @@
         <div class="col-12 col-md-7 offset-md-1 mx-auto">
             {% for post in posts %}
             <div class=" general-style border-bottom my-5">
-            <div class="row">
-                <div class="col-sm-8 col-md-7">
-                    <div class="p-3" style="margin-right: -20px;">
-                        <p class="">
-                            <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail p-0 profile-pic"
-                                alt="{{post.title}}" />
-                            <a href="{% url 'profile' post.author.username %}" class="mr-4 text-dark">
-                                <span>
-                                    {{ post.author }}
-                                </span>
-                            </a>
-                            <small>{{ post.date_created|date:"F d, Y" }}</small>
-                        </p>
-                        <h1 class="h2">
-                            <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}" class="header_link">
-                                {{ post.title|truncatechars:70 }}
-                            </a>
-                        </h1>
-                        <p>
-                            <small>{{ post.content|truncatechars:70 }}</small>
-                        </p>
-                    
-                    <!--
+                <div class="row">
+                    <div class="col-sm-8 col-md-7">
+                        <div class="p-3" style="margin-right: -20px;">
+                            <div class="d-flex pb-3">
+                                <img src="{{ post.author.profile.photo_url }}"
+                                    class="img-fluid img-thumbnail p-0 profile-pic" alt="{{post.title}}" />
+                                <div class="d-flex flex-column justify-content-center pl-2">
+                                    <a href="{% url 'profile' post.author.username %}" class="mr-4 text-dark">
+                                        <span>
+                                            {{ post.author }}
+                                        </span>
+                                    </a>
+                                    <small class="text-muted">{{ post.date_created|date:"F d, Y" }}</small>
+                                </div>
+
+
+                            </div>
+                            <h1 class="h2">
+                                <a href="{% url 'post-detail' post.pk post.date_created.year post.slug %}"
+                                    class="header_link">
+                                    {{ post.title|truncatechars:70 }}
+                                </a>
+                            </h1>
+                            <p>
+                                <small>{{ post.content|truncatechars:70 }}</small>
+                            </p>
+
+                            <!--
                         - the like button
                     -->
-                    <div id="like_button" class="pb-0">
-                        {% include "blog/likebutton.html" %}
+                            <div id="like_button" class="pb-0">
+                                {% include "blog/likebutton.html" %}
+                            </div>
+                        </div>
                     </div>
-                </div>
-                </div>
-                <!--
+                    <!--
                     - the product image 
                 -->
-                <div class="col-12 col-md-5 order-first order-sm-last p-0">
-                    <div>
-                        {% if post.image %}
-                        <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
-                        {% else %}
-                            <img src="{% static "blog/images/blogdefault.png" %}" alt="no thumbnail added" class="img-fluid product-img" />
-                        {% endif %}
+                    <div class="col-12 col-md-5 order-first order-sm-last p-0">
+                        <div>
+                            {% if post.image %}
+                            <img src="{{post.image.url}}" class="img-fluid product-img" alt="{{post.title}}">
+                            {% else %}
+                            <img src="{% static "blog/images/blogdefault.png" %}" alt="no thumbnail added"
+                                class="img-fluid product-img" />
+                            {% endif %}
+                        </div>
+
                     </div>
-                    
                 </div>
             </div>
-        </div>
             {% endfor %}
         </div>
 
@@ -66,8 +72,9 @@
         -->
         <aside class="col-sm-3 mx-auto" style="height: auto; background-color: #FFFFDD;">
             <div class="form py-3">
-                <form class=" form-inline " method="GET" action="{% url 'post_search' %}" >
-                    <input class="form-control form-control-lg p-2 col-12" type="search" name="search" placeholder="title content" />
+                <form class=" form-inline " method="GET" action="{% url 'post_search' %}">
+                    <input class="form-control form-control-lg p-2 col-12" type="search" name="search"
+                        placeholder="title content" />
                     <button type="submit" class="btn btn-outline-danger my-2">Search Post</button>
                 </form>
             </div>
@@ -90,7 +97,7 @@
         {% endfor %}
         {% if page_obj.has_next %}
         <a class="btn btn-outline-dark" href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a class="btn btn-outline-dark" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+        <a class="btn btn-dark" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {% endif %}
         {% endif %}
     </div>
