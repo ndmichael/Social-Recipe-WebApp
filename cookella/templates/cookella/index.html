@@ -126,8 +126,7 @@
                     <div class="d-flex justify-content-between pt-2 px-3 border-top  ">
                         {% comment %} <p><i class="icofont icofont-ui-user text-danger"></i> {{ post.author }} </p> {% endcomment %}
                         <p>
-                            <img class="img-fluid rounded-circle shadow-lg" src="{{ post.author.profile.photo_url }}"
-                                    style="width: 30px; height: 30px; object-fit: cover;">
+                            <img class="img-fluid rounded-circle shadow-lg user-thumbnail" src="{{ post.author.profile.photo_url }}">
                             {{ post.author }} 
                         </p>
                         <span>

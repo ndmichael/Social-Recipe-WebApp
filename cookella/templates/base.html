@@ -60,8 +60,7 @@
                     <li class="nav-item dropdown nav-item nav-auth pt-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="img-fluid rounded-circle shadow-lg" src="{{ request.user.profile.photo_url }}"
-                                    style="width: 30px; height: 30px; object-fit: cover;">
+                            <img class="img-fluid rounded-circle shadow-lg user-thumbnail" src="{{ request.user.profile.photo_url }}">
                             {{ request.user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -42,9 +42,10 @@ a {
     text-decoration: none;
 }
 
-b,
-strong {
-    color: #dc3545;
+.user-thumbnail {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
 }
 
 #recipe-header {
