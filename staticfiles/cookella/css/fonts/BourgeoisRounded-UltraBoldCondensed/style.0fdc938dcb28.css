@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Bourgeois Rounded';
+    src: local('Bourgeois Rounded UltraBold Condensed'), local('Bourgeois-Rounded-UltraBold-Condensed'),
+        url("BourgeoisRounded-UltraBoldCondensed.2f93ccd1f486.woff2") format('woff2'),
+        url("BourgeoisRounded-UltraBoldCondensed.fc0759ada55a.woff") format('woff'),
+        url("BourgeoisRounded-UltraBoldCondensed.f6764e5e0c8e.ttf") format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
