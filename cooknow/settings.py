@@ -32,7 +32,7 @@ DEBUG = os.environ.get("DEBUG_VALUE") == "True"
 
 ALLOWED_HOSTS = [
     "cookella.herokuapp.com",
-    "http://nokrecipes.com/",
+    "http://nokrecipes.com",
     "localhost",
     "127.0.0.1",
 ]
