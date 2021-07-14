@@ -3,51 +3,53 @@
 {% load cookella_tags %}
 
 {% block content %}
-    <section class="container">    
-        <div class="row" id="food_recipe">
-            
-            <div class="col-12 col-md-12 my-4">
-                <h1>{{ object.food_name }} Recipes</h1>
-            </div>
-            <br />
+<section class="container">
+    <div class="row" id="food_recipe">
+        <div class="col-12 col-md-9">
+            <div class="row">
+                <div class="col-12">
+                    <div>
+                        <h1>{{ object.food_name }} Recipes</h1>
+                    </div>
 
-            <div class="col-12 col-md-3">
-                <p><img class="img-thumbnail img-responsive" src="{{ object.food_image.url }}" /></p>
-            </div>
+                    <div>
+                        <img class="img-thumbnail img-responsive" src="{{ object.contributor.profile.url }}" />
+                        <h5><strong>Contributor: </strong>{{ object.contributor }}</h5>
+                    </div>
 
-            <div class="col-12 col-md-6 border-right" >
-                <div>
-                    <h2>Country: <span class="text-muted">{{ object.country.name }}</span></h2>
-                    <h3>Ingredients: <br /> <small class="text-muted">{{ object.food_type.ingredient }}</small></h3>
-                <br /><br />
-                    <h3>PROCEDURES</h3>
-                    <ol>
-                        {% for steps in object.food_type.recipe|split:'.'  %}
-                            {% if steps %}
-                                <li><p>{{ steps|capfirst }}. </p></li>
-                            {% endif %}
-                        {% endfor %}
-                    </ol>
-                    <!-- <p></p> -->
+                    <div>
+                        <img class="shadow-lg img-responsive" src="{{ object.food_image.url }}"
+                            style="min-width:100vh; height: 450px; object-fit: cover; object-position:center;" />
+                    </div>
+
                 </div>
-            </div>
 
-            <div class="col-sm-3">
-                <div>
-                    <p><img class="img-thumbnail img-responsive" src="{{ object.contributor.profile.url }}" /></p>
-                    <p><strong>Contributor: </strong>{{ object.contributor }}</p>
-                    <!-- only display the update button if requesting person is the contributor -->
-                    {% if request.user.username == object.contributor  %}
-                        <a href="{% url "recipe-update" object.pk object.slug %}" class="btn btn-lg btn-danger">Update Recipe</a>
-                    {% endif %}
+                <div class="col-12 col-md-12">
+                    <div>
+                        <h2>Country: <span class="text-muted">{{ object.country.name }}</span></h2>
+                        <h3>Ingredients: </h3>
+                        <p class="text-muted">{{ object.food_type.ingredient }}</p>
+                        <h3>PROCEDURES: </h3>
+                        <ol>
+                            {% for steps in object.food_type.recipe|split:'.'  %}
+                            {% if steps %}
+                            <li>
+                                <p>{{ steps|capfirst }}. </p>
+                            </li>
+                            {% endif %}
+                            {% endfor %}
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+
+        <aside class="col-12 col-md-3 bg-danger">
+            <div> Hello </div>
+        </aside>
+    </div>
+</section>
 
 
 
 {% endblock %}
-
-
-
