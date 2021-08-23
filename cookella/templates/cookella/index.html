@@ -7,19 +7,16 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active drk">
-            <img src="{% static "cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg" %}"
-                class="d-block mx-auto d-block w-100 " alt="..." />
+            <img src="{% static 'cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg' %}" class="d-block mx-auto d-block w-100 " alt="..." />
             <div class="carousel-caption">
                 <h5 class="animated fadeInUp" style=" animation-delay: 1s;">Food, Recipe <span class="text-danger">&amp;</span> Blog</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    We are a community of cooking and food enthusiast.
-                    A platform where You can upload your recipes online, and blog about it.
+                    We are a community of cooking and food enthusiast. A platform where You can upload your recipes online, and blog about it.
 
                 </p>
 
                 <p class="animated zoomIn pt-4" style=" animation-delay: 1s;">
-                    <a href="{% url 'dish_list' %}"
-                        class="d-inline-block mb-2 mb-md-0 btn btn-danger rounded-pill  btn-lg shadow-sm">
+                    <a href="{% url 'dish_list' %}" class="d-inline-block mb-2 mb-md-0 btn btn-danger rounded-pill  btn-lg shadow-sm">
                         View Recipe
                     </a>
                     <!-- <span class="d"></span> -->
@@ -37,8 +34,7 @@
             <div class="carousel-caption">
                 <h5 class="animated  lightSpeedIn" style=" animation-delay: 1s;">Join our Community</h5>
                 <p class="animated bounceInLeft" style=" animation-delay: 1s;">
-                    Join us today and enjoy all our awesome features. <br />
-                    Earn your recognition for your cooking skills.
+                    Join us today and enjoy all our awesome features. <br /> Earn your recognition for your cooking skills.
                 </p>
                 <p class="animated zoomIn pt-3" style=" animation-delay: 1s;">
                     <a href="{% url 'blog-home' %}">
@@ -55,7 +51,8 @@
             </div>
         </div>
     </div>
-    {% comment %} <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    {% comment %}
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
@@ -75,11 +72,9 @@
                 <div class="row">
                     {% for recipe in ft_recipes %}
                     <div class="col-12 col-sm-6 pb-3">
-                        <a href="{%  url 'recipes' recipe.pk recipe.slug %}"
-                            class="d-flex justify-content-lg-start p-3 shadow rounded">
+                        <a href="{%  url 'recipes' recipe.pk recipe.slug %}" class="d-flex justify-content-lg-start p-3 shadow rounded">
                             <div>
-                                <img class="img-fluid m-0 p-0 rounded-circle" src="{{ recipe.food_image.url }}"
-                                    style="min-width: 100%; width: 200px; height: 120px; padding-right: 5px; object-fit: cover;">
+                                <img class="img-fluid m-0 p-0 rounded-circle" src="{{ recipe.food_image.url }}" style="min-width: 100%; width: 200px; height: 120px; padding-right: 5px; object-fit: cover;">
                             </div>
                             <div class="p-2" style="width: 100%;">
                                 <h5><b class="text-dark">{{recipe.food_name}}</b></h5>
@@ -106,8 +101,7 @@
             {% for post in posts %}
             <div class="col-md-4 mb-5">
                 <!-- <div class="h-100 w-100 border bg-danger"> -->
-                <a href="{{ post.get_absolute_url }}" class="text-dark bg-white hvr-shrink shadow-sm"
-                    style="width: 100%; height: 100%; border-radius: 10px 20px; overflow: hidden;
+                <a href="{{ post.get_absolute_url }}" class="text-dark bg-white hvr-shrink shadow-sm" style="width: 100%; height: 100%; border-radius: 10px 20px; overflow: hidden;
                      ">
                     {% if post.image %}
 
@@ -115,23 +109,22 @@
                         style="height: 300px; width: 100% !important; object-fit: cover; ">
 
                     {% else %}
-                    <img src="{% static "blog/images/blogdefault.png" %}" alt="no thumbnail"
+                    <img src="{% static 'blog/images/blogdefault.png' %}" alt="no thumbnail"
                         style="height: 300px; width: 100%; object-fit: cover; object-position: center;" />
                     {% endif %}
                     <div class="p-3">
                         <h2 class="h3"> {{ post.title|truncatechars:55 }} </h2>
-
                     </div>
 
                     <div class="d-flex justify-content-between pt-2 px-3 border-top  ">
-                        {% comment %} <p><i class="icofont icofont-ui-user text-danger"></i> {{ post.author }} </p> {% endcomment %}
                         <p>
-                            <img class="img-fluid rounded-circle shadow-lg user-thumbnail" src="{{ post.author.profile.photo_url }}">
-                            {{ post.author }} 
+                            <img class="img-fluid rounded-circle shadow-lg user-thumbnail"
+                                src="{{ post.author.profile.photo_url }}">
+                            {{ post.author }}
                         </p>
                         <span>
-                            <i class="icofont icofont-ui-calendar text-secondary"></i> 
-                            <small> {{ post.date_created|date:"M d, Y"  }} </small>
+                            <i class="icofont icofont-ui-calendar text-secondary"></i>
+                            <small> {{ post.date_created|date:"M d, Y" }} </small>
                         </span>
                     </div>
 
@@ -151,21 +144,19 @@
         <div class="row">
             <div class="col-sm-6 d-flex align-items-center">
                 <div>
-                <h2>Who we are and What we do?</h2>
-                <p>
-                    A Social community where you can post on a variety of topics related to Food, Health, and Recipes.
-                    We
-                    provide Cooking Enthusiasts, and Food Experts a profile, Recipes page, and a blogging
-                    system, where every registered user is a blogger. <br />
-                    <strong>Gain the recognition you deserve today!!!</strong> <br />
-                    <br />
-                    <a href="{% url 'cookella-about' %}">
-                        <button class="btn btn-lg btn-light">
-                            Know More
-                        </button>
-                    </a>
+                    <h2>Who we are and What we do?</h2>
+                    <p>
+                        A Social community where you can post on a variety of topics related to Food, Health, and Recipes. We provide Cooking Enthusiasts, and Food Experts a profile, Recipes page, and a blogging system, where every registered user is a blogger. <br
+                        />
+                        <strong>Gain the recognition you deserve today!!!</strong> <br />
+                        <br />
+                        <a href="{% url 'cookella-about' %}">
+                            <button class="btn btn-lg btn-light">
+                                Know More
+                            </button>
+                        </a>
 
-                </p>
+                    </p>
                 </div>
             </div>
             <div class="col-sm-6 join-mission mission-class">
@@ -201,8 +192,7 @@
                         <p><span class="icofont icofont-page icofont-5x"></span></p>
                         <h3 class="py-3">Add Recipe</h3>
                         <p>
-                            Add Recipes today and watch them grow in popularity, and Appreciated by other foodies.
-                            Enjoy what you do, dowhat you enjoy.
+                            Add Recipes today and watch them grow in popularity, and Appreciated by other foodies. Enjoy what you do, dowhat you enjoy.
                         </p>
                     </div>
                 </a>
@@ -215,9 +205,7 @@
                         <p><span class="icofont icofont-5x icofont-food-basket" aria-hidden="true"></span></p>
                         <h3 class="py-3">Dish & Recipe</h3>
                         <p>
-                            Over 3000+ Recipes,contributed by cooking enthusiast and foodies alike. Share your Recipes
-                            and
-                            learn new Recipes.
+                            Over 3000+ Recipes,contributed by cooking enthusiast and foodies alike. Share your Recipes and learn new Recipes.
                         </p>
 
                     </div>
@@ -230,8 +218,7 @@
                         <p><span class="icofont icofont-5x icofont-rss-feed" aria-hidden="true"></span></p>
                         <h3 class="py-3">Community</h3>
                         <p>
-                            Get in touch with multitude of cooking enthusiast, foodies and expert chefs.
-                            Blog and post anything related to food health and recipes.
+                            Get in touch with multitude of cooking enthusiast, foodies and expert chefs. Blog and post anything related to food health and recipes.
                         </p>
                     </div>
                 </a>
@@ -254,8 +241,7 @@
                     <i class="icofont icofont-1x icofont-culinary"></i>
                     <h3>Recipes</h3>
                     <p>
-                        View hundreds of easy to learn recipes or Upload your recipes on our platform,
-                        Let the world admire your skills.
+                        View hundreds of easy to learn recipes or Upload your recipes on our platform, Let the world admire your skills.
                     </p>
                 </div>
             </div>
@@ -264,8 +250,7 @@
                     <i class="icofont icofont-cup-cake"></i>
                     <h3>Blogging</h3>
                     <p>
-                        Blog about your interest and what excites you, about your recipes
-                        home cook or professional.
+                        Blog about your interest and what excites you, about your recipes home cook or professional.
                     </p>
                 </div>
             </div>
@@ -274,8 +259,7 @@
                     <i class="icofont icofont-restaurant"></i>
                     <h3>Health</h3>
                     <p>
-                        How does food and recipes related to health, well-being and healthy living?
-                        let us know.
+                        How does food and recipes related to health, well-being and healthy living? let us know.
                     </p>
                 </div>
             </div>
@@ -284,8 +268,7 @@
                     <i class="icofont icofont-birthday-cake"></i>
                     <h3>Cakes</h3>
                     <p>
-                        We love cakes, do you? are you a baker and do you wish to promote yourself?
-                        don't worry we got you covered.
+                        We love cakes, do you? are you a baker and do you wish to promote yourself? don't worry we got you covered.
                     </p>
                 </div>
             </div>
@@ -294,8 +277,7 @@
                     <i class="icofont icofont-blogger"></i>
                     <h3>Baking</h3>
                     <p>
-                        Do you have skills beyond cakes, the world is waiting to find out, through our platform
-                        you can reach your fans.
+                        Do you have skills beyond cakes, the world is waiting to find out, through our platform you can reach your fans.
                     </p>
                 </div>
             </div>
@@ -304,8 +286,7 @@
                     <i class="icofont icofont-diners-club"></i>
                     <h3>Events Planning &amp; Tips</h3>
                     <p>
-                        Here you can find tips for event planning or get to meet clients
-                        who are ready to hire your service.
+                        Here you can find tips for event planning or get to meet clients who are ready to hire your service.
                     </p>
                 </div>
             </div>
