@@ -381,7 +381,7 @@ span {
 
 #recipe-section .img-box img {
     width: 100%;
-    height: 240px;
+    height: 220px;
     padding: 20px;
     transform: scale(1, 1) !important;
     transition: padding 0.2s ease-out, filter 0.2s 0.3s ease-out;
