@@ -1,8 +1,4 @@
-{% extends "base.html" %}
-{% load static %}
-
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <section id="recipe-header">
     <div class="container">
         <div class="row">
@@ -13,8 +9,7 @@
                     </h1>
                     <div class="form py-3">
                         <form class=" form-inline " method="GET" action="{% url 'recipe_search' %}">
-                            <input class="form-control form-control-lg p-2 col-6 col-md-9 mx-auto" type="search" name="search"
-                                placeholder="title content" />
+                            <input class="form-control form-control-lg p-2 col-6 col-md-9 mx-auto" type="search" name="search" placeholder="title content" />
                             <button type="submit" class="btn btn-lg btn-danger">Search Post</button>
                         </form>
                     </div>
@@ -26,7 +21,7 @@
 <section class="container" id="recipe-section">
     <div class="row mb-4">
         {% for dish in object_list %}
-        <div class="col-12 col-md-3  mb-4">
+        <div class="col-6 col-md-3  mb-4">
             <div class="recipe-wrapper h-100">
                 {% if dish.food_image %}
                 <div class="img-box border-bottom">
@@ -52,18 +47,7 @@
         </div>
         {% endfor %}
     </div>
-    <!--
-    <aside class="col-12 col-md-3" style="width: 100%; height: 600px; background-color: #ffc800;">
-            <div class="form w-100 py-3">
-                <form class=" form-inline " method="GET" action="{% url 'recipe_search' %}">
-                    <input class="form-control form-control-lg p-2 col-12" type="search" name="search"
-                        placeholder="title content" />
-                    <button type="submit" class="btn btn-outline-danger my-2">Search Post</button>
-                </form>
-            </div>
-        </aside>
-    -->
-    <div class="mt-5 text-center border-top">
+    <div class=" text-center border-top">
         {% if is_paginated %}
         {% if page_obj.has_previous %}
         <a class="btn btn-outline-dark" href="?page=1">First</a>
@@ -81,9 +65,7 @@
         <a class="btn btn-dark" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
         {% endif %}
         {% endif %}
-
-
     </div>
 
 </section>
-{% endblock %}
+{% endblock content %}
