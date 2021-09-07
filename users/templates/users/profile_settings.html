@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% load static %} {% block content %}
+<section>
+    <article class="container">
+        {% if request.user.username == user.username %}
+        <form method="POST" enctype="multipart/form-data" class="offset-sm-3 col-sm-6 form-override">
+            {% csrf_token %}
+            <fieldset>
+                <legend class="form-group mb-4 mt-4"><strong>Profile Information <br /> <small class="text-muted">You
+                            can update your Profile details anytime</small> </strong>
+                </legend>
+                {{ u_form|crispy }} {{ p_form|crispy }}
+            </fieldset>
+            <div>
+                <button type="submit" class="btn btn-outline-danger btn-lg">Update Profile</button>
+            </div>
+        </form>
+        {% endif %}
+    </article>
+</section>
+{% endblock content %}
