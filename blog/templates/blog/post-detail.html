@@ -2,8 +2,12 @@
 <section class="container" id="blog-container">
     <article class="row">
         <div class="col-sm-8 ">
+            <!-- inner row -->
             <div class=" row">
-                <h3>{{ post.title }}</h3>
+                <article class="col-12">
+                    <h3>{{ post.title }}</h3>
+                </article>
+
                 <article class="col-6">
                     <div class="d-flex ali pb-3">
                         <img src="{{ post.author.profile.photo_url }}" class="img-fluid img-thumbnail profile-pic" alt="..." />
@@ -19,25 +23,32 @@
                 </article>
 
                 <article class=" col-6">
-                    {% if object.author == user %}
                     <div class="border-bottom float-right">
+                        {% if object.author == user %}
                         <a href="{% url 'post-update' object.id %}" class="btn btn-info btn-sm mt-1 mb-1">
                             <i class=" icofont icofont-edit-alt"></i>
                         </a>
                         <a href="{% url 'post-delete' object.id %}" class="btn btn-outline-danger btn-sm mt-1 mb-1">
                             <i class=" icofont icofont-delete-alt"></i>
                         </a>
+                        {% endif %}
                         <div id="like_button" style="display: inline-block;">
                             {% include "blog/likebutton.html" %}
                         </div>
                     </div>
-                    {% endif %}
+
                 </article>
 
                 <article class=" col-12">
-                    <p>{{ post.content }}</p>
+                    <div>
+                        {% if post.image %}
+                        <img src="{{post.image.url}}" class="img-fluid product-img shadow" alt="{{post.title}}" style="height: 400px; 
+                        width: 100%; object-fit: cover;"> {% endif %}
+                    </div>
+                    <p class=" py-5">{{ post.content }}</p>
                 </article>
             </div>
+            <!-- inner row ends here -->
             <!-- <span class="fb-comments-count" data-href="https://example.com/"></span>awesome comments -->
             <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="10" data-width=""></div>
         </div>
