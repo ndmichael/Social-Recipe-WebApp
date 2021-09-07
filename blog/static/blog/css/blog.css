@@ -35,7 +35,7 @@
     color: #dc3545 !important;
 }
 
-.general-style .profile-pic {
+.profile-pic {
     min-width: 60px !important;
     max-width: 60px !important;
     min-height: 60px;
