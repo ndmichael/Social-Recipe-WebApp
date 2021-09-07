@@ -1,63 +1,72 @@
-{% extends "base.html" %}
-{%  load crispy_forms_tags %}
-{%  load static %}
+{% extends "base.html" %} {% load crispy_forms_tags %} {% load static %} {% block content %}
+<div class="container mt-5">
+    <div class="row" id="about-page">
 
-{% block content %}
-    <div class="container mt-5">
-        <div class="row" id="about-page" >
-            <div class="offset-sm-2 col-sm-4 mb-4">
-                <a href="{{ user.profile.photo_url }}" target="_blank">
-                    <img class="img-thumbnail img-fluid rounded-circle" 
-                    style="max-height: 250px; width: 250px; height: 100%;" 
-                    src="{{ user.profile.photo_url }}">   
+        <div class="col-12 col-md-5 mb-4 d-flex">
+            <a href="{{ user.profile.photo_url }}" target="_blank">
+                <img class="img-fluid rounded-circle" style="max-height: 250px; width: 250px; height: 100%;" src="{{ user.profile.photo_url }}">
+            </a>
+        </div>
+
+        <div class="col-sm-7">
+            <div class=" d-flex">
+                <h1 class="mr-2 mr-md-5">{{ user.username }}</h1>
+                <a href="" class=" mr-2">
+                    <i class=" icofont icofont-ui-settings icofont-3x text-dark"></i>
+                </a>
+                <a href="" class="mr-2">
+                    <span class="  btn btn-danger ">ADD RECIPES</span>
+                </a>
+                <a href="" class="mr-2">
+                    <span class="btn btn-secondary ">WRITE</span>
                 </a>
             </div>
-            <div class="col-sm-6">
-                <h1>{{ user.username }}</h1>
-                <p>{{ user.email }}</p>
-                <h3> Posted {{ post_count }} times </h3>
 
-            <!-- if the user have above 0 post then display this -->
-                {% if post_count > 0 %}
-                    <p>to view all post please <a href="{% url 'user-post' user.username %}"><strong>click here</strong></a> </p> <br />
-                    <!-- this this only when the user requesting is same as the user porfile owner -->
-                 {% elif request.user.username == user.username %}
-                    <p>Click here to add new post <a href="{% url 'create-post' %}"><strong>Add Post</strong></a> </p>
-                {% endif %}
+            <p>{{ user.email }}</p>
 
-                <h3> {{ contribution_count }} Contributions </h3>
-                <!-- if the user have above 0 contribution then display this -->
-                {% if contribution_count > 0 %}
-                    <p>to view all contributions please <strong><a href="{% url 'user-contribution' user.username %}">click here</a></strong></p> <br/>
-                    <!-- this this only when the user requesting is same as the user porfile owner -->
-                {% elif request.user.username == user.username %}
-                    <p>Click here to contribute recipe <strong><a href="{% url 'cookella-add-recipe' %}">Add Recipe</a></strong>
-                    </p>
-                {% endif %}
+            <div class=" d-flex pt-3">
+                <a href="{% url 'user-post' user.username %}" class="mr-4" style=" text-align: center;">
+                    <i class=" icofont icofont-2x icofont-letterbox"></i> <br />
+                    <p class=" text-dark"> <b>{{ post_count }} posts </b></p>
+                </a>
 
-                <h4 class="mt-5 border-bottom">About Author</h4>
-                 <p>
-                    {{ user.profile.details }}
-                </p>
+                <a href="{% url 'user-contribution' user.username %}" class="mr-4" style=" text-align: center;">
+                    <i class=" icofont icofont-2x icofont-chef text-warning"></i> <br />
+                    <p> <b>{{ contribution_count }} recipes</b></p>
+                </a>
+
+                <a href="{% url 'user-post' user.username %}" class="mr-4" style=" text-align: center;">
+                    <i class=" icofont icofont-2x icofont-contact-add text-danger"></i> <br />
+                    <p class=" text-dark"><b> Saved posts </b></p>
+                </a>
+
+                <a href="{% url 'user-contribution' user.username %}" class="mr-4" style=" text-align: center;">
+                    <i class=" icofont icofont-2x icofont-food-basket text-info"></i> <br />
+                    <p> <b> saved recipes </b></p>
+                </a>
             </div>
+
+
+
+            <!-- if the user have above 0 contribution then display this -->
+            {% if contribution_count > 0 %}
+            <p>to view all contributions please <strong></strong></p> <br />
+            <!-- this this only when the user requesting is same as the user porfile owner -->
+            {% elif request.user.username == user.username %}
+            <p>Click here to contribute recipe <strong><a href="{% url 'cookella-add-recipe' %}">Add Recipe</a></strong>
+            </p>
+            {% endif %}
+
+            <h4 class="mt-5 border-bottom">About Author</h4>
+            <p>
+                {{ user.profile.details }}
+            </p>
+        </div>
         <!-- display form only when the profile belongs to the requesting user
             if user who makes request == user who owns the profile then display else don't
          -->
-         
-            {% if request.user.username == user.username %}
-                <form method="POST" enctype="multipart/form-data" class="offset-sm-3 col-sm-6 form-override">
-                    {% csrf_token %}
-                    <fieldset>
-                        <legend class="form-group mb-4 mt-4"><strong>Profile Information <br /> <small class="text-muted">You can update your Profile details anytime</small> </strong>
-                            </legend>
-                        {{ u_form|crispy }}
-                        {{ p_form|crispy }}
-                    </fieldset>
-                    <div>
-                        <button type="submit" class="btn btn-outline-danger btn-lg">Update Profile</button>
-                    </div>
-                </form>
-            {% endif %}
-        </div>
+
+
     </div>
+</div>
 {% endblock content %}
