@@ -7,7 +7,11 @@ from .views import UserPostListView, ContributorListView
 urlpatterns = [
     path(r"register/", users_views.register, name="register"),
     path(r"profile/<str:username>", users_views.profile, name="profile"),
-    path(r"settings/<str:username>", users_views.profile_settings, name="settings"),
+    path(
+        r"profile/<str:username>/settings/",
+        users_views.profile_settings,
+        name="profile-settings",
+    ),
     path("post/<str:username>", UserPostListView.as_view(), name="user-post"),
     path(
         "<str:username>/contribution/",
