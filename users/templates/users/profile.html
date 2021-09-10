@@ -11,13 +11,14 @@
         <div class="col-sm-7">
             <div class=" d-flex">
                 <h1 class="mr-2 mr-md-5">{{ user.username }}</h1>
-                <a href="" class=" mr-2">
+                <a href="{% url 'profile-settings' request.user.username %}" class=" mr-2">
+
                     <i class=" icofont icofont-ui-settings icofont-3x text-dark"></i>
                 </a>
-                <a href="" class="mr-2">
+                <a href="{% url 'cookella-add-recipe' %}" class="mr-2">
                     <span class="  btn btn-danger ">ADD RECIPES</span>
                 </a>
-                <a href="" class="mr-2">
+                <a href="{% url 'blog-home' %}" class="mr-2">
                     <span class="btn btn-secondary ">WRITE</span>
                 </a>
             </div>
