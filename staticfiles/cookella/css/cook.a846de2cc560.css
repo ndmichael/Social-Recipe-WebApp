@@ -54,7 +54,7 @@ a {
     width: 100%;
     height: 60vh;
     min-height: 60vh;
-    background-image: linear-gradient(to bottom, rgb(225, 225, 225, 1), rgb(225, 225, 225, 0.55)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
+    background-image: linear-gradient(to bottom, rgb(225, 225, 225, 1), rgb(225, 225, 225, 0.55)), url("/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.57fc970d1c4b.jpg");
 }
 
 
@@ -131,7 +131,7 @@ a {
 }
 
 #ft_recipes .bg_layer {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg");
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/jonathan-borba-8WbeydChgQA-unsplash.41138b56de1a.jpg");
     background-size: cover;
     text-align: center;
     width: auto;
@@ -203,7 +203,7 @@ a {
 }
 
 #mission .join-mission {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.jpg");
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.03ebbf5403ac.jpg");
     background-size: cover;
     padding: 6em;
     text-align: center;
@@ -263,7 +263,7 @@ a {
 /* css for features section */
 
 #features {
-    background-image: linear-gradient(to left, rgb(225, 225, 225, 0.55), rgb(225, 225, 225, 0.55)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
+    background-image: linear-gradient(to left, rgb(225, 225, 225, 0.55), rgb(225, 225, 225, 0.55)), url("/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.57fc970d1c4b.jpg");
     background-size: cover;
     background-position: center;
     /* background-attachment: fixed; */
