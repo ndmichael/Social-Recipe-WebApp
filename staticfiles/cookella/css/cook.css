@@ -325,25 +325,6 @@ span {
 }
 
 
-/* The about page css section */
-
-#about-page {
-    background-color: transparent;
-    padding: 20px;
-    margin: 4.5em auto;
-    text-align: left;
-}
-
-#about-page img {
-    height: 300px;
-    width: 100%;
-    margin: 1em auto;
-    box-shadow: 10px 10px 7px -5px grey;
-    display: inline-block !important;
-    opacity: 0.9;
-}
-
-
 /* form */
 
 .form-override {
@@ -419,6 +400,9 @@ span {
 }
 
 
+/* profile css */
+
+
 /*For the like and unlike button in django css */
 
 .msg-btn {
@@ -456,12 +440,6 @@ span {
     #food_recipe {
         padding: 0px;
         margin: 4.5em auto;
-    }
-    #about-page {
-        background-color: transparent;
-        padding: 0px;
-        margin: 4em auto;
-        text-align: left;
     }
     #details {
         padding: 5vh 10px;
