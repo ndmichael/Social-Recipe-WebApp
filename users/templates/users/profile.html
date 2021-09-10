@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% load crispy_forms_tags %} {% load static %} {% block content %}
 <div class="container mt-5">
-    <div class="row" id="about-page">
-
+    <div class="row " id="profile">
         <div class="col-12 col-md-5 mb-4 d-flex">
             <a href="{{ user.profile.photo_url }}" target="_blank">
                 <img class="img-fluid rounded-circle" style="max-height: 250px; width: 250px; height: 100%;" src="{{ user.profile.photo_url }}">
@@ -26,22 +25,22 @@
             <p>{{ user.email }}</p>
 
             <div class=" d-flex pt-3">
-                <a href="{% url 'user-post' user.username %}" class="mr-4" style=" text-align: center;">
-                    <i class=" icofont icofont-2x icofont-letterbox"></i> <br />
+                <a href="{% url 'user-post' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
+                    <i class=" icofont icofont-2x icofont-letterbox text-primary"></i> <br />
                     <p class=" text-dark"> <b>{{ post_count }} posts </b></p>
                 </a>
 
-                <a href="{% url 'user-contribution' user.username %}" class="mr-4" style=" text-align: center;">
+                <a href="{% url 'user-contribution' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
                     <i class=" icofont icofont-2x icofont-chef text-warning"></i> <br />
                     <p> <b>{{ contribution_count }} recipes</b></p>
                 </a>
 
-                <a href="{% url 'user-post' user.username %}" class="mr-4" style=" text-align: center;">
+                <a href="{% url 'user-post' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
                     <i class=" icofont icofont-2x icofont-contact-add text-danger"></i> <br />
                     <p class=" text-dark"><b> Saved posts </b></p>
                 </a>
 
-                <a href="{% url 'user-contribution' user.username %}" class="mr-4" style=" text-align: center;">
+                <a href="{% url 'user-contribution' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
                     <i class=" icofont icofont-2x icofont-food-basket text-info"></i> <br />
                     <p> <b> saved recipes </b></p>
                 </a>
