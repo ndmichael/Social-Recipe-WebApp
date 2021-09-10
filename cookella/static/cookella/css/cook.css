@@ -326,16 +326,22 @@ span {
 }
 
 
-/* The about page css section */
+/* The profile page css section */
 
-#about-page {
+#profile {
     background-color: transparent;
     padding: 20px;
     margin: 4.5em auto;
     text-align: left;
 }
 
-#about-page img {
+#profile a {
+    text-decoration: none;
+    text-align: center;
+    color: transparent;
+}
+
+#profile img {
     height: 300px;
     width: 100%;
     margin: 1em auto;
@@ -458,10 +464,10 @@ span {
         padding: 0px;
         margin: 4.5em auto;
     }
-    #about-page {
+    #profile {
         background-color: transparent;
         padding: 0px;
-        margin: 4em auto;
+        margin: 4.5em auto;
         text-align: left;
     }
     #details {
