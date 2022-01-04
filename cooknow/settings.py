@@ -104,8 +104,8 @@ DATABASES = {
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         "ENGINE": "django.db.backends.postgresql",
         "NAME": os.environ.get("COOKELLA_DB_NAME"),
-        "USER": os.environ.get("COOKELLA_DB_USER"),
-        "PASSWORD": os.environ.get("COOKELLA_DB_PW"),
+        "USER": os.environ.get("DB_USER"),
+        "PASSWORD": os.environ.get("DB_PW"),
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -168,8 +168,8 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # setting environmental variables for S3
 
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID_COOKELLA")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY_COOKELLA")
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID_MIKE")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY_MIKE")
 AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME_COOKELLA")
 
 
@@ -184,7 +184,6 @@ if not DEBUG:
 
 
 # django-allauth registraion settings
-
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
