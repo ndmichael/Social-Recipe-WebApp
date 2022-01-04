@@ -5,7 +5,8 @@
         <div class="row">
             <article class="col-12 col-md-5">
                 <header>
-                    <h1>Recipes, Blog <span class="text-white">&</span> Community</h1>
+                    <h1>Recipes, Blog <span class="text-white">&</span> Community
+                    </h1>
                     <p class="pt-2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. iusto aliquam, cumque nemo odit eius ratione quisquam ea temporibus nam?
                     </p>
@@ -19,7 +20,7 @@
 
             <article class="col-12 col-md-7">
                 <div style=" position:relative;">
-                    <img src="{% static 'cookella/images/chef2.png' %}" alt="" class="img-fluid" style="object-fit: cover;position: absolute; top:-40px; left: 160px;">
+                    <img src="{% static 'cookella/images/chef2.png' %}" alt="" class="img-fluid" style="object-fit: cover;position: absolute; top:5px; left: 160px;">
                     <img src="{% static 'cookella/images/chef1.png' %}" alt="" class="img-fluid" style="object-fit: cover; z-index: 20; position: absolute; top:0; left: 0; ">
                 </div>
             </article>
@@ -42,8 +43,11 @@
                                 <img class="img-fluid m-0 p-0 rounded-circle" src="{{ recipe.food_image.url }}" style="min-width: 100%; width: 200px; height: 120px; padding-right: 5px; object-fit: cover;">
                             </div>
                             <div class="p-2" style="width: 100%;">
-                                <h5><b class="text-dark">{{recipe.food_name}}</b></h5>
-                                <p class="text-danger"><small>{{recipe.country.name}}</small></p>
+                                <h5><b class="text-dark">{{recipe.food_name}}</b>
+                                </h5>
+                                <p class="text-danger">
+                                    <small>{{recipe.country.name}}</small>
+                                </p>
                                 <p>{{recipe.contributor}}</p>
                             </div>
                         </a>
@@ -60,7 +64,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2 my-5 text-center">
-                <h1 class="">Top Featured Blogs About Food and Recipes For You</h1>
+                <h1 class="">Top Featured Blogs About Food and Recipes For You
+                </h1>
             </div>
 
             {% for post in posts %}
@@ -69,27 +74,31 @@
                 <a href="{{ post.get_absolute_url }}" class="text-dark bg-white hvr-shrink shadow-sm" style="width: 100%; height: 100%; border-radius: 10px 20px; overflow: hidden;
                      ">
                     {% if post.image %}
-
-                    <img src="{{post.image.url}}" class="img-fluid product-img p-0" alt="{{post.title}}"
+                    <img src="{{post.image.url}}"
+                        class="img-fluid product-img p-0" alt="{{post.title}}"
                         style="height: 300px; width: 100% !important; object-fit: cover; ">
 
                     {% else %}
-                    <img src="{% static 'blog/images/blogdefault.png' %}" alt="no thumbnail"
+                    <img src="{% static 'blog/images/blogdefault.png' %}"
+                        alt="no thumbnail"
                         style="height: 300px; width: 100%; object-fit: cover; object-position: center;" />
                     {% endif %}
                     <div class="p-3">
                         <h2 class="h3"> {{ post.title|truncatechars:55 }} </h2>
                     </div>
 
-                    <div class="d-flex justify-content-between pt-2 px-3 border-top  ">
+                    <div
+                        class="d-flex justify-content-between pt-2 px-3 border-top  ">
                         <p>
                             <img class="img-fluid rounded-circle shadow-lg user-thumbnail"
                                 src="{{ post.author.profile.photo_url }}">
                             {{ post.author }}
                         </p>
                         <span>
-                            <i class="icofont icofont-ui-calendar text-secondary"></i>
-                            <small> {{ post.date_created|date:"M d, Y" }} </small>
+                            <i
+                                class="icofont icofont-ui-calendar text-secondary"></i>
+                            <small> {{ post.date_created|date:"M d, Y" }}
+                            </small>
                         </span>
                     </div>
                 </a>
@@ -111,7 +120,8 @@
                     <p>
                         A Social community where you can post on a variety of topics related to Food, Health, and Recipes. We provide Cooking Enthusiasts, and Food Experts a profile, Recipes page, and a blogging system, where every registered user is a blogger. <br
                         />
-                        <strong>Gain the recognition you deserve today!!!</strong> <br />
+                        <strong>Gain the recognition you deserve
+                            today!!!</strong> <br />
                         <br />
                         <a href="{% url 'cookella-about' %}">
                             <button class="btn btn-lg btn-light">
@@ -143,7 +153,8 @@
             <div class="col-sm-4 col-12 hvr-float-shadow ">
                 <a href="{% url 'cookella-add-recipe' %}">
                     <div class="col-sm-12 welcome-class hvr-curl-top-right" id="welcome-learning">
-                        <p><span class="icofont icofont-page icofont-5x"></span></p>
+                        <p><span class="icofont icofont-page icofont-5x"></span>
+                        </p>
                         <h3 class="py-3">Add Recipe</h3>
                         <p>
                             Add Recipes today and watch them grow in popularity, and Appreciated by other foodies. Enjoy what you do, dowhat you enjoy.
@@ -184,68 +195,59 @@
 
 <!-- the features section -->
 <section id="features">
-    <section class="container" id="ft-section">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h1 class="hvr-underline-from-center">Superb Features</h1>
-                <p>What we offer on our platform, superb features with zero cost.</p>
+    <div class="container" id="ft-section">
+        <section class="row">
+            <div class="col-12 col-md-8">
+                <section class="row">
+                    <ariticle class="col-12 col-md-6">
+                        <div class="ft-features">
+                            <i class="icofont icofont-1x icofont-culinary"></i>
+                            <h3>Recipes</h3>
+                            <p>
+                                View hundreds of easy to learn recipes or Upload your recipes on our platform, Let the world admire your skills.
+                            </p>
+                        </div>
+                    </ariticle>
+                    <ariticle class="col-12 col-md-6">
+                        <div class="ft-features">
+                            <i class="icofont icofont-cup-cake"></i>
+                            <h3>Blogging</h3>
+                            <p>
+                                Blog about your interest and what excites you, about your recipes home cook or professional.
+                            </p>
+                        </div>
+                    </ariticle>
+                    <article class="col-12 col-md-6">
+                        <div class="ft-features">
+                            <i class="icofont icofont-restaurant"></i>
+                            <h3>Health</h3>
+                            <p>
+                                How does food and recipes related to health, well-being and healthy living? let us know.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="col-12 col-md-6">
+                        <div class="ft-features ">
+                            <i class="icofont icofont-diners-club"></i>
+                            <h3>Events Planning &amp; Tips</h3>
+                            <p>
+                                Here you can find tips for event planning or get to meet clients who are ready to hire your service.
+                            </p>
+                        </div>
+                    </article>
+                </section>
             </div>
-            <div class="col-sm-4">
-                <div class="ft-features">
-                    <i class="icofont icofont-1x icofont-culinary"></i>
-                    <h3>Recipes</h3>
-                    <p>
-                        View hundreds of easy to learn recipes or Upload your recipes on our platform, Let the world admire your skills.
+            <article class="col-12 col-md-4 d-flex align-self-center">
+                <div class="px-4">
+                    <h1 class="hvr-underline-from-center">Superb Features</h1>
+                    <p>What we offer on our platform, superb features with zero cost.
                     </p>
                 </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="ft-features">
-                    <i class="icofont icofont-cup-cake"></i>
-                    <h3>Blogging</h3>
-                    <p>
-                        Blog about your interest and what excites you, about your recipes home cook or professional.
-                    </p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="ft-features">
-                    <i class="icofont icofont-restaurant"></i>
-                    <h3>Health</h3>
-                    <p>
-                        How does food and recipes related to health, well-being and healthy living? let us know.
-                    </p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="ft-features ">
-                    <i class="icofont icofont-birthday-cake"></i>
-                    <h3>Cakes</h3>
-                    <p>
-                        We love cakes, do you? are you a baker and do you wish to promote yourself? don't worry we got you covered.
-                    </p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="ft-features ">
-                    <i class="icofont icofont-blogger"></i>
-                    <h3>Baking</h3>
-                    <p>
-                        Do you have skills beyond cakes, the world is waiting to find out, through our platform you can reach your fans.
-                    </p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="ft-features ">
-                    <i class="icofont icofont-diners-club"></i>
-                    <h3>Events Planning &amp; Tips</h3>
-                    <p>
-                        Here you can find tips for event planning or get to meet clients who are ready to hire your service.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+            </article>
+        </section>
+    </div>
 </section>
+
+
 
 {% endblock content %}
