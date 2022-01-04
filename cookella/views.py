@@ -12,7 +12,7 @@ from django.contrib.postgres.search import SearchVector, SearchQuery
 
 
 def index(request):
-    ft_recipes = FoodType.objects.all().order_by("date_added")[:4]
+    ft_recipes = FoodType.objects.all().order_by("date_added")[:6]
     posts = Post.objects.all().order_by("-like_count")[:6]
     return render(
         request,
@@ -98,7 +98,7 @@ def recipeUpdateView(request, pk, slug):
 
 
 def recipe_search(request):
-    form = RecipeSearchForm()
+    form = RecipeSearchForm
     q = ""
     results = []
     if "search" in request.GET:
