@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-{% load static %}
+<!DOCTYPE html> {% load static %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, autoRotate= disabled">
-    <meta property="og:image" content="{% static 'cookella/images/ogimages.png' %}" />
-    {% if title %}
+    <meta property="og:image" content="{% static 'cookella/images/ogimages.png' %}" /> {% if title %}
     <title>cookella-{{ title }}</title>
     {% else %}
     <title>Cookella</title>
@@ -33,22 +31,20 @@
 <body class="d-flex flex-column min-vh-100">
     <!-- facebook fdk -->
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=543675512490996">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=543675512490996">
     </script>
 
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <span>
-                <a class="navbar-brand" href="{% url 'cookella-index' %}">CookElla</a>
+                <a class="navbar-brand" href="/">CookElla</a>
             </span>
 
             <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button> -->
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="" role="button">
                     <i class="fa fa-bars fa-2x" aria-hidden="true" style="color:#dc4535"></i>
                 </span>
@@ -58,11 +54,8 @@
                 <ul class="navbar-nav mr-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown nav-item nav-auth pt-2">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="img-fluid rounded-circle shadow-lg user-thumbnail"
-                                src="{{ request.user.profile.photo_url }}">
-                            {{ request.user.username }}
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="img-fluid rounded-circle shadow-lg user-thumbnail" src="{{ request.user.profile.photo_url }}"> {{ request.user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'profile' request.user.username %}">
@@ -82,17 +75,15 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">
-                            <button class="btn btn-light">
-                                LOGIN
-                            </button>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link nav-auth" href="{% url 'account_signup' %}">
                             <button class="btn btn-danger">
                                 SIGN UP
                             </button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pt-4" href="{% url 'account_login' %}">
+                            LOGIN
                         </a>
                     </li>
                     {% endif %}
@@ -124,10 +115,7 @@
             {% endfor %}
         </div>
     </div>
-    {% endif %}
-    {% block content %}
-    {% endblock %}
-    {% block comment %} {% endblock comment %}
+    {% endif %} {% block content %} {% endblock %} {% block comment %} {% endblock comment %}
 
 
     <!-- footer of the website -->
@@ -146,14 +134,14 @@
 
 
     <!-- jQuery library -->
-    <script src="{% static "cookella/js/jquery-3.4.1.min.js " %}"></script>
+    <script src="{% static "cookella/js/jquery-3.4.1.min.js" %}"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="{% static "cookella/js/bootstrap.min.js " %}"></script>
+    <script src="{% static "cookella/js/bootstrap.min.js" %}"></script>
 
     <script>
-        $(document).ready(function () {
-            $(".likebtn").click(function (event) {
+        $(document).ready(function() {
+            $(".likebtn").click(function(event) {
                 event.preventDefault()
                 var ansid = $(this).attr('id');
                 $.ajax({
@@ -164,7 +152,7 @@
                         'csrfmiddlewaretoken': "{{ csrf_token }}",
                         'action': 'post'
                     },
-                    success: function (response) {
+                    success: function(response) {
                         $('#like_count' + ansid).text(response['result']);
                         // console.log(response['stated'])
                         if (response['flag']) {
@@ -173,7 +161,7 @@
                             $('#' + ansid).removeClass('text-danger animated zoomIn');
                         }
                     },
-                    error: function (rs, e) {
+                    error: function(rs, e) {
                         console.log(rs.response)
                     }
                 });
@@ -182,7 +170,7 @@
     </script>
 
     <script>
-        $(window).scroll(function () {
+        $(window).scroll(function() {
             $('nav').toggleClass('scrolled', $(this).scrollTop() > 30);
         });
     </script>
