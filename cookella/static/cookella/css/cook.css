@@ -52,90 +52,50 @@ a {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 60vh;
-    min-height: 60vh;
     background-image: linear-gradient(to bottom, rgb(225, 225, 225, 1), rgb(225, 225, 225, 0.55)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
 }
 
 
 /* Carousel CSS  */
 
-.drk::before {
-    content: "";
-    display: block;
-    position: absolute;
+#index-header {
+    padding-top: 25vh;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(255, 165, 0, 0.45), rgba(255, 165, 0, 0.9));
-    /* background: rgba(255, 229, 123, 0.72); */
-}
-
-.carousel-item img {
-    border: none !important;
-    outline: none;
-    object-fit: cover;
-    object-position: center;
-}
-
-.carousel-item {
-    text-align: center;
-    min-height: 80vh;
-    height: 80vh;
+    min-height: 85vh;
+    height: 85vh;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
-    background-color: maroon;
+    background-image: linear-gradient(rgba(255, 165, 0, 0.45), rgba(255, 165, 0, 0.9)), url(/static/cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg);
+    overflow: hidden !important;
 }
 
-.carousel-caption {
-    display: block;
-    margin-bottom: 17vh;
+#index-header h1 {
+    font-size: 4.7em;
+    text-shadow: 2px 2px gold;
 }
 
-.carousel-caption h5 {
-    font-size: 70px;
-    font-weight: 900;
-    color: #080808;
-    text-transform: capitalize;
-    margin-top: 25px;
-    font-family: 'Bourgeois Rounded';
-    text-shadow: 1.5px 2px whitesmoke;
-    padding-bottom: 15px;
-}
 
-.carousel-caption p {
-    width: 60%;
-    margin: auto;
-    font-size: 20px;
-    font-weight: 600;
-    padding-bottom: 15px;
-}
+/* 
+* recipes section
+*/
 
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    width: 70px;
-    height: 70px;
-}
-
-.carousel-caption p a button {
-    text-transform: uppercase;
-    font-weight: 700;
-    border-radius: 50px;
-}
-
-.carousel-indicators li {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
+#ft_recipes {
+    min-height: 90vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    /* height: 100vh; */
 }
 
 #ft_recipes .bg_layer {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/jonathan-borba-8WbeydChgQA-unsplash.jpg");
     background-size: cover;
+    height: 350px;
     text-align: center;
     width: auto;
-    border-radius: 50px 0 0 50px;
+    border-radius: 20px 0 20px 0;
 }
 
 
@@ -205,6 +165,7 @@ a {
 #mission .join-mission {
     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/cookella/images/slidefood_img4.jpg");
     background-size: cover;
+    height: 500px;
     padding: 6em;
     text-align: center;
     width: auto;
