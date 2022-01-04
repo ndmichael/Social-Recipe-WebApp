@@ -224,11 +224,11 @@ a {
 /* css for features section */
 
 #features {
-    background-image: linear-gradient(to left, rgb(225, 225, 225, 0.55), rgb(225, 225, 225, 0.55)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgb(225, 225, 225, 0.75)), url(/static/cookella/images/brooke-lark-V4MBq8kue3U-unsplash.jpg);
     background-size: cover;
     background-position: center;
     /* background-attachment: fixed; */
-    padding: 3.0em 0;
+    padding: 4.5em 10px;
 }
 
 #features h2,
@@ -238,10 +238,10 @@ span {
 }
 
 #features .icofont {
-    font-size: 26px;
-    background: -moz-linear-gradient(maroon, #dc3545);
-    background: -webkit-linear-gradient(maroon, #dc3545);
-    background: linear-gradient(#dc3545, maroon);
+    font-size: 36px;
+    /* background: -moz-linear-gradient(to bottom #dc3545, red 70%);
+    background: -webkit-linear-gradient(to bottom #dc3545, red 70%); */
+    background: linear-gradient(to top, #dc3545, maroon);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -255,10 +255,14 @@ span {
     margin: 1em auto;
     transition: All 2000s ease-in !important;
     background-color: rgba(255, 255, 255, 0.15) !important;
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.45);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.25);
     -moz-backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
+}
+
+#features p {
+    padding-top: 10px;
 }
 
 
