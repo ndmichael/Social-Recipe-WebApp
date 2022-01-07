@@ -1,17 +1,16 @@
 {% extends "base.html" %} {% load crispy_forms_tags %} {% load static %} {% block content %}
 <div class="container mt-5">
     <div class="row " id="profile">
-        <div class="col-12 col-md-5 mb-4 d-flex">
+        <div class="col-12 col-md-3 mb-4 d-flex">
             <a href="{{ user.profile.photo_url }}" target="_blank">
                 <img class="img-fluid rounded-circle" style="max-height: 250px; width: 250px; height: 100%;" src="{{ user.profile.photo_url }}">
             </a>
         </div>
 
-        <div class="col-sm-7">
+        <div class="col-sm-8">
             <div class=" d-flex">
                 <h1 class="mr-2 mr-md-5">{{ user.username }}</h1>
                 <a href="{% url 'profile-settings' request.user.username %}" class=" mr-2">
-
                     <i class=" icofont icofont-ui-settings icofont-3x text-dark"></i>
                 </a>
                 <a href="{% url 'cookella-add-recipe' %}" class="mr-2">
@@ -24,24 +23,43 @@
 
             <p>{{ user.email }}</p>
 
+            <ul class="nav nav-tabs text-dark">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+
             <div class=" d-flex pt-3">
                 <a href="{% url 'user-post' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
-                    <i class=" icofont icofont-2x icofont-letterbox text-primary"></i> <br />
+                    <i class=" icofont icofont-2x icofont-letterbox text-primary"></i>
+                    <br />
                     <p class=" text-dark"> <b>{{ post_count }} posts </b></p>
                 </a>
 
                 <a href="{% url 'user-contribution' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
-                    <i class=" icofont icofont-2x icofont-chef text-warning"></i> <br />
+                    <i class=" icofont icofont-2x icofont-chef text-warning"></i>
+                    <br />
                     <p> <b>{{ contribution_count }} recipes</b></p>
                 </a>
 
                 <a href="{% url 'user-post' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
-                    <i class=" icofont icofont-2x icofont-contact-add text-danger"></i> <br />
+                    <i class=" icofont icofont-2x icofont-contact-add text-danger"></i>
+                    <br />
                     <p class=" text-dark"><b> Saved posts </b></p>
                 </a>
 
                 <a href="{% url 'user-contribution' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
-                    <i class=" icofont icofont-2x icofont-food-basket text-info"></i> <br />
+                    <i class=" icofont icofont-2x icofont-food-basket text-info"></i>
+                    <br />
                     <p> <b> saved recipes </b></p>
                 </a>
             </div>
@@ -53,7 +71,9 @@
             <p>to view all contributions please <strong></strong></p> <br />
             <!-- this this only when the user requesting is same as the user porfile owner -->
             {% elif request.user.username == user.username %}
-            <p>Click here to contribute recipe <strong><a href="{% url 'cookella-add-recipe' %}">Add Recipe</a></strong>
+            <p>Click here to contribute recipe <strong><a
+                        href="{% url 'cookella-add-recipe' %}">Add
+                        Recipe</a></strong>
             </p>
             {% endif %}
 

@@ -12,7 +12,7 @@
                     </p>
                 </header>
                 <p class=" pt-4">
-                    <a href="#" class="btn btn-lg btn-danger rounded-pill shadow">
+                    <a href="{% url 'dish_list' %}" class="btn btn-lg btn-danger rounded-pill shadow">
                         Explore Recipes
                     </a>
                 </p>
@@ -71,7 +71,7 @@
             {% for post in posts %}
             <div class="col-md-4 mb-5">
                 <!-- <div class="h-100 w-100 border bg-danger"> -->
-                <a href="{{ post.get_absolute_url }}" class="text-dark bg-white hvr-shrink shadow-sm" style="width: 100%; height: 100%; border-radius: 10px 20px; overflow: hidden;
+                <a href="{{ post.get_absolute_url }}" class="text-dark bg-white hvr-shrink shadow" style="width: 100%; height: 100%; border-radius: 10px 20px; overflow: hidden;
                      ">
                     {% if post.image %}
                     <img src="{{post.image.url}}"
