@@ -303,8 +303,15 @@ span {
 
 #profile a {
     text-decoration: none;
-    text-align: center;
-    /* color: transparent; */
+    color: inherit;
+}
+
+#profile .nav-tabs .nav-link.active>.icofont {
+    color: black;
+}
+
+#profile .nav-tabs .nav-link>.icofont {
+    color: #607d8b;
 }
 
 #profile img {
