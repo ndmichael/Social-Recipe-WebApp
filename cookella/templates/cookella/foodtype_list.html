@@ -10,7 +10,8 @@
                     <div class="form py-3">
                         <form class=" form-inline " method="GET" action="{% url 'recipe_search' %}">
                             <input class="form-control form-control-lg p-2 col-6 col-md-9 mx-auto" type="search" name="search" placeholder="title content" />
-                            <button type="submit" class="btn btn-lg btn-danger">Search Post</button>
+                            <button type="submit" class="btn btn-lg btn-danger">Search
+                                Post</button>
                         </form>
                     </div>
                 </div>
@@ -35,7 +36,7 @@
                         {{ dish.food_name }}
                     </h5>
                     <p><strong>By:</strong> {{ dish.contributor }}</p>
-                    <a href="{%  url 'recipes' dish.pk dish.slug %}">
+                    <a href=" {{ dish.get_absolute_url }}">
                         <button type="button" class="btn btn-danger btn-block rounded-pill">
                             Cook Now
                         </button>
@@ -48,23 +49,15 @@
         {% endfor %}
     </div>
     <div class=" text-center border-top">
-        {% if is_paginated %}
-        {% if page_obj.has_previous %}
+        {% if is_paginated %} {% if page_obj.has_previous %}
         <a class="btn btn-outline-dark" href="?page=1">First</a>
-        <a class="btn btn-outline-dark" href="?page={{ page_obj.previous_page_number }}">Previous</a>
-        {% endif %}
-        {% for num in page_obj.paginator.page_range %}
-        {% if page_obj.number == num %}
-        <a class="btn btn-danger btn" href="?page={{ num }}">{{ num }}</a>
-        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a class="btn btn-outline-dark" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-        <a class="btn btn-outline-dark" href="?page={{ page_obj.next_page_number }}">Next</a>
-        <a class="btn btn-dark" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
-        {% endif %}
-        {% endif %}
+        <a class="btn btn-outline-dark" href="?page={{ page_obj.previous_page_number }}">Previous</a> {% endif %} {% for num in page_obj.paginator.page_range %} {% if page_obj.number == num %}
+        <a class="btn btn-danger btn" href="?page={{ num }}">{{ num }}</a> {% elif num > page_obj.number|add:'-3' and num
+        < page_obj.number|add: '3' %} <a class="btn btn-outline-dark" href="?page={{ num }}">{{ num }}
+            </a>
+            {% endif %} {% endfor %} {% if page_obj.has_next %}
+            <a class="btn btn-outline-dark" href="?page={{ page_obj.next_page_number }}">Next</a>
+            <a class="btn btn-dark" href="?page={{ page_obj.paginator.num_pages }}">Last</a> {% endif %} {% endif %}
     </div>
 
 </section>
