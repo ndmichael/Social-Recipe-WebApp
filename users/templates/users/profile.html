@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% load crispy_forms_tags %} {% load static %} {% block content %}
 <div class="container mt-5">
     <div class="row " id="profile">
-        <div class="col-12 col-md-3 mb-4 d-flex">
+        <div class="col-12 col-md-3 mb-4">
             <a href="{{ user.profile.photo_url }}" target="_blank">
                 <img class="img-fluid rounded-circle" style="height: 150px; width: 150px;" src="{{ user.profile.photo_url }}">
             </a>
