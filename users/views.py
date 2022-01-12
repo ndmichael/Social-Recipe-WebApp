@@ -34,11 +34,14 @@ def profile(request, username):
         User, username=username
     )  # getting the current user passed to it
     user_post = Post.objects.filter(author=user)
+    user_recipes = FoodType.objects.filter(contributor=user)
     contribution_count = FoodType.objects.filter(contributor=user).count()
     post_count = user_post.count()
 
     context = {
         "user": user,
+        "posts": user_post,
+        "recipes": user_recipes,
         "post_count": post_count,
         "contribution_count": contribution_count,
     }
