@@ -304,7 +304,7 @@ span {
 #profile a {
     text-decoration: none;
     text-align: center;
-    color: transparent;
+    /* color: transparent; */
 }
 
 #profile img {
