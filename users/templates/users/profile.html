@@ -21,22 +21,26 @@
                     <span class="btn btn-secondary ">WRITE</span>
                 </a>
             </div>
-
-            <p>{{ user.email }}</p>
-
-            <nav>
+            <div class="pt-3">
+                <h3>About</h3>
+                <p>
+                    {{ user.profile.details }}
+                </p>
+            </div>
+            <nav class="pt-4">
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <a class="nav-link active" id="nav-recipes-tab" data-toggle="tab" href="#nav-recipes" role="tab" aria-controls="nav-recipes" aria-selected="true" data-toggle="tooltip" data-placement="bottom" title="RECIPES">
                         <i class=" icofont icofont-3x icofont-chef"></i>
-                        <!-- <br>
-                        <span class="badge badge-danger">{{ post_count }}
-                        </span> -->
+                        <!-- <br> -->
+                        <span class="badge badge-danger">
+                            {{ contribution_count}}
+                        </span>
                     </a>
                     <a class="nav-link" id="nav-posts-tab" data-toggle="tab" href="#nav-posts" role="tab" aria-controls="nav-posts" aria-selected="false">
                         <i class=" icofont icofont-3x icofont-letterbox"></i>
-                        <!-- <br>
+                        <!-- <br> -->
                         <span class="badge badge-danger">{{ post_count }}
-                        </span> -->
+                        </span>
                     </a>
                     <a class="nav-link" id="nav-savedposts-tab" data-toggle="tab" href="#nav-savedposts" role="tab" aria-controls="nav-savedposts" aria-selected="false">
                         <i class=" icofont icofont-3x icofont-contact-add"></i>
@@ -51,10 +55,10 @@
                     <section class="row">
                         {% for recipe in recipes %}
                         <article class="col-6 col-md-4 pt-4">
-                            <div>
+                            <a href="{{recipe.get_absolute_url}}">
                                 <img src="{{ recipe.food_image.url }}" alt="{{recipe.food_name}}" class="img-fluid" style="height: 100px; object-fit: cover;" />
                                 <h5 class="pt-2">{{recipe.food_name}}</h5>
-                            </div>
+                            </a>
                         </article>
                         {% endfor %}
                     </section>
@@ -63,12 +67,19 @@
                     <section class="row">
                         {% for post in posts %}
                         <article class="col-6 col-md-4 pt-4">
-                            <div>
+                            <a href="{{post.get_absolute_url}}">
                                 {% if post.image %}
-                                <img src="{{post.image.url}}" class="img-fluid product-img p-0" alt="{{post.title}}" style="height: 100px; width: 100% !important; object-fit: cover; "> {% else %}
-                                <img src="{% static 'blog/images/blogdefault.png' %}" alt="no thumbnail" style="height: 100px; width: 100%; object-fit: cover; " /> {% endif %}
+                                <img src="{{post.image.url}}"
+                                    class="img-fluid product-img p-0"
+                                    alt="{{post.title}}"
+                                    style="height: 100px; width: 100% !important; object-fit: cover; ">
+                                {% else %}
+                                <img src="{% static 'blog/images/blogdefault.png' %}"
+                                    alt="no thumbnail"
+                                    style="height: 100px; width: 100%; object-fit: cover; " />
+                                {% endif %}
                                 <h5>{{post.title|truncatechars:40}}</h5>
-                            </div>
+                            </a>
                         </article>
                         {% endfor %}
                     </section>
@@ -77,56 +88,7 @@
                 <div class="tab-pane fade" id="nav-savedposts" role="tabpanel" aria-labelledby="nav-savedposts-tab">...</div>
                 <div class="tab-pane fade" id="nav-savedrecipes" role="tabpanel" aria-labelledby="nav-savedrecipes-tab">...</div>
             </div>
-
-            <div class=" d-flex pt-3">
-                <a href="{% url 'user-post' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
-                    <i class=" icofont icofont-2x icofont-letterbox text-primary"></i>
-                    <br />
-                    <p class=" text-dark"> <b>{{ post_count }} posts </b></p>
-                </a>
-
-                <a href="{% url 'user-contribution' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
-                    <i class=" icofont icofont-2x icofont-chef text-warning"></i>
-                    <br />
-                    <p> <b>{{ contribution_count }} recipes</b></p>
-                </a>
-
-                <a href="{% url 'user-post' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
-                    <i class=" icofont icofont-2x icofont-contact-add text-danger"></i>
-                    <br />
-                    <p class=" text-dark"><b> Saved posts </b></p>
-                </a>
-
-                <a href="{% url 'user-contribution' user.username %}" class="mr-4 hvr-grow hvr-underline-from-center">
-                    <i class=" icofont icofont-2x icofont-food-basket text-info"></i>
-                    <br />
-                    <p> <b> saved recipes </b></p>
-                </a>
-            </div>
-
-
-
-            <!-- if the user have above 0 contribution then display this -->
-            {% if contribution_count > 0 %}
-            <p>to view all contributions please <strong></strong></p> <br />
-            <!-- this this only when the user requesting is same as the user porfile owner -->
-            {% elif request.user.username == user.username %}
-            <p>Click here to contribute recipe <strong><a
-                        href="{% url 'cookella-add-recipe' %}">Add
-                        Recipe</a></strong>
-            </p>
-            {% endif %}
-
-            <h4 class="mt-5 border-bottom">About Author</h4>
-            <p>
-                {{ user.profile.details }}
-            </p>
         </div>
-        <!-- display form only when the profile belongs to the requesting user
-            if user who makes request == user who owns the profile then display else don't
-         -->
-
-
     </div>
 </div>
 {% endblock content %}
