@@ -9,7 +9,7 @@ Django==3.1.1
 django-allauth==0.42.0
 django-appconf==1.0.4
 django-classy-tags==1.0.0
-django-cms==3.7.2
+django-cms==3.7.4
 django-contrib-comments==1.9.2
 django-countries==6.1.2
 django-crispy-forms==1.9.0
