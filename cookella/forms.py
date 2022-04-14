@@ -4,17 +4,17 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import FoodRecipe, FoodType
 
 
-
 class FoodTypeForm(forms.ModelForm):
     class Meta:
         model = FoodType
-        fields = ['food_name', 'country', 'food_image']
+        fields = ["food_name", "country"]
 
 
 class FoodRecipeForm(forms.ModelForm):
     class Meta:
         model = FoodRecipe
-        fields = ['ingredient', 'recipe', 'note']
+        fields = ["ingredient", "recipe", "note"]
 
-class RecipeSearchForm (forms.Form):
-    search = forms.CharField ();
+
+class RecipeSearchForm(forms.Form):
+    search = forms.CharField()
