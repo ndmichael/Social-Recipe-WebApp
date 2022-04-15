@@ -50,7 +50,10 @@ class Category(MPTTModel):
 
 class FoodType(models.Model):
     category = models.ForeignKey(
-        Category, on_delete=models.RESTRICT, related_name="food_category"
+        Category,
+        on_delete=models.RESTRICT,
+        related_name="food_category",
+        default="soup",
     )
     contributor = models.ForeignKey(
         User, on_delete=models.RESTRICT, related_name="contributor"
